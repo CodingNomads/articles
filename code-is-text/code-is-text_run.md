@@ -1,6 +1,6 @@
 # Code Is Just Text
 
-In the previous post you've learned how to write your code into a plain text editor and save it as a Python file. Here, you will learn how to execute the file you wrote in order to finally play the game!
+In the previous post you've learned how to write your code into a plain text editor and save it as a Python file. If you haven't written the code, or lost it in the depths of your Desktop, you can copy it [from this online resource](https://gist.github.com/martin-martin/d2f0bf7a6187a4e05d847b06e2bcee1d). In this lesson you will learn how to execute the file you wrote in order to finally play the game!
 
 **Note**: If you built the game in [repl.it](https://repl.it/) all you need to do is press _Run_. Nevertheless, read through this text and come back to give it a try once you have Python installed.
 

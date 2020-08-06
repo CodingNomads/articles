@@ -34,7 +34,7 @@ while guess != num:
         print("nope, sorry. try again!")
 ```
 
-Make sure you type it out as-is, including the 4 spaces for **indentation**. Your text window should look like this:
+Make sure you type it out as-is, including the 4 spaces for **indentation**. You can also copy-paste the code from [this online resource](https://gist.github.com/martin-martin/d2f0bf7a6187a4e05d847b06e2bcee1d). Your text window should look like this:
 
 ![Code In TextEdit Window](imgs/guess_code.png)
 
