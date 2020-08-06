@@ -1,4 +1,4 @@
-This series of blog posts will help you get started with the Django Web Framework. Learn more and dive deeper in our intensive [Django Online Bootcamp]().
+This series of blog posts will help you get started with the Django Web Framework. Learn more and dive deeper in our intensive [Django Online Bootcamp](https://codingnomads.co/courses/django-course-learn-django-online).
 
 # Why Learn Django?
 
