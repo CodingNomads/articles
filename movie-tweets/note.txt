@@ -1,2 +1,0 @@
-For Cagdas: You can delete this file and put all your content
-(notebook + markdown draft) into this folder.
