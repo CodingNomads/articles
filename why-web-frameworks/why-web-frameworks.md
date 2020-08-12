@@ -4,7 +4,7 @@ This series of blog posts will help you get started with the Django Web Framewor
 
 You probably heard the term before, but what does it really mean and why would you want to use a web framework in the first place?
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/joUGCwXHWWE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=7oMt5AaTJS4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Let's recap that in writing. First and foremost: _The web is a mess_. You'll want to use a web framework because it _simplifies web development_. More specifically, it helps you to:
 
