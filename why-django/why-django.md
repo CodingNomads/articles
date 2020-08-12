@@ -4,7 +4,7 @@ This series of blog posts will help you get started with the Django Web Framewor
 
 While there are many programming languages and even more web frameworks that can help you to achieve your goal of developing for the web, here are a couple of reasons why **Django** is a great choice:
 
-[Replace with Youtube link](https://vimeo.com/413625825)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4COYF6CbiPY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Here's the recap in writing on why Django is a great choice for learning web development:
 
