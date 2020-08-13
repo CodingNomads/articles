@@ -14,4 +14,4 @@ Let's recap that in writing. First and foremost: _The web is a mess_. You'll wan
 - **Provide** templating frameworks
 - **Help** with security, caching, sessions, etc.
 
-In the next post, you will learn about why _Django_ is a great choice for a Python web framework.
+In this post you learned about what web frameworks are and why they are useful for web development. In the next post, you will learn about why _Django_ is a great choice for a Python web framework.
