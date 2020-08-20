@@ -1,6 +1,6 @@
-# Code Is Just Text
+# Python Project for Beginners
 
-In this article and its related video, you will learn how to write a simple Guess-the-numbers game in a normal text editor. Don't worry if you don't yet understand everything that's going on here. The main point is that you get to see how **code is just text**. Let's go ahead and build and run your first interactive Python program on your own computer.
+In this article and its related video, you will learn how to write a simple **Guess-the-number game** in a normal text editor. Don't worry if you don't yet understand everything that's going on here, this is a fun python project for beginners. The main point is that you get to see how **code is just text**. Let's go ahead and build and run your first interactive Python program on your own computer.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CAOOILNwI5M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -36,7 +36,7 @@ while guess != num:
         print("nope, sorry. try again!")
 ```
 
-Make sure you type it out as-is, including the 4 spaces for **indentation**. You can also copy-paste the code from [this online resource](https://gist.github.com/martin-martin/d2f0bf7a6187a4e05d847b06e2bcee1d). Your text window should look like this:
+Make sure you type it out as-is, including the 4 spaces for **indentation**. You can also copy-paste the code from [this online resource](https://gist.github.com/martin-martin/d2f0bf7a6187a4e05d847b06e2bcee1d). Your text window should look like this, which is already the full code for your beginner python project:
 
 ![Code In TextEdit Window](https://github.com/CodingNomads/articles/blob/main/code-is-text/imgs/guess_code.png?raw=true)
 
@@ -44,7 +44,7 @@ Finally, let's save it and give it a name, then top it off with the python file 
 
 ![Finised Code in TextEdit Window](https://github.com/CodingNomads/articles/blob/main/code-is-text/imgs/finished_code.png?raw=true)
 
-And that's it for writing the code. Next step is we need to run it to play that game!
+And that's it for writing the code. You're done with building your first Python project. Next step is for your to run the code to play your game.
 
 ### Play the Game
 
@@ -52,7 +52,7 @@ Well done so far! :) To play your game on your computer you need to run the Pyth
 
 ![How to get to the Terminal](https://github.com/CodingNomads/articles/blob/main/code-is-text/imgs/get_to_terminal.png?raw=true)
 
-This will open up your Terminal, a tool that programmers use on a daily basis. If you join one of our courses, you will get to know your Terminal in much more detail, but for now don't worry about it too much. Just type the following in there:
+This will open up your Terminal, a tool that programmers use on a daily basis. If you join one of our courses, you will get to know your Terminal in much more detail, but for this beginner project you don't need to worry about it too much. Just type the following in there:
 
 ```bash
 cd ~/Desktop
@@ -105,6 +105,8 @@ Here are the important take-aways from this article:
 - **Text**: Programming is just writing text
 - **Python**: You run Python programs with `python`
 - **Fun**: There's fun stuff you can build! :)
+
+Congratulations again on building your first beginner project in Python.
 
 ---
 
