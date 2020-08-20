@@ -6,7 +6,7 @@ In the previous two posts you've learned how to write your code in a plain text 
 
 There are a lot of different concepts that went into creating even such a small program like this game you wrote. Let's take a look what they are:
 
-![Base Parts of your Program](imgs/base_parts.png)
+![Base Parts of your Program](https://github.com/CodingNomads/articles/blob/main/code-is-text/imgs/base_parts.png?raw=true)
 
 In the screenshot above you can see the **filename** of the Python file you created, as well as the **code** saved you saved in the file. Now let's dive deeper into the code and learn about which **programming concepts** you touched upon by making this file.
 
@@ -14,7 +14,7 @@ In the screenshot above you can see the **filename** of the Python file you crea
 
 Keep in mind that, like a paragraph of English, if you understand these parts, then it's likely that you can write and understand another similar paragraph. Even if you haven't seen it before. It also takes some training before you will be able to do that, so don't feel overwhelmed if you won't grasp it all right away. If you do, then wow! If you don't, that's perfectly normal. But check out the pretty colors! :)
 
-![Highlighted Programming Concepts with Labels](imgs/programming_concepts.png)
+![Highlighted Programming Concepts with Labels](https://github.com/CodingNomads/articles/blob/main/code-is-text/imgs//programming_concepts.png?raw=True)
 
 That are a lot of colors! But don't worry if it feels like a lot right now. If you join one of our courses, you will learn to understand all of those programming concepts, and many more! Give it time and effort and you will see that you will be able to grasp it and start speaking the coding language.
 
