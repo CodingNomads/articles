@@ -353,7 +353,7 @@ movies.head()
 
 ### A quick look into the datasets:
 
-By far the most important variable is the movie `rating`. Let's see its distribution:
+Since you want to find out how well movies are liked or disliked, the most important variable is the movie `rating`. Let's see its distribution:
 
 
 ```python
@@ -380,7 +380,7 @@ ratings['rating'].value_counts()
 
 `value_counts()` is a quick but effective way of checking what values your variable takes. Here we see quickly that 8 rating score was given 211699 times!
 
-A histogram is also quite helpful or the `describe()` function:
+A histogram will show you the distribution and the `describe()` function will give additional basic statistics. So, they are quite helpful to get quick insights.
 
 
 ```python
