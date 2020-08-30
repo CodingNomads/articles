@@ -11,7 +11,7 @@ You will achive all of it by using Python <a href="https://pandas.pydata.org/doc
 
 ## Introduction
 
-<p>Movie Tweetings Project lives on <a href="https://github.com/sidooms/MovieTweetings" target="_blank">GitHub</a> and its story is quite straight forward in a nutshell: </p>
+You can access the code of the <a href="https://github.com/sidooms/MovieTweetings" target="_blank">Movie Tweetings Project</a> that you will be working with on GitHub. Here is what the project is about in a nutshell:
 
 It consists of ratings on movies that were contained in well-structured tweets on Twitter and it has been updated every day since 2013. OK but, how is this data created?
 
