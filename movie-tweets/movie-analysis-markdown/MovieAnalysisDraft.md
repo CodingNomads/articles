@@ -3,8 +3,8 @@
 **In this notebook you will learn**:
 1. Getting and Cleaning the Data
 2. Getting the overall figures and basic statistics with their interpretation
-3. Joining datasets, aggregating and filtering by conditions
-4. Drilling down into the insights to discover patterns
+3. Joining datasets, aggregating and filtering your data by conditions
+4. Discovering hidden patterns and insights
 5. Creating summary tables
 
 all using Python <a href="https://pandas.pydata.org/docs/getting_started/index.html#getting-started" target="_blank">`pandas`</a>  and <a href="https://matplotlib.org/3.2.2/contents.html" target="_blank">`matplotlib`</a> libraries. You can download and run this Jupyter Notebook **here**.
