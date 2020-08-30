@@ -1,6 +1,6 @@
 ## Movie Analysis
 
-##### In this notebook you will learn:
+**In this notebook you will learn**:
 1. Getting and Cleaning the Data
 2. Getting the overall figures and having a basic understanding
 3. Joining datasets, aggregating and filtering by conditions
@@ -94,14 +94,14 @@ Options You have used above:
 - Set the max rows and max columns to some big numbers (in this case **50**). This option just makes all the columns and rows in a DataFrame more readable or visible.
 - `fivethirtyeight` style to have plots like the ones on <a href="https://www.fivethirtyeight.com" target="_blank">fivethirtyeight.com</a>: A website founded by <a href="https://en.wikipedia.org/wiki/Nate_Silver" target="_blank">Nate Silver</a>. If you want to explore `fivethirtyeight` I highly recommend the book: <a href="https://www.amazon.com/Signal-Noise-Many-Predictions-Fail-but/dp/0143125087" target="_blank">The Signal and the Noise</a>.
 
-## Reading the Data:
+### Reading the Data:
 
 You are ready to read the files into `pandas` data frames now:
 - You will set the separators to be double colons `::`
 - You will give the column names when reading and they will become the headers
 - You will convert the Unixtime to a datetime format
 
-### 1- Users
+#### 1- Users
 
 
 ```python
@@ -171,7 +171,7 @@ users.head()
 
 
 
-### 2- Ratings
+#### 2- Ratings
 
 
 ```python
@@ -261,7 +261,7 @@ ratings.head()
 
 
 
-### 3- Movies
+#### 3- Movies
 
 
 ```python
@@ -464,7 +464,7 @@ This skewness is at the extreme: Look how the `max` value is far far away! Could
 
 The output also tells us that **%50** of the people used it only **twice** but, the average is almost **13**. It is because of those users with extreme usage numbers. Could it be possible that they are not human beings but just bots? It could be a great topic to investigate. However, we will continue by joining these datasets now.
 
-### Joining the Datasets
+## Joining the Datasets
 
 ![title](tweet_pandas.png)
 
@@ -1328,7 +1328,7 @@ We see that the 5-year moving average is in a shocking decline already. What is 
 - The filming industry is in a serious crisis! They are not producing films because of COVID-19.
 - The people didn't have the time to watch the most recent movies. If they didn't watch, they don't rate and we can see a decline. For example, I didn't watch the Avengers series before doing this analysis and on the other hand, The Braveheart (1995) most probably had enough time to get high numbers.
 
-##### What have the people watched (or rated) most of the time since 2000?
+#### What have the people watched (or rated) most of the time since 2000?
 
 Let's now focus on the `genres` with high volume. You are going to identify the top 6 genres with the highest volume and filter them to produce the next chart.
 
@@ -1401,7 +1401,7 @@ percent_change = (tidy_movie_ratings.iloc[:, 4:]
 We notice the decline we have spotted one more time. What's interesting is to see the `Sci-Fi` & `Adventure` moving to the top.
 - Indeed, the `Sci-Fi` & `Adventure` was a real **hype** and you might play your card into them, especially if your business is somewhat related to the global filming industry trends. It has the sharpest slope for the increase in getting ratings. This can signal for the increasing demand.
 
-### Top Rated Sci-Fi Movies by Decades
+#### Top Rated Sci-Fi Movies by Decades
 
 What are the movies from each decade which you could suggest to the users by default? _( let's say for your imaginary streaming service )_
 
@@ -1863,7 +1863,7 @@ What is more, you completed a full project:
 * And you didn't jump into conclusions and root causes. You kept it simple and skeptic
 * You created summary tables
 
-### What is next?
+## What is next?
 
 If you want to learn and practice further: 
 
@@ -1875,6 +1875,6 @@ If you want to learn and practice further:
     
 Thank you!
 
-## Cagdas Yetkin
+### Cagdas Yetkin
 
 # ...
