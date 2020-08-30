@@ -17,11 +17,15 @@ It consists of ratings on movies that were contained in well-structured tweets o
 
 It comes from people who connected their `IMDB` profile with their `Twitter` accounts. Whenever they rate a movie on the website an automated process will shoot a tweet. 
 
-And these *well-structured* tweets are like: "I rated The Matrix 9/10 http://www.imdb.com/title/tt0133093/ #IMDb"
+And these *well-structured* tweets are like: 
 
-Nice but, can we use this data to learn and practice some data analysis using Python? The answer is yes! 
+>"I rated The Matrix 9/10 http://www.imdb.com/title/tt0133093/ #IMDb"
 
-We highly encourage you to replicate the work and find some additional knowledge hidden inside. You can either download the data from the original repo or from <a href="https://drive.google.com/drive/folders/1nSV5S8jCh7LbrTdIgOSyxq6DqN-G3bah?usp=sharing" target="_blank">here</a>. Note that you will have the most up to date data if you use the original repo.
+Nice, but can you use this data to learn and practice some data analysis using Python? The answer is yes! 
+
+You are highly encouraged to write the code for this project by yourself. You may discover some additional interesting revelations in the data, and doing the work yourself is what will give you the practice you need to improve your skills.
+
+You can either download the data from the original repo or from <a href="https://drive.google.com/drive/folders/1nSV5S8jCh7LbrTdIgOSyxq6DqN-G3bah?usp=sharing" target="_blank">here</a>. Note that you will have the most up to date data if you use the original repo.
 
 The most important is to have these 3 files in a folder called `data` inside your working directory as a first step:
 
