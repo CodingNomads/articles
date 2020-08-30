@@ -2,7 +2,7 @@
 
 **In this notebook you will learn**:
 1. Getting and Cleaning the Data
-2. Getting the overall figures and having a basic understanding
+2. Getting the overall figures and basic statistics with their interpretation
 3. Joining datasets, aggregating and filtering by conditions
 4. Drilling down into the insights to discover patterns
 5. Creating summary tables
