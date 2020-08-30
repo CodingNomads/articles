@@ -413,10 +413,12 @@ ratings['rating'].hist(bins=10);
 
 It is skewed to the left! It means the distribution doesn't have a symmetrical shape around the mean and this off-balanced distribution has a long tail on the left hand side. 
 
-The `hist()` and `describe()` functions are in fact quite similar: One gives text output and the other gives the visual. <p> 
-Hence, we could say that the `rating` was left-skewed without seeing the visual histogram also. Because in the `describe()` output: 
+The `hist()` and `describe()` functions are in fact quite similar: One gives text output and the other gives the visual.
+
+Given that both functions return the same output, you can also conclude that the rating is left-skewed by looking at the text output from your describe() function. The relevant data for this conclusion are:
+
 * The `mean` is much smaller than the `median` (50%) and 
-* 25% of the data covers only until a rating of **6**
+* 25% of the data covers only until a rating of `6`
 
 This is a bit confusing now. You have seen first that the highest frequency was 8. And then after generating the historgram it looked like 9-10. It is because of binning! 
 
