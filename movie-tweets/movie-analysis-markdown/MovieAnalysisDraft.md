@@ -113,6 +113,8 @@ There are a couple of adjustments you should make while reading in the data, to 
 - Give the column names when reading and they will become the headers
 - Convert the Unixtime to a datetime format
 
+Now, you will read `users.dat`, `ratings.dat` and `movies.dat` one by one:
+
 #### 1- Users
 
 
