@@ -351,7 +351,7 @@ movies.head()
 
 
 
-## A quick look into the datasets:
+### A quick look into the datasets:
 
 By far the most important variable is the movie `rating`. Let's see its distribution:
 
