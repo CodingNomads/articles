@@ -7,7 +7,7 @@
 4. Discovering hidden patterns and insights
 5. Creating summary tables
 
-all using Python <a href="https://pandas.pydata.org/docs/getting_started/index.html#getting-started" target="_blank">`pandas`</a>  and <a href="https://matplotlib.org/3.2.2/contents.html" target="_blank">`matplotlib`</a> libraries. You can download and run this Jupyter Notebook **here**.
+You will achive all of it by using Python <a href="https://pandas.pydata.org/docs/getting_started/index.html#getting-started" target="_blank">`pandas`</a>  and <a href="https://matplotlib.org/3.2.2/contents.html" target="_blank">`matplotlib`</a> libraries. You can download and run this Jupyter Notebook **here**.
 
 ## Introduction
 
