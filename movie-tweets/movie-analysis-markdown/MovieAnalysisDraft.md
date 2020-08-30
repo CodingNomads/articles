@@ -27,13 +27,13 @@ You are highly encouraged to write the code for this project by yourself. You ma
 
 You can either download the data from the original repo or from <a href="https://drive.google.com/drive/folders/1nSV5S8jCh7LbrTdIgOSyxq6DqN-G3bah?usp=sharing" target="_blank">here</a>. Note that you will have the most up to date data if you use the original repo.
 
-The most important is to have these 3 files in a folder called `data` inside your working directory as a first step:
+To get started, confirm that you have these 3 files in your working directory:
 
 - users.dat 
 - movies.dat 
 - ratings.dat
 
-The first action you would take is to check what these files contain:
+The first action you check what these files contain:
 
 
 ```bash
@@ -45,8 +45,11 @@ head -n3 data/users.dat
     2::522540374
     3::475571186
 
+At first it can be confusing that you can't see any field names but, these are documented in the <a href="https://github.com/sidooms/MovieTweetings" target="_blank">README</a> file as follows:
 
-In `users.dat` the first field is the `user_id` and the second one is `twitter_id`. Interestingly, the separator is not a comma but a double colon. This means that they decided to use a double colon as a separator.
+In `users.dat` the first field is the `user_id` and the second one is `twitter_id`.
+
+You can see that there is a surprising amount of colons in this data snippet. Because you already know that you are working with two data fields, this means that the creators of this data set decided to use a double-colon `::` as a field separator. Interesting choice! It is helpful to keep in mind that data fields can be divided by all sorts of different separators, and it's good to know which one is used in the data you are working with.
 
 
 ```bash
