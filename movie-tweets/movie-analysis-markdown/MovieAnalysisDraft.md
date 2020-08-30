@@ -62,7 +62,7 @@ head -n3 data/movies.dat
     0000012::The Arrival of a Train (1896)::Documentary|Short
 
 
-Here we have the `movie_id`, `movie_title` and `genres`. The `genres` are separated by `|`, another interesting expression!
+Here you have the `movie_id`, `movie_title` and `genres`. The `genres` are separated by `|`, another interesting choice!
 
 
 ```bash
@@ -75,7 +75,9 @@ head -n3 data/ratings.dat
     2::0208092::5::1586466072
 
 
-In this third dataset, our variables are `user_id`, `movie_id`, `rating` and, `rating_timestamp`. And again it comes with an intersting feature: The timestamps are in <a href="https://www.unixtimestamp.com/" target="_blank">unixtime</a> format! <p>
+In this third dataset, your variables are `user_id`, `movie_id`, `rating` and, `rating_timestamp`. And again it comes with an intersting feature: The timestamps are in <a href="https://www.unixtimestamp.com/" target="_blank">unixtime</a> format!
+
+UNIX time is a time format often used in computer time that shows the seconds passed since January 1st, 1970. You can use online converters to translate it to a format that is easier to read for humans. If you're interested, read more about Unix time on Wikipedia.
     
 Now you have an overall understanding of how the raw datasets look like. Next, you will import the libraries you will need for the rest of this work:
 
@@ -96,17 +98,20 @@ pd.set_option('display.max_columns', 50)
 warnings.filterwarnings('ignore')
 ```
 
-Options You have used above:
+Let's look a bit closer at the options you set up in the code snippet above:
 - You give the `filter-out-warnings` command to have a cleaner notebook without warning messages. 
 - Set the max rows and max columns to some big numbers (in this case **50**). This option just makes all the columns and rows in a DataFrame more readable or visible.
-- `fivethirtyeight` style to have plots like the ones on <a href="https://www.fivethirtyeight.com" target="_blank">fivethirtyeight.com</a>: A website founded by <a href="https://en.wikipedia.org/wiki/Nate_Silver" target="_blank">Nate Silver</a>. If you want to explore `fivethirtyeight` I highly recommend the book: <a href="https://www.amazon.com/Signal-Noise-Many-Predictions-Fail-but/dp/0143125087" target="_blank">The Signal and the Noise</a>.
+- Use `fivethirtyeight` style to have plots like the ones on <a href="https://www.fivethirtyeight.com" target="_blank">fivethirtyeight.com</a>: A website founded by <a href="https://en.wikipedia.org/wiki/Nate_Silver" target="_blank">Nate Silver</a>. If you want to explore `fivethirtyeight` I highly recommend the book: <a href="https://www.amazon.com/Signal-Noise-Many-Predictions-Fail-but/dp/0143125087" target="_blank">The Signal and the Noise</a>.
 
 ### Reading the Data:
 
-You are ready to read the files into `pandas` data frames now:
-- You will set the separators to be double colons `::`
-- You will give the column names when reading and they will become the headers
-- You will convert the Unixtime to a datetime format
+After importing the necessary libraries, you are now ready to read the files into `pandas` data frames.
+
+There are a couple of adjustments you should make while reading in the data, to make sure it will be in good shape to work with:
+
+- Set the separators to be double colons `::`
+- Give the column names when reading and they will become the headers
+- Convert the Unixtime to a datetime format
 
 #### 1- Users
 
