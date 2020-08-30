@@ -15,7 +15,7 @@ You can access the code of the <a href="https://github.com/sidooms/MovieTweeting
 
 It consists of ratings on movies that were contained in well-structured tweets on Twitter and it has been updated every day since 2013. OK but, how is this data created?
 
-The source is the people who connected their `IMDB` profile with their `Twitter` accounts. Whenever they rate a movie on the website an automated process will shoot a twit. 
+It comes from people who connected their `IMDB` profile with their `Twitter` accounts. Whenever they rate a movie on the website an automated process will shoot a tweet. 
 
 And these *well-structured* tweets are like: "I rated The Matrix 9/10 http://www.imdb.com/title/tt0133093/ #IMDb"
 
