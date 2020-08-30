@@ -411,7 +411,7 @@ ratings['rating'].hist(bins=10);
 ![png](output_30_0.png)
 
 
-It is skewed to the left!
+It is skewed to the left! It means the distribution doesn't have a symmetrical shape around the mean and this off-balanced distribution has a long tail on the left hand side. 
 
 The `hist()` and `describe()` functions are in fact quite similar: One gives text output and the other gives the visual. <p> 
 Hence, we could say that the `rating` was left-skewed without seeing the visual histogram also. Because in the `describe()` output: 
