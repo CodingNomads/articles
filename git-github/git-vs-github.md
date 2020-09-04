@@ -4,7 +4,7 @@ Git is not the same as GitHub. In this article you'll learn about what distingui
 - Git
 - Github
 
-### Version Control & Version Control Systems
+## Version Control & Version Control Systems
 
 On a general level, you can think of version control like this:
 
@@ -14,9 +14,7 @@ To make this _practice_ easier, more secure, and more efficient, you can use a *
 
 Version control systems also let you create **branches** in your project. A branch is a version of the project that split off at a certain point in time, and developed from there on separately to another branch of the same project. A VCS helps you to track these branches independently of one another, as well as merge them back together, if you want to combine the edits done on different branches. While doing so, it also keeps a record of who made which changes when.
 
-<div class='alert alert-info' role='alert'>
-    <strong>Info:</strong> As a real-life example of branching, think back to the example about creating multiple different resumes for different roles and companies. Each of these resumes could be a branch of the project
-</div>
+>As a real-life example of branching, think back to the example about creating multiple different resumes for different roles and companies. Each of these resumes could be a branch of the project
 
 Being able to efficiently keep track of both the edit history as well as multiple versions of a project is quite powerful, but there is more to version control that makes it such a widely-applied concept:
 
@@ -33,19 +31,17 @@ With this overview of version control in mind, let's sum up the main benefits of
 
 The most popular open-source version control systems are **Git, SVN, CVS, and Mercurial**. Of those four, _Git_ is by far the most popular modern VCS.
 
-### Git
+## Git
 
 Git is the most famous and widely used modern open-source version control system. It was created by <a href='https://en.wikipedia.org/wiki/Linus_Torvalds' target='_blank'>Linus Torvalds</a>, the creator of the Linux kernel, in 2005.
 
 **Distributed**: Git is a _distributed_ version control system, which means that the entire codebase and history, including all branches of a project, are available on every person's computer who is involved in a project. This makes it easy to branch and merge at any given time.
 
-<div class='alert alert-info' role='alert'>
-    <strong>Info:</strong> You'll learn more about branching and merging in just a bit
-</div>
+>You'll learn more about branching and merging in just a bit
 
 Git also allows users to work on any number of projects at the same time and tracks each project independently of the others.
 
-#### Advantages of Using Git
+### Advantages of Using Git
 
 - **Performance**: Git provides high-quality performance when it comes to version control systems. Branching, merging and committing are all optimized for fast performance
 - **Security**: Git secures your repositories with a cryptographically secure hashing algorithm named SHA-1
@@ -56,11 +52,11 @@ Git also allows users to work on any number of projects at the same time and tra
 - **History**: You can undo the changes you made, by reverting to previous versions on the file
 - **Open-Source Software**: Git is open-source software, which means that developers can contribute from all over the world. The community can help by adding new features or solving newly discovered issues quickly
 
-#### Disadvantages of Using Git
+### Disadvantages of Using Git
 
 - **Complexity**: Git can be a bit difficult to learn for new users
 
-### GitHub
+## GitHub
 
 Git and Github are not the same. While Git is version tracking software that runs on your local machine, _GitHub_ is a web service that hosts projects that are _tracked with Git_. It is a cloud-based system where you can store your Git projects outside of your local computer, and it also helps you keep track of your stored projects. Projects on GitHub are also called **repositories**.
 
@@ -74,11 +70,9 @@ GitHub is popular, but not the only hosting service for Git repositories. Some o
 
 The majority of people who use Github are developers, but you don't need to be a developer to use GitHub. Since all it is is a web service for hosting your projects that you track via Git, you can use it to manage any files and projects you are working with. There are, for example, writers who use GitHub to store their developing novels, etc.
 
-<div class='alert alert-info' role='alert'>
-    <strong>Info:</strong> You can use GitHub to store any document that benefits from easy access, version control, and collaboration
-</div>
+>You can use GitHub to store any document that benefits from easy access, version control, and collaboration
 
-#### Advantages of Using GitHub
+### Advantages of Using GitHub
 
 - **Graphical User Interface**: GitHub provides a well-furnished and organized graphical interface, which makes interacting with your Git repositories intuitive
 - **Collaboration**: GitHub provides access control and collaboration features such as wikis, as well as basic task management tools for every project
@@ -97,8 +91,6 @@ With this in-depth explanation in mind, let's look at an image that sums up the 
 
 GitHub is an important tool for a modern software developer, and crucial for participating in collaboration with other programmers.
 
-<div class='alert alert-info' role='alert'>
-    <strong>Info:</strong> If you don't have a GitHub profile yet, head over to their website and <a href='https://github.com/join' target='_blank'>Sign Up</a> for an account.
-</div>
+>If you don't have a GitHub profile yet, head over to their website and <a href='https://github.com/join' target='_blank'>Sign Up</a> for an account.
 
 Once you have your GitHub profile set up, you can head to the next page where you will learn about GitHub repositories.
