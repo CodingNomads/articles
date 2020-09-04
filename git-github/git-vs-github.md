@@ -37,7 +37,7 @@ Git is the most famous and widely used modern open-source version control system
 
 **Distributed**: Git is a _distributed_ version control system, which means that the entire codebase and history, including all branches of a project, are available on every person's computer who is involved in a project. This makes it easy to branch and merge at any given time.
 
->You'll learn more about branching and merging in just a bit
+>If you want to learn more about _branching_ and _merging_, check out our <a href='https://platform.codingnomads.co/learn/course/view.php?id=2' target='_blank'>free course on Git & GitHub</a> on the CodingNomads learning platform
 
 Git also allows users to work on any number of projects at the same time and tracks each project independently of the others.
 
@@ -93,4 +93,6 @@ GitHub is an important tool for a modern software developer, and crucial for par
 
 >If you don't have a GitHub profile yet, head over to their website and <a href='https://github.com/join' target='_blank'>Sign Up</a> for an account.
 
-Once you have your GitHub profile set up, you can head to the next page where you will learn about GitHub repositories.
+---
+
+In this post you learned about what **version control** means, as well as about the differences between **Git** and **GitHub**. If you want to dive deeper, check out this <a href='https://platform.codingnomads.co/learn/course/view.php?id=2' target='_blank'>free course on Git & GitHub</a> on the CodingNomads learning platform.
