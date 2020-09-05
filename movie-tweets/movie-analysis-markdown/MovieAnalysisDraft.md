@@ -484,7 +484,7 @@ The output also tells us that **50%** of the people used it only **twice** but, 
 
 ![title](tweet_pandas.png)
 
-Luckily we have a user friendly interface to <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.join.html" target="_blank">join</a>  our `movies` data frame with the `ratings` and this is going to be an *inner* join. It means that we are bringing in the movies only if there is a rating available for them: 
+Luckily you have a user friendly interface to <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.join.html" target="_blank">join</a>  your `movies` data frame with the `ratings` and this is going to be an *inner* join. It means that you are bringing in the movies only if there is a rating available for them: 
 
 
 ```python
@@ -1102,7 +1102,6 @@ tidy_movie_ratings["movie_title"] = tidy_movie_ratings["movie_title"].str[:-7]
 
 
 ```python
-# check that out
 tidy_movie_ratings.reset_index(inplace=True)
 
 tidy_movie_ratings.head(2)
@@ -1243,7 +1242,12 @@ tidy_movie_ratings.head(2)
 
 
 
-**Congratulation.** You have completed the most difficult part: Getting and cleaning the data! <p> This was not easy. You are special if you could follow until here. You can now: <a href="https://www.youtube.com/watch?v=2wnOpDWSbyw" target="_blank">watch the first movie in our records from 1894</a> as a reward :)
+**Congratulation.** You have completed the most difficult part: Getting and cleaning the data!
+
+- You read the raw data into dataframes
+- You learnt and reported basic statistics
+    
+This was not easy. You are special if you could follow until here. You can now: <a href="https://www.youtube.com/watch?v=2wnOpDWSbyw" target="_blank">watch the first movie in our records from 1894</a> as a reward :)
 
 **Next, you are going to visualize your data and discover some patterns**
 Generally this part is more interesting for the larger audience and takes more attention when you deliver your report.
