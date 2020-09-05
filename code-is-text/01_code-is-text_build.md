@@ -8,11 +8,11 @@ In this video, you will learn how to write a simple Guess-the-numbers game in a 
 
 Open up any Text Editor - this can be as simple as the built-in TextEdit program on MacOS:
 
-![Empty TextEdit Window](imgs/empty_textedit.png)
+![Empty TextEdit Window](https://github.com/CodingNomads/articles/blob/main/code-is-text/imgs/empty_textedit.png?raw=true)
 
 Code is just plain text. So, if you're using TextEdit, you can press <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>t</kbd> to switch to plain text. Doing so means that you can't apply any formatting, such as bold or italics. Remember that code is just text, so you won't need any formatting for it. Your window should look like this now:
 
-![Plain Text TextEdit Window](imgs/plain_textedit_window.png)
+![Plain Text TextEdit Window](https://github.com/CodingNomads/articles/blob/main/code-is-text/imgs/plain_textedit_window.png?raw=true)
 
 Now it's time to write some code! Type the following code into your TextEdit file:
 
@@ -36,11 +36,11 @@ while guess != num:
 
 Make sure you type it out as-is, including the 4 spaces for **indentation**. You can also copy-paste the code from [this online resource](https://gist.github.com/martin-martin/d2f0bf7a6187a4e05d847b06e2bcee1d). Your text window should look like this:
 
-![Code In TextEdit Window](imgs/guess_code.png)
+![Code In TextEdit Window](https://github.com/CodingNomads/articles/blob/main/code-is-text/imgs/guess_code.png?raw=true)
 
 Finally, let's save it and give it a name, then top it off with the python file extension `.py`. Press <kbd>Cmd</kbd>+<kbd>s</kbd> or go to _File/Save_ and save it on your Desktop with the name `guess.py`:
 
-![Finised Code in TextEdit Window](imgs/finished_code.png)
+![Finised Code in TextEdit Window](https://github.com/CodingNomads/articles/blob/main/code-is-text/imgs/finished_code.png?raw=true)
 
 And that's it for writing the code. Next step is we need to run it to play that game!
 
