@@ -451,7 +451,7 @@ f"We have {len(users.user_id.unique())} unique user ids in the data"
 
 
 
-We have just seen that both `value_counts()` and `describe()` are quite handy. So why not combine them?
+You have just seen that both `value_counts()` and `describe()` are quite handy. So why not combine them?
 For instance, how many rating tweets are posted by the users on average? What is the minimum, maximum and median number of tweets posted by the users? The answer to these questions will enable you understand how active the users are: Are they frequent users or are they disappearing after shooting one single tweet?
 
 ```python
@@ -478,7 +478,7 @@ The output shows you that the data is skewed to the right. Notice how the `mean`
 
 This skewness is at the extreme: Look how the `max` value is far far away! Could there be someone posting more than 2000 times? Not likely.
 
-The output also tells us that **%50** of the people used it only **twice** but, the average is almost **13**. It is because of those users with extreme usage numbers. Could it be possible that they are not human beings but just bots? It could be a great topic to investigate. However, we will continue by joining these datasets now.
+The output also tells us that **50%** of the people used it only **twice** but, the average is almost **13**. It is because of those users with extreme usage numbers. Could it be possible that they are not human beings but just bots? It could be a great investigation topic. However, you will continue by joining these datasets for now.
 
 ## Joining the Datasets
 
