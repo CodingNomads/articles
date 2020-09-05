@@ -558,8 +558,8 @@ movies_rating.head(2)
 
 Notice that you didn't use the `on` and `how` parameters when you are joining because you set index of both data frames to `movie_id`. So, the `join` knew on which variable to join and by default it became an *inner* join.
 
-Looking at the output of the `join` operation, you have a new problem: You want to quantify the `genres`. How would you count them? <p>
-One way of doing that could be creating dummies for each possible `genre` such as `Sci-Fi` or `Drama`. <p> and having a single column for each. <p>
+Looking at the output of the `join` operation, you have a new problem: You want to quantify the `genres`. How would you count them?
+One way of doing that could be creating dummies for each possible `genre` such as `Sci-Fi` or `Drama` and having a single column for each.
 Creating dummies stands for having 0s and 1s just like here:
 
 
@@ -1093,6 +1093,7 @@ This is almost as tidy as you want but, it would be much more clean and useful i
 You will:
 - Make a new column by getting the 4 digits representing the year:
 - Remove the last 7 characters from the movie names
+- Checkout the result
 
 
 ```python
@@ -1246,6 +1247,7 @@ tidy_movie_ratings.head(2)
 
 - You read the raw data into dataframes
 - You learnt and reported basic statistics
+- You joined dataframes and created new fields
     
 This was not easy. You are special if you could follow until here. You can now: <a href="https://www.youtube.com/watch?v=2wnOpDWSbyw" target="_blank">watch the first movie in our records from 1894</a> as a reward :)
 
@@ -1254,7 +1256,7 @@ Generally this part is more interesting for the larger audience and takes more a
 
 ## Visualizing the Patterns
 
-Let's start with total volume of films over the years
+You will start with total volume of films over the years.
 
 You will count the total number of productions for each year and plot it. The record you see for the year of 2021 should be filtered out for sure before proceeding.
 
@@ -1325,7 +1327,7 @@ prodcount.tail()
 
 
 
-The other interesting number is 2020. Although we have passed more than half of the year there are only 5712 rated films and movies. 2020 is definitely one of the most extraordinary years in history. Or they are so new, the people didn't have the time to watch them yet.
+The other interesting number is 2020. Although we have passed more than half of the year there are only 5712 rated films and movies. 2020 is definitely one of the most extraordinary years in history. Or they are so new, the people didn't have the time to watch them yet. Or both!
 
 You can chart a 5 year moving average of the total productions:
 
@@ -1342,11 +1344,11 @@ You can chart a 5 year moving average of the total productions:
 ![png](output_63_0.png)
 
 
-We see that the 5-year moving average is in a shocking decline already. What is happening here? What can be the reason? Can we formulate some hypotheses? Here are some points for you to consider:
+You see that the 5-year moving average is in a shocking decline already. What is happening here? What can be the reason? Can you formulate some hypotheses? Here are some points for you to consider:
 
 - This was an *inner* join. So these are the **rated movies**. Perhaps site and app usage went down.
 - The filming industry is in a serious crisis! They are not producing films because of COVID-19.
-- The people didn't have the time to watch the most recent movies. If they didn't watch, they don't rate and we can see a decline. For example, I didn't watch the Avengers series before doing this analysis and on the other hand, The Braveheart (1995) most probably had enough time to get high numbers.
+- The people didn't have the time to watch the most recent movies. If they didn't watch, they don't rate and you can see a decline. For example, I didn't watch the Avengers series before doing this analysis and on the other hand, The Braveheart (1995) most probably had enough time to get high numbers.
 
 #### What have the people watched (or rated) most of the time since 2000?
 
@@ -1396,8 +1398,9 @@ genre_groups = (tidy_movie_ratings.iloc[:, 4:]
   * This plot would show the `Sci-Fi` & `Adventure` not as important.
   * On the other hand, some patterns can be misleading since we are only looking at the absolute numbers.
   * Another way to look at this phenomenon is using the percentage changes.
-  * This could help decision-taking if we are _( let's say )_ in the business of online movie streaming
+  * This could help decision-taking if you are _( let's say )_ in the business of online movie streaming
 
+Next, you will plot the percentage changes:
 
 ```python
 percent_change = (tidy_movie_ratings.iloc[:, 4:]
@@ -1418,19 +1421,17 @@ percent_change = (tidy_movie_ratings.iloc[:, 4:]
 ![png](output_72_0.png)
 
 
-We notice the decline we have spotted one more time. What's interesting is to see the `Sci-Fi` & `Adventure` moving to the top.
-- Indeed, the `Sci-Fi` & `Adventure` was a real **hype** and you might play your card into them, especially if your business is somewhat related to the global filming industry trends. It has the sharpest slope for the increase in getting ratings. This can signal for the increasing demand.
+You notice the decline we have spotted one more time. What's interesting is to see the `Sci-Fi` & `Adventure` moving to the top.
+- Indeed, the `Sci-Fi` & `Adventure` was a real **hype** and you might play your card into them, especially if your business is somewhat related to the global filming industry trends. It has the sharpest slope for the increase in getting ratings. This can signal for the increasing demand and it can be a valuable insight for your business.
 
 #### Top Rated Sci-Fi Movies by Decades
 
 What are the movies from each decade which you could suggest to the users by default? _( let's say for your imaginary streaming service )_
 
-- decade: by production year
-- metric: average rating
-- movies having more than 10 ratings
-
-As a first step you are going to generate a science fiction base table
-
+- Build a `scifi` base table having only the columns you need
+- Filter for the records before 2020
+- Create a new column called `decade`
+- Check it out
 
 ```python
 cols = ["movie_title", "rating", "production_year", "Sci-Fi", "movie_id"]
@@ -1522,8 +1523,7 @@ scifi.head()
 </div>
 
 
-
-And then you will create a count group which will tell you how many times a movie was rated. Because you need to filter out the ones rated less than or equal to 10 times:
+Next you will filter movies having more than 10 ratings. But how to find how many times a movie was rated? Here `groupby` comes to the rescue. After having the counts you will generate a new list called `movie_list` and give the condition of having greater than 10. The final touch will be only about getting the indices of the filtered `count_group`: 
 
 
 ```python
@@ -1540,7 +1540,7 @@ movie_list[:5]
 
 
 
-Now `movie_list` contains those movies rated more than 10 times. Next you will do the filtering:
+Now `movie_list` contains those movies rated more than 10 times. Next you will do the filtering on your `scifi` base table using the `movie_list`. Notice the usage of `isin()` method: It is quite user friendly and straight forward. 
 
 
 ```python
@@ -1549,6 +1549,10 @@ columns = ["movie_title", "decade", "rating"]
 
 scifi_filtered = scifi[condition][columns]
 ```
+
+After having the filtered scifi table you can focus on building up your metrics. This will be the average rating and you will need to `groupby` decade and movie_title. It is important to sort the aggregated value in a descending order. You need the groups having maximum 5 films so the lambda expression helps you to loop through the decade groups and show the top 5. Otherwise if there are less than 5 films in a decade you only show the top movie name meaning only 1 record. Finally you will `round` the the ratings to two decimal points.
+
+You are encouraged to chop below code into single lines and see the individual result for each of them:
 
 
 ```python
@@ -1764,7 +1768,7 @@ top_rate_by_decade
 
 
 
-If you want to see it starting from 1990:
+If you want to see it starting from 1990 the slicing method is quite straight forward:
 
 
 ```python
