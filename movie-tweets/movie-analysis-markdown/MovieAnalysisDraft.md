@@ -420,7 +420,7 @@ Given that both functions return the same output, you can also conclude that the
 * The `mean` is much smaller than the `median` (50%) and 
 * 25% of the data covers only until a rating of `6`
 
-This is a bit confusing now. You have seen first that the highest frequency was 8. And then after generating the historgram it looked like 9-10. It is because of binning! 
+This is a bit confusing now. You have seen first that the highest frequency was 8. And then after generating the historgram it looked like 9-10. It is because of <a href="https://statistics.laerd.com/statistical-guides/understanding-histograms.php" target="_blank">binning</a>! The person conducting the analysis decides the right number of bins after a few trials most of the time. Generally you have an idea about them after some research.
 
 Playing with the `bins` of a histogram can have an impact on the story you are telling. The same histogram would look like this if you increase the number of bins from 10 to 30:
 
@@ -434,6 +434,8 @@ ratings['rating'].hist(bins=30);
 
 
 If you were using the first histogram you would falsely argue that the most frequent rating was 9 or maybe 10. However, the second one makes everything crystal clear. Also, note that if you use the `value_counts()` function you wouldn't also fall into that trap.
+
+Thanks to these methods now you have a more clear understanding about the `rating` variable in your data. You will focus on the `user_id` next.
 
 How many unique `user_id` do we have in the `users` data?
 
@@ -449,12 +451,10 @@ f"We have {len(users.user_id.unique())} unique user ids in the data"
 
 
 
-We have just seen that both `value_counts()` and `describe()` are quite handy. So why not combine them? <p>
-For instance, how many rating twits are posted by the users on average?
-
+We have just seen that both `value_counts()` and `describe()` are quite handy. So why not combine them?
+For instance, how many rating tweets are posted by the users on average? What is the minimum, maximum and median number of tweets posted by the users? The answer to these questions will enable you understand how active the users are: Are they frequent users or are they disappearing after shooting one single tweet?
 
 ```python
-# Notice that this time I am accessing the column by dot notation
 
 ratings.user_id.value_counts().describe()
 ```
@@ -472,9 +472,9 @@ ratings.user_id.value_counts().describe()
     max       2875.000000
     Name: user_id, dtype: float64
 
+Notice that this time above I accessed the column by dot notation.
 
-
-This time our data is skewed to the right. Notice how the `mean` is much greater than the `median` (50%)
+The output shows you that the data is skewed to the right. Notice how the `mean` is much greater than the `median` (50%)
 
 This skewness is at the extreme: Look how the `max` value is far far away! Could there be someone posting more than 2000 times? Not likely.
 
