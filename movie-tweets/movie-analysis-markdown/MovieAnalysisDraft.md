@@ -420,7 +420,7 @@ Given that both functions return the same output, you can also conclude that the
 * The `mean` is much smaller than the `median` (50%) and 
 * 25% of the data covers only until a rating of `6`
 
-This is a bit confusing now. You have seen first that the highest frequency was 8. And then after generating the historgram it looked like 9-10. It is because of binning! 
+This is a bit confusing now. You have seen first that the highest frequency was 8. And then after generating the historgram it looked like 9-10. It is because of <a href="https://statistics.laerd.com/statistical-guides/understanding-histograms.php" target="_blank">binning</a>! The person conducting the analysis decides the right number of bins after a few trials most of the time. Generally you have an idea about them after some research.
 
 Playing with the `bins` of a histogram can have an impact on the story you are telling. The same histogram would look like this if you increase the number of bins from 10 to 30:
 
@@ -434,6 +434,8 @@ ratings['rating'].hist(bins=30);
 
 
 If you were using the first histogram you would falsely argue that the most frequent rating was 9 or maybe 10. However, the second one makes everything crystal clear. Also, note that if you use the `value_counts()` function you wouldn't also fall into that trap.
+
+Thanks to these methods now you have a more clear understanding about the `rating` variable in your data. You will focus on the `user_id` next.
 
 How many unique `user_id` do we have in the `users` data?
 
@@ -449,12 +451,10 @@ f"We have {len(users.user_id.unique())} unique user ids in the data"
 
 
 
-We have just seen that both `value_counts()` and `describe()` are quite handy. So why not combine them? <p>
-For instance, how many rating twits are posted by the users on average?
-
+You have just seen that both `value_counts()` and `describe()` are quite handy. So why not combine them?
+For instance, how many rating tweets are posted by the users on average? What is the minimum, maximum and median number of tweets posted by the users? The answer to these questions will enable you understand how active the users are: Are they frequent users or are they disappearing after shooting one single tweet?
 
 ```python
-# Notice that this time I am accessing the column by dot notation
 
 ratings.user_id.value_counts().describe()
 ```
@@ -472,19 +472,19 @@ ratings.user_id.value_counts().describe()
     max       2875.000000
     Name: user_id, dtype: float64
 
+Notice that this time above I accessed the column by dot notation.
 
-
-This time our data is skewed to the right. Notice how the `mean` is much greater than the `median` (50%)
+The output shows you that the data is skewed to the right. Notice how the `mean` is much greater than the `median` (50%)
 
 This skewness is at the extreme: Look how the `max` value is far far away! Could there be someone posting more than 2000 times? Not likely.
 
-The output also tells us that **%50** of the people used it only **twice** but, the average is almost **13**. It is because of those users with extreme usage numbers. Could it be possible that they are not human beings but just bots? It could be a great topic to investigate. However, we will continue by joining these datasets now.
+The output also tells us that **50%** of the people used it only **twice** but, the average is almost **13**. It is because of those users with extreme usage numbers. Could it be possible that they are not human beings but just bots? It could be a great investigation topic. However, you will continue by joining these datasets for now.
 
 ## Joining the Datasets
 
 ![title](tweet_pandas.png)
 
-Luckily we have a user friendly interface to <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.join.html" target="_blank">join</a>  our `movies` data frame with the `ratings` and this is going to be an *inner* join. It means that we are bringing in the movies only if there is a rating available for them: 
+Luckily you have a user friendly interface to <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.join.html" target="_blank">join</a>  your `movies` data frame with the `ratings` and this is going to be an *inner* join. It means that you are bringing in the movies only if there is a rating available for them: 
 
 
 ```python
@@ -558,8 +558,8 @@ movies_rating.head(2)
 
 Notice that you didn't use the `on` and `how` parameters when you are joining because you set index of both data frames to `movie_id`. So, the `join` knew on which variable to join and by default it became an *inner* join.
 
-Looking at the output of the `join` operation, you have a new problem: You want to quantify the `genres`. How would you count them? <p>
-One way of doing that could be creating dummies for each possible `genre` such as `Sci-Fi` or `Drama`. <p> and having a single column for each. <p>
+Looking at the output of the `join` operation, you have a new problem: You want to quantify the `genres`. How would you count them?
+One way of doing that could be creating dummies for each possible `genre` such as `Sci-Fi` or `Drama` and having a single column for each.
 Creating dummies stands for having 0s and 1s just like here:
 
 
@@ -1093,6 +1093,7 @@ This is almost as tidy as you want but, it would be much more clean and useful i
 You will:
 - Make a new column by getting the 4 digits representing the year:
 - Remove the last 7 characters from the movie names
+- Checkout the result
 
 
 ```python
@@ -1102,7 +1103,6 @@ tidy_movie_ratings["movie_title"] = tidy_movie_ratings["movie_title"].str[:-7]
 
 
 ```python
-# check that out
 tidy_movie_ratings.reset_index(inplace=True)
 
 tidy_movie_ratings.head(2)
@@ -1243,14 +1243,20 @@ tidy_movie_ratings.head(2)
 
 
 
-**Congratulation.** You have completed the most difficult part: Getting and cleaning the data! <p> This was not easy. You are special if you could follow until here. You can now: <a href="https://www.youtube.com/watch?v=2wnOpDWSbyw" target="_blank">watch the first movie in our records from 1894</a> as a reward :)
+**Congratulation.** You have completed the most difficult part: Getting and cleaning the data!
+
+- You read the raw data into dataframes
+- You learnt and reported basic statistics
+- You joined dataframes and created new fields
+    
+This was not easy. You are special if you could follow until here. You can now: <a href="https://www.youtube.com/watch?v=2wnOpDWSbyw" target="_blank">watch the first movie in our records from 1894</a> as a reward :)
 
 **Next, you are going to visualize your data and discover some patterns**
 Generally this part is more interesting for the larger audience and takes more attention when you deliver your report.
 
 ## Visualizing the Patterns
 
-Let's start with total volume of films over the years
+You will start with total volume of films over the years.
 
 You will count the total number of productions for each year and plot it. The record you see for the year of 2021 should be filtered out for sure before proceeding.
 
@@ -1321,7 +1327,7 @@ prodcount.tail()
 
 
 
-The other interesting number is 2020. Although we have passed more than half of the year there are only 5712 rated films and movies. 2020 is definitely one of the most extraordinary years in history. Or they are so new, the people didn't have the time to watch them yet.
+The other interesting number is 2020. Although we have passed more than half of the year there are only 5712 rated films and movies. 2020 is definitely one of the most extraordinary years in history. Or they are so new, the people didn't have the time to watch them yet. Or both!
 
 You can chart a 5 year moving average of the total productions:
 
@@ -1338,11 +1344,11 @@ You can chart a 5 year moving average of the total productions:
 ![png](output_63_0.png)
 
 
-We see that the 5-year moving average is in a shocking decline already. What is happening here? What can be the reason? Can we formulate some hypotheses? Here are some points for you to consider:
+You see that the 5-year moving average is in a shocking decline already. What is happening here? What can be the reason? Can you formulate some hypotheses? Here are some points for you to consider:
 
 - This was an *inner* join. So these are the **rated movies**. Perhaps site and app usage went down.
 - The filming industry is in a serious crisis! They are not producing films because of COVID-19.
-- The people didn't have the time to watch the most recent movies. If they didn't watch, they don't rate and we can see a decline. For example, I didn't watch the Avengers series before doing this analysis and on the other hand, The Braveheart (1995) most probably had enough time to get high numbers.
+- The people didn't have the time to watch the most recent movies. If they didn't watch, they don't rate and you can see a decline. For example, I didn't watch the Avengers series before doing this analysis and on the other hand, The Braveheart (1995) most probably had enough time to get high numbers.
 
 #### What have the people watched (or rated) most of the time since 2000?
 
@@ -1392,8 +1398,9 @@ genre_groups = (tidy_movie_ratings.iloc[:, 4:]
   * This plot would show the `Sci-Fi` & `Adventure` not as important.
   * On the other hand, some patterns can be misleading since we are only looking at the absolute numbers.
   * Another way to look at this phenomenon is using the percentage changes.
-  * This could help decision-taking if we are _( let's say )_ in the business of online movie streaming
+  * This could help decision-taking if you are _( let's say )_ in the business of online movie streaming
 
+Next, you will plot the percentage changes:
 
 ```python
 percent_change = (tidy_movie_ratings.iloc[:, 4:]
@@ -1414,19 +1421,17 @@ percent_change = (tidy_movie_ratings.iloc[:, 4:]
 ![png](output_72_0.png)
 
 
-We notice the decline we have spotted one more time. What's interesting is to see the `Sci-Fi` & `Adventure` moving to the top.
-- Indeed, the `Sci-Fi` & `Adventure` was a real **hype** and you might play your card into them, especially if your business is somewhat related to the global filming industry trends. It has the sharpest slope for the increase in getting ratings. This can signal for the increasing demand.
+You notice the decline we have spotted one more time. What's interesting is to see the `Sci-Fi` & `Adventure` moving to the top.
+- Indeed, the `Sci-Fi` & `Adventure` was a real **hype** and you might play your card into them, especially if your business is somewhat related to the global filming industry trends. It has the sharpest slope for the increase in getting ratings. This can signal for the increasing demand and it can be a valuable insight for your business.
 
 #### Top Rated Sci-Fi Movies by Decades
 
 What are the movies from each decade which you could suggest to the users by default? _( let's say for your imaginary streaming service )_
 
-- decade: by production year
-- metric: average rating
-- movies having more than 10 ratings
-
-As a first step you are going to generate a science fiction base table
-
+- Build a `scifi` base table having only the columns you need
+- Filter for the records before 2020
+- Create a new column called `decade`
+- Check it out
 
 ```python
 cols = ["movie_title", "rating", "production_year", "Sci-Fi", "movie_id"]
@@ -1518,8 +1523,7 @@ scifi.head()
 </div>
 
 
-
-And then you will create a count group which will tell you how many times a movie was rated. Because you need to filter out the ones rated less than or equal to 10 times:
+Next you will filter movies having more than 10 ratings. But how to find how many times a movie was rated? Here `groupby` comes to the rescue. After having the counts you will generate a new list called `movie_list` and give the condition of having greater than 10. The final touch will be only about getting the indices of the filtered `count_group`: 
 
 
 ```python
@@ -1536,7 +1540,7 @@ movie_list[:5]
 
 
 
-Now `movie_list` contains those movies rated more than 10 times. Next you will do the filtering:
+Now `movie_list` contains those movies rated more than 10 times. Next you will do the filtering on your `scifi` base table using the `movie_list`. Notice the usage of `isin()` method: It is quite user friendly and straight forward. 
 
 
 ```python
@@ -1545,6 +1549,10 @@ columns = ["movie_title", "decade", "rating"]
 
 scifi_filtered = scifi[condition][columns]
 ```
+
+After having the filtered scifi table you can focus on building up your metrics. This will be the average rating and you will need to `groupby` decade and movie_title. It is important to sort the aggregated value in a descending order. You need the groups having maximum 5 films so the lambda expression helps you to loop through the decade groups and show the top 5. Otherwise if there are less than 5 films in a decade you only show the top movie name meaning only 1 record. Finally you will `round` the the ratings to two decimal points.
+
+You are encouraged to chop below code into single lines and see the individual result for each of them:
 
 
 ```python
@@ -1760,7 +1768,7 @@ top_rate_by_decade
 
 
 
-If you want to see it starting from 1990:
+If you want to see it starting from 1990 the slicing method is quite straight forward:
 
 
 ```python
