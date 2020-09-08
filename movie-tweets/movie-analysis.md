@@ -331,7 +331,7 @@ Checking the successful completion of this process with the familiar `movies.hea
 
 With this you're all set and the data has been read in to the notebook. What follows next, is **exploration**.
 
-## Exploratory Data Analysis
+## Explore Your Data
 
 To get a feeling for the data you are working with, it always helps to play around a little and create some quick stats and graphs for different aspects of it. This will help you have a better overview of what the data is about.
 
@@ -1238,7 +1238,7 @@ For this article, let's continue by investigating a slightly different question:
 
 >What have people watched (or rated) most since 2000?
 
-## Exploring a Question
+## Explore a Question
 
 For this question, let's focus on the genres with a high volume of movies. You are going to identify the top 6 genres with the highest number of movies in them, and filter them out to produce the next chart:
 
