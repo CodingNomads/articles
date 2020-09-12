@@ -8,7 +8,7 @@ In this article you will analyze a dataset of movie ratings. You will learn abou
 4. Discovering hidden patterns and insights
 5. Creating summary tables
 
-You will achieve all of it by using Python and its popular <a href="https://pandas.pydata.org/docs/getting_started/index.html#getting-started" target="_blank">`pandas`</a>  and <a href="https://matplotlib.org/3.2.2/contents.html" target="_blank">`matplotlib`</a> libraries. You can download and run the Jupyter Notebook that this article is based on **here**.
+You will achieve all of it by using Python and its popular <a href="https://pandas.pydata.org/docs/getting_started/index.html#getting-started" target="_blank"><code>pandas</code></a>  and <a href="https://matplotlib.org/3.2.2/contents.html" target="_blank"><code>matplotlib</code></a> libraries. You can download and run the Jupyter Notebook that this article is based on here <a href='https://github.com/CodingNomads/articles/blob/main/movie-tweets/movie-analysis.ipynb' target='_blank'><strong>here</strong></a>.
 
 ## Introduction
 
@@ -1765,4 +1765,4 @@ I hope you enjoyed this article and continue having fun with analyzing your data
 
 >**About the Author:** Cagdas Yetkin is a Data Scientist at Nokia where he works on the next generation Supply Chain improvements for network devices and software. He develops soccer analytics and betting applicatons as a hobby, and enjoys traveling. Connect with him on <a href="https://www.linkedin.com/in/cagdasyetkin/" target="_blank">LinkedIn</a> and <a href="https://twitter.com/cagdasyetkin" target="_blank">Twitter</a>.
 
-_Reviewed by Martin Breuss_
+_Editor: Martin Breuss, <a href='https://twitter.com/martinbreuss' target='_blank'>@martinbreuss</a>, <a href='https://martinbreuss.com/' target='_blank'>martinbreuss.com</a>_
