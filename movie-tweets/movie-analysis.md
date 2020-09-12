@@ -453,7 +453,7 @@ Name: user_id, dtype: float64
 
 Notice that this time above you accessed the column using **dot notation**, which in this case does the same as accessing it through the square-bracket notation you used before, but is a little bit more convenient. Check out <a href='https://stackoverflow.com/a/55057329' target='_blank'>this StackOverflow post</a> if you want to learn more about the limitations and differences between the two notations.
 
-The output shows you that the data is skewed to the right. Notice how the `mean` is much greater than the `median` (50%).
+See in the above output how the `mean` is much greater than the `median` (12.83 vs 2). It means that the data is skewed to the right. 
 
 This skewness is at the extreme: Look how the `max` value is far far away! Could there be someone posting more than 2000 times? Not likely.
 
@@ -1420,7 +1420,7 @@ The first 5 rows of your new `scifi` data frame will look like this:
 </table>
 </div>
 
-Next, you will filter for movies that have more than 10 ratings. But how can you find how many times a movie was rated? Here `.groupby()` comes to the rescue. After getting the counts, you will generate a new list called `movie_list` with the condition that a movie needs to have greater than 10 ratings. The final touch will be only about getting the indices of the filtered `count_group`: 
+Next, you will filter for movies that have more than 10 ratings. But how can you find how many times a movie was rated? Here `.groupby()` comes to the rescue. After getting the counts, you will generate a new list called `movie_list` with the condition that a movie needs to have greater than 10 ratings. Below, the final operation will be only about getting the indices of the filtered `count_group`. You will achieve that by using `.index.values` method: 
 
 ```python
 count_group = scifi.groupby("movie_id").count()["rating"]
