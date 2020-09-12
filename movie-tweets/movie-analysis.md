@@ -1763,6 +1763,6 @@ I hope you enjoyed this article and continue having fun with analyzing your data
 
 ---
 
->**About the Author:** Cagdas Yetkin is a Data Scientist at _____ who knows a lot about soccer and enjoys traveling. Connect with him on Twitter and LinkedIn, or check out his personal website.
+>**About the Author:** Cagdas Yetkin is a Data Scientist at Nokia where he works on the next generation Supply Chain improvements for network devices and software. He develops soccer analytics and betting applicatons as a hobby, and enjoys traveling. Connect with him on <a href="https://www.linkedin.com/in/cagdasyetkin/" target="_blank">LinkedIn</a> and <a href="https://twitter.com/cagdasyetkin" target="_blank">Twitter</a>.
 
 _Reviewed by Martin Breuss_
