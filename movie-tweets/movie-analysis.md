@@ -1029,7 +1029,7 @@ To accomplish this, you will practice working with the `.str` attribute, which i
 Let's write the code for achieving these tasks:
 
 ```python
-tidy_movie_ratings["production_year"] = tidy_movie_ratings["movie_title"].str[-5:-1] #.astype(int)
+tidy_movie_ratings["production_year"] = tidy_movie_ratings["movie_title"].str[-5:-1]
 tidy_movie_ratings["movie_title"] = tidy_movie_ratings["movie_title"].str[:-7]
 ```
 
