@@ -8,7 +8,21 @@ In this article you will analyze a dataset of movie ratings. You will learn abou
 4. Discovering hidden patterns and insights
 5. Creating summary tables
 
-You will achieve all of it by using Python and its popular <a href="https://pandas.pydata.org/docs/getting_started/index.html#getting-started" target="_blank"><code>pandas</code></a>  and <a href="https://matplotlib.org/3.2.2/contents.html" target="_blank"><code>matplotlib</code></a> libraries. You can download and run the Jupyter Notebook that this article is based on here <a href='https://github.com/CodingNomads/articles/blob/main/movie-tweets/movie-analysis.ipynb' target='_blank'><strong>here</strong></a>.
+You will achieve all of it by using Python and its popular <a href="https://pandas.pydata.org/docs/getting_started/index.html#getting-started" target="_blank"><code>pandas</code></a> and <a href="https://matplotlib.org/3.2.2/contents.html" target="_blank"><code>matplotlib</code></a> libraries. You can download and run the Jupyter Notebook that this article is based on here <a href='https://github.com/CodingNomads/articles/blob/main/movie-tweets/movie-analysis.ipynb' target='_blank'><strong>here</strong></a>.
+
+- [Introduction](#introduction)
+- [Inspect the Data](#inspect-the-data)
+- [Set Up Your Notebook](#set-up-your-notebook)
+- [Read in the Data](#read-in-the-data)
+  - [Users: users.dat](#users-usersdat)
+  - [Ratings: ratings.dat](#ratings-ratingsdat)
+  - [Movies: movies.dat](#movies-moviesdat)
+- [Explore Your Data](#explore-your-data)
+- [Join the Datasets](#join-the-datasets)
+- [Visualize Patterns](#visualize-patterns)
+- [Explore a Question](#explore-a-question)
+  - [Top Rated Sci-Fi Movies by Decades](#top-rated-sci-fi-movies-by-decades)
+- [What Next?](#what-next)
 
 ## Introduction
 
@@ -16,13 +30,13 @@ You can access the code of the <a href="https://github.com/sidooms/MovieTweeting
 
 It consists of ratings of movies that were contained in well-structured tweets on Twitter and it has been updated every day since 2013. OK, but how is this data created?
 
-It comes from people who connected their <a href='https://www.imdb.com/' target='_blank'>IMDB</a> profile with their <a href='https://twitter.com/' target='_blank'>Twitter</a> accounts. Whenever they rate a movie on the IMDB website an automated process will shoot a tweet. 
+It comes from people who connected their <a href='https://www.imdb.com/' target='_blank'>IMDB</a> profile with their <a href='https://twitter.com/' target='_blank'>Twitter</a> accounts. Whenever they rate a movie on the IMDB website an automated process will shoot a tweet.
 
-And these *well-structured* tweets look like this: 
+And these _well-structured_ tweets look like this:
 
->"I rated The Matrix 9/10 http://www.imdb.com/title/tt0133093/ #IMDb"
+> "I rated The Matrix 9/10 http://www.imdb.com/title/tt0133093/ #IMDb"
 
-Nice, but can you use this data to learn and practice some data analysis using Python? The answer is yes! 
+Nice, but can you use this data to learn and practice some data analysis using Python? The answer is yes!
 
 You are highly encouraged to write the code for this project yourself. You may discover some additional interesting revelations in the data, and doing the work yourself is what will give you the practice you need to improve your skills.
 
@@ -33,7 +47,7 @@ You can either download the data from the original repo or from <a href="https:/
 To get started, confirm that you have these 3 files in your working directory:
 
 - `users.dat`
-- `movies.dat` 
+- `movies.dat`
 - `ratings.dat`
 
 If all these files are accessible to you, you can start off your investigation by checking what these files contain. Let's start off by looking at the first three lines in `users.dat` directly in your terminal:
@@ -52,7 +66,7 @@ Your output will look similar to this:
 
 At first it may be confusing that you can't see any field names but these are documented in the <a href="https://github.com/sidooms/MovieTweetings" target="_blank">README</a> file as follows:
 
->In `users.dat` the _first_ field is the `user_id` and the _second_ one is `twitter_id`.
+> In `users.dat` the _first_ field is the `user_id` and the _second_ one is `twitter_id`.
 
 You can see that there is a surprising amount of colons in this data snippet. Because you already know that you are working with two data fields, this means that the creators of this dataset decided to use a double-colon `::` as a field separator. Interesting choice! It is helpful to keep in mind that data fields can be divided by all sorts of different separators, and it's good to know which one is used in the data you are working with.
 
@@ -104,7 +118,7 @@ And again it comes with an interesting feature: The timestamps are in <a href="h
 **UNIX time** is a time format often used in computer time that shows the seconds passed since January 1st, 1970. You can use online converters to translate it to a format that is easier to read for humans. If you're interested, read more about <a href='https://en.wikipedia.org/wiki/Unix_time' target='_blank'>Unix time on Wikipedia</a>.
 
 ## Set Up Your Notebook
-    
+
 Now you have an overall understanding of how the raw datasets look like. Next, you will import the libraries you will need for the rest of this analysis:
 
 ```python
@@ -149,7 +163,7 @@ With this in mind, let's read in `users.dat`, `ratings.dat` and `movies.dat` one
 Starting with `users.dat`, the following code snippet will read in the file into your notebook, register the double-colon as the separator between the fields, and add column names as well:
 
 ```python
-users = pd.read_csv('data/users.dat', sep='::', 
+users = pd.read_csv('data/users.dat', sep='::',
                     names=['user_id', 'twitter_id'])
 ```
 
@@ -284,7 +298,7 @@ With the `ratings` data read in, there's only one more file left to go.
 Of course you also need to have access to information about the actual movies, to find potential correlations e.g. between ratings and movie genres. So, let's read in that data next:
 
 ```python
-movies = pd.read_csv('data/movies.dat', sep='::', 
+movies = pd.read_csv('data/movies.dat', sep='::',
                      header=None, names=['movie_id', 'movie_title', 'genres'])
 ```
 
@@ -396,14 +410,14 @@ The data with the above settings will produce a histogram that looks like below:
 
 ![Rating Histogram with Bin of 10](https://github.com/CodingNomads/articles/blob/main/movie-tweets/imgs/output_30_0.png?raw=true)
 
-It is skewed to the left! That means that the distribution doesn't have a symmetrical shape around the mean and this specific off-balanced distribution has a long tail on the left hand side. 
+It is skewed to the left! That means that the distribution doesn't have a symmetrical shape around the mean and this specific off-balanced distribution has a long tail on the left hand side.
 
 The `hist()` and `describe()` methods are in fact quite similar: One gives text output and the other gives its visual representation.
 
 Given that both functions return the same output, you may also be able to conclude that the `rating` is left-skewed by looking only at the text output of your `.describe()` method. The relevant data for this conclusion are:
 
-* The `mean` is much smaller than the `median` and 
-* 25% of the data covers only until a rating of `6`
+- The `mean` is much smaller than the `median` and
+- 25% of the data covers only until a rating of `6`
 
 This is a bit confusing. You have seen first that the highest frequency was `8`. And then, after generating the histogram, it looked like the ratings were highest around `9`-`10`.
 
@@ -427,7 +441,7 @@ How many unique `user_id` do you have in the `users` data?
 f"You have {len(users.user_id.unique())} unique user ids in the data"
 ```
 
->'You have 68388 unique user ids in the data'
+> 'You have 68388 unique user ids in the data'
 
 You have seen earlier that both `value_counts()` and `describe()` are quite handy. So why not combine them to learn a little more?
 
@@ -453,7 +467,7 @@ Name: user_id, dtype: float64
 
 Notice that this time above you accessed the column using **dot notation**, which in this case does the same as accessing it through the square-bracket notation you used before, but is a little bit more convenient. Check out <a href='https://stackoverflow.com/a/55057329' target='_blank'>this StackOverflow post</a> if you want to learn more about the limitations and differences between the two notations.
 
-See in the above output how the `mean` is much greater than the `median` (12.83 vs 2). It means that the data is skewed to the right. 
+See in the above output how the `mean` is much greater than the `median` (12.83 vs 2). It means that the data is skewed to the right.
 
 This skewness is at the extreme: Look how the `max` value is far far away! Could there be someone posting more than 2000 times? Not likely.
 
@@ -465,12 +479,12 @@ Joining data could be really difficult, as this tweet addresses:
 
 ![Joining before Pandas Twitter](https://github.com/CodingNomads/articles/blob/main/movie-tweets/imgs/tweet_pandas.PNG?raw=true)
 
-Luckily, with `pandas` you have a user-friendly interface to <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.join.html" target="_blank">join</a> your `movies` data frame with the `ratings` data frame. This is going to be an *inner* join. It means that you are bringing in the movies only if there is a rating available for them: 
+Luckily, with `pandas` you have a user-friendly interface to <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.join.html" target="_blank">join</a> your `movies` data frame with the `ratings` data frame. This is going to be an _inner_ join. It means that you are bringing in the movies only if there is a rating available for them:
 
 ```python
 movies_rating = (ratings
                   .set_index("movie_id")
-                  .join(movies.set_index("movie_id"), 
+                  .join(movies.set_index("movie_id"),
                         how="left")
                  )
 
@@ -520,7 +534,7 @@ Inspecting the first two rows with the `.head(2)` method shows you this:
 </table>
 </div>
 
-Notice that you didn't use the `on` and `how` parameters when you joined the data, because you set the index of both data frames to `movie_id`. So, the `.join()` method knew on which variable to join and by default this creates an *inner* join.
+Notice that you didn't use the `on` and `how` parameters when you joined the data, because you set the index of both data frames to `movie_id`. So, the `.join()` method knew on which variable to join and by default this creates an _inner_ join.
 
 Looking at the output of the `.join()` operation, you have a new problem: You want to quantify the _genres_, but how would you count them?
 
@@ -1165,7 +1179,7 @@ Now you can see that you produces a better-formatted version of the data frame:
 - You read the raw data into data frames
 - You learnt and reported basic statistics
 - You joined data frames and created new fields
-    
+
 This was not easy. You did some great work if you followed all the way until here. You can now: <a href="https://www.youtube.com/watch?v=2wnOpDWSbyw" target="_blank">watch the first movie in your records from 1894</a> as a reward :)
 
 Next, you are going to visualize your data and discover some patterns. Generally this part is more interesting for most people when you deliver your report.
@@ -1233,7 +1247,7 @@ You can chart a 5 year moving average of the total productions:
 ```python
 (prodcount
  .rolling(5).mean().rename(columns={"movie_id":"count"})
- .plot(figsize=(15,5), 
+ .plot(figsize=(15,5),
        title="Count of Rated Movies - by production year")
 )
 ```
@@ -1244,7 +1258,7 @@ This will produce a graphic similar to the one below:
 
 You can see that the 5-year moving average is in a shocking decline! What is happening here? What can be the reason? Can you formulate some hypotheses? Here are some points for you to consider:
 
-- This was an *inner* join. So these are the _rated_ movies. Perhaps site and app usage went down.
+- This was an _inner_ join. So these are the _rated_ movies. Perhaps site and app usage went down.
 - The filming industry is in a serious crisis! They are not producing films because of COVID-19.
 - The people didn't have the time to watch the most recent movies. If they didn't watch them, they don't rate them, and you can see a decline in ratings. For example, I didn't watch the _Avengers_ series before doing this analysis. On the other hand, the movie _Braveheart_ (1995) most probably had enough time to get high numbers.
 
@@ -1252,7 +1266,7 @@ Each of these hypotheses could warrant an investigation, and there might be othe
 
 For this article, let's continue by investigating a slightly different question:
 
->What have people watched (or rated) most since 2000?
+> What have people watched (or rated) most since 2000?
 
 ## Explore a Question
 
@@ -1280,7 +1294,7 @@ array(['Drama', 'Thriller', 'Action', 'Comedy', 'Adventure', 'Sci-Fi'],
 Now, you want to get the ratings for these genres from your `tidy_movie_ratings` data frame, but restrict the ratings to only the ones made between 2000 and 2019:
 
 ```python
-genre_groups = (tidy_movie_ratings.iloc[:, 4:] 
+genre_groups = (tidy_movie_ratings.iloc[:, 4:]
                 .groupby("production_year")
                 .sum()
                ).loc["2000":"2019", top6_genre] # since 2000
@@ -1289,7 +1303,7 @@ genre_groups = (tidy_movie_ratings.iloc[:, 4:]
 Finally, you can create a graph showing a 2-year moving average of the total volume of rated films:
 
 ```python
-genre_groups.rolling(2).mean().plot(figsize=(15,5), 
+genre_groups.rolling(2).mean().plot(figsize=(15,5),
                                     title="Total Rated Films")
 ```
 
@@ -1299,8 +1313,8 @@ And here is your graph output for this data:
 
 This gives a nice visual representation and helps you to interpret the data to answer the question you posed further up. Here are the take-aways that I took from it:
 
-* _Drama_ and _Thriller_ are the winner genres
-* Seems that _Sci-Fi_ & _Adventure_ are not as important genres
+- _Drama_ and _Thriller_ are the winner genres
+- Seems that _Sci-Fi_ & _Adventure_ are not as important genres
 
 On the other hand, some patterns can be misleading since we are only looking at the absolute numbers. Therefore, another way to analyze this phenomenon would be to look at the _percentage changes_. This could help your decision-taking if you are, let's say, in the business of online movie streaming.
 
@@ -1318,7 +1332,7 @@ From this filtered data, let's produce a 5-years moving average graph:
 
 ```python
 (percent_change.rolling(5).mean() # 5 years moving average
- .plot(figsize=(15,5), 
+ .plot(figsize=(15,5),
        title="Percentage Change in Rated Films"))
 ```
 
@@ -1420,7 +1434,7 @@ The first 5 rows of your new `scifi` data frame will look like this:
 </table>
 </div>
 
-Next, you will filter for movies that have more than 10 ratings. But how can you find how many times a movie was rated? Here `.groupby()` comes to the rescue. After getting the counts, you will generate a new list called `movie_list` with the condition that a movie needs to have greater than 10 ratings. Below, the final operation will be only about getting the indices of the filtered `count_group`. You will achieve that by using `.index.values` method: 
+Next, you will filter for movies that have more than 10 ratings. But how can you find how many times a movie was rated? Here `.groupby()` comes to the rescue. After getting the counts, you will generate a new list called `movie_list` with the condition that a movie needs to have greater than 10 ratings. Below, the final operation will be only about getting the indices of the filtered `count_group`. You will achieve that by using `.index.values` method:
 
 ```python
 count_group = scifi.groupby("movie_id").count()["rating"]
@@ -1454,7 +1468,7 @@ You are encouraged to chop the code shown below into single lines and see the in
 top_rate_by_decade = (scifi_filtered
                      .groupby(["decade", "movie_title"])
                      .mean()
-                     .sort_values(["decade", "rating"], 
+                     .sort_values(["decade", "rating"],
                                                 ascending=False)
                      .groupby(level=0, as_index=False)
                      .apply(lambda x: x.head() if len(x) >= 5 else x.head(1))
@@ -1742,27 +1756,27 @@ Here are the results going back to 1990:
 
 What is more, you completed a full data-analysis project:
 
-* You read your data as pandas data frames
-* You created basic statistics and interpreted the results
-* You joined data frames, applied conditions to filter them, and aggregated them
-* You have found patterns by using visualization and developed some hypotheses
-* And you didn't jump into conclusions and root causes. You kept your reasoning simple and skeptic
-* You created summary tables
+- You read your data as pandas data frames
+- You created basic statistics and interpreted the results
+- You joined data frames, applied conditions to filter them, and aggregated them
+- You have found patterns by using visualization and developed some hypotheses
+- And you didn't jump into conclusions and root causes. You kept your reasoning simple and skeptic
+- You created summary tables
 
 All of the above are important and common aspects of working with data.
 
 ## What Next?
 
-If you enjoyed this project and you want to learn more and practice your data analysis skills further: 
+If you enjoyed this project and you want to learn more and practice your data analysis skills further:
 
-* **Add More Data**: You can search for some additional IMDB data freely available on the internet. Chances are they contain information about _directors_ of the movies. You could join this data with your `tidy_movie_ratings` dataset and see which directors are getting top ratings for which movies over the years, and by decades. This way, you can practice everything you have learned here over again
-* **Build Your Service**: You can write a function which takes the `top_rate_by_decade` data frame as input and returns a random movie from the list, further simulating a movie recommendation system
-* **Your Idea Here**: There are limitless possibilities to practice and play with this data. Share your explorations with us if you do!
-    
+- **Add More Data**: You can search for some additional IMDB data freely available on the internet. Chances are they contain information about _directors_ of the movies. You could join this data with your `tidy_movie_ratings` dataset and see which directors are getting top ratings for which movies over the years, and by decades. This way, you can practice everything you have learned here over again
+- **Build Your Service**: You can write a function which takes the `top_rate_by_decade` data frame as input and returns a random movie from the list, further simulating a movie recommendation system
+- **Your Idea Here**: There are limitless possibilities to practice and play with this data. Share your explorations with us if you do!
+
 I hope you enjoyed this article and continue having fun with analyzing your datasets.
 
 ---
 
->**About the Author:** Cagdas Yetkin is a Data Scientist at Nokia where he works on the next generation Supply Chain improvements for network devices and software. He develops soccer analytics and betting applicatons as a hobby, and enjoys traveling. Connect with him on <a href="https://www.linkedin.com/in/cagdasyetkin/" target="_blank">LinkedIn</a> and <a href="https://twitter.com/cagdasyetkin" target="_blank">Twitter</a>.
+> **About the Author:** Cagdas Yetkin is a Data Scientist at Nokia where he works on the next generation Supply Chain improvements for network devices and software. He develops soccer analytics and betting applicatons as a hobby, and enjoys traveling. Connect with him on <a href="https://www.linkedin.com/in/cagdasyetkin/" target="_blank">LinkedIn</a> and <a href="https://twitter.com/cagdasyetkin" target="_blank">Twitter</a>.
 
 _Editor: Martin Breuss, <a href='https://twitter.com/martinbreuss' target='_blank'>@martinbreuss</a>, <a href='https://martinbreuss.com/' target='_blank'>martinbreuss.com</a>_
