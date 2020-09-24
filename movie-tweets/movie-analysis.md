@@ -37,7 +37,7 @@ You will achieve all of it by using Python and its popular <a href="https://pand
   - [Top Rated Sci-Fi Movies by Decades](#top-rated-sci-fi-movies-by-decades)
 - [What Next?](#what-next)
 
-## Introduction
+<h2 id="introduction">Introduction</h2>
 
 You can access the code of the <a href="https://github.com/sidooms/MovieTweetings" target="_blank">Movie Tweetings Project</a> that you will be working with on GitHub. Here is what the project is about in a nutshell:
 
@@ -55,7 +55,7 @@ You are highly encouraged to write the code for this project yourself. You may d
 
 You can either download the data from the original repo or from <a href="https://drive.google.com/drive/folders/1nSV5S8jCh7LbrTdIgOSyxq6DqN-G3bah?usp=sharing" target="_blank">here</a>. Note that you will have the most up to date data if you use the original repo.
 
-## Inspect the Data
+<h2 id="inspect-the-data">Inspect the Data</h2>
 
 To get started, confirm that you have these 3 files in your working directory:
 
@@ -130,7 +130,7 @@ And again it comes with an interesting feature: The timestamps are in <a href="h
 
 **UNIX time** is a time format often used in computer time that shows the seconds passed since January 1st, 1970. You can use online converters to translate it to a format that is easier to read for humans. If you're interested, read more about <a href='https://en.wikipedia.org/wiki/Unix_time' target='_blank'>Unix time on Wikipedia</a>.
 
-## Set Up Your Notebook
+<h2 id="set-up-your-notebook">Set Up Your Notebook</h2>
 
 Now you have an overall understanding of how the raw datasets look like. Next, you will import the libraries you will need for the rest of this analysis:
 
@@ -159,7 +159,7 @@ Let's look a bit closer at the options you set up in the code snippet above. You
 
 These imports and adjustments create a good base setup for you to get started with your analysis. Keep in mind that while the `import`s are necessary, the adjustments are just to make your analysis easier and better-looking.
 
-## Read in the Data
+<h2 id="read-in-the-data">Read in the Data</h2>
 
 After importing the necessary libraries, you are now ready to read the files into `pandas` data frames.
 
@@ -171,7 +171,7 @@ There are a couple of adjustments you should make while reading in the data, to 
 
 With this in mind, let's read in `users.dat`, `ratings.dat` and `movies.dat` one by one:
 
-### Users: `users.dat`
+<h3 id="users-usersdat">Users: `users.dat`</h3>
 
 Starting with `users.dat`, the following code snippet will read in the file into your notebook, register the double-colon as the separator between the fields, and add column names as well:
 
@@ -229,7 +229,7 @@ You will see a nicely formatted output that shows the first 5 rows of your `user
 
 You successfully read in the data from the external file and now have access to it as a `DataFrame()` object. Let's do the same with the other files as well.
 
-### Ratings: `ratings.dat`
+<h3 id="ratings-ratingsdat">Ratings: `ratings.dat`</h3>
 
 Similar to before, you will want to read in the data and save it into a data frame, define the separator, and pass in the column names. Additionally, you will also call the `.sort_values()` method on the data frame right away, to sort your data by when the ratings have been created:
 
@@ -306,7 +306,7 @@ You output should look similar to below:
 
 With the `ratings` data read in, there's only one more file left to go.
 
-### Movies: `movies.dat`
+<h3 id="movies-moviesdat">Movies: `movies.dat`</h3>
 
 Of course you also need to have access to information about the actual movies, to find potential correlations e.g. between ratings and movie genres. So, let's read in that data next:
 
@@ -364,7 +364,7 @@ Checking the successful completion of this process with the familiar `movies.hea
 
 With this you're all set and the data has been read in to the notebook. What follows next, is **exploration**.
 
-## Explore Your Data
+<h2 id="explore-your-data">Explore Your Data</h2>
 
 To get a feeling for the data you are working with, it always helps to play around a little and create some quick stats and graphs for different aspects of it. This will help you have a better overview of what the data is about.
 
@@ -486,7 +486,7 @@ This skewness is at the extreme: Look how the `max` value is far far away! Could
 
 The output also tells us that _50%_ of the people used it only _twice_ but the `mean` is almost `13`. This is because of those users with extremely high usage numbers. Could it be possible that they are not human beings but bots instead? That could be a great investigation topic, if you want to dive deeper. However, in this article you will leave this aside for now and continue by joining the datasets you have.
 
-## Join the Datasets
+<h2 id="join-the-datasets">Join the Datasets</h2>
 
 Joining data could be really difficult, as this tweet addresses:
 
@@ -1197,7 +1197,7 @@ This was not easy. You did some great work if you followed all the way until her
 
 Next, you are going to visualize your data and discover some patterns. Generally this part is more interesting for most people when you deliver your report.
 
-## Visualize Patterns
+<h2 id="visualize-patterns">Visualize Patterns</h2>
 
 You will start with visualizing the total volume of films created over the years.
 
@@ -1281,7 +1281,7 @@ For this article, let's continue by investigating a slightly different question:
 
 > What have people watched (or rated) most since 2000?
 
-## Explore a Question
+<h2 id="explore-a-question">Explore a Question</h2>
 
 For this question, let's focus on the genres with a high volume of movies. You are going to identify the top 6 genres with the highest number of movies in them, and filter them out to produce the next chart:
 
@@ -1359,7 +1359,7 @@ Indeed, _Sci-Fi_ & _Adventure_ movies were a real _hype_, and you might want to 
 
 Let's stay with one of these hyped genres for a bit longer and explore yet another question you can answer through this data set.
 
-### Top Rated Sci-Fi Movies by Decades
+<h3 id="top-rated-sci-fi-movies-by-decades">Top Rated Sci-Fi Movies by Decades</h3>
 
 Let's say you're still building out your imaginary streaming service, you understood that the interest in Sci-Fi movies is rising sharply, and you want to make it easy for your users to find the best Sci-Fi movies of all times. What are the movies _from each decade_ which you could suggest to your users by default?
 
@@ -1778,7 +1778,7 @@ What is more, you completed a full data-analysis project:
 
 All of the above are important and common aspects of working with data.
 
-## What Next?
+<h2 id="what-next">What Next?</h2>
 
 If you enjoyed this project and you want to learn more and practice your data analysis skills further:
 
