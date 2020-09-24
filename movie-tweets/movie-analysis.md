@@ -2,7 +2,6 @@
 <style>
   table-div {
     margin-bottom: 20px;
-    overflow-x: scroll;
   }
   table, th, td {
     padding: 10px;
@@ -192,7 +191,7 @@ users.head()
 
 You will see a nicely formatted output that shows the first 5 rows of your `users` data frame:
 
-<div class="table-div">
+<div class="table-div" style="overflow-x: scroll;">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -257,7 +256,7 @@ ratings.head()
 
 You output should look similar to below:
 
-<div class="table-div">
+<div class="table-div" style="overflow-x: scroll;">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -321,7 +320,7 @@ movies = pd.read_csv('data/movies.dat', sep='::',
 
 Checking the successful completion of this process with the familiar `movies.head()` command, you will see something similar to below:
 
-<div class="table-div">
+<div class="table-div" style="overflow-x: scroll;">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -510,7 +509,7 @@ movies_rating.head(2)
 
 Inspecting the first two rows with the `.head(2)` method shows you this:
 
-<div class="table-div">
+<div class="table-div" style="overflow-x: scroll;">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -564,7 +563,7 @@ dummies.head()
 
 The data frame that gets produced by this command looks like below:
 
-<div class="table-div">
+<div class="table-div" style="overflow-x: scroll;">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -802,7 +801,7 @@ tidy_movie_ratings.head()
 
 Your newly created data frame will look like this:
 
-<div class="table-div">
+<div class="table-div" style="overflow-x: scroll;">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1074,7 +1073,7 @@ tidy_movie_ratings.head(2)
 
 Now you can see that you produces a better-formatted version of the data frame:
 
-<div class="table-div">
+<div class="table-div" style="overflow-x: scroll;">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1220,7 +1219,7 @@ prodcount.tail()
 
 Similar to the `.head()` method you have encountered before, `.tail()` shows you a subset of the rows of your data frame. However, instead of showing the _first_ ones, it shows you the _last_ ones:
 
-<div class="table-div">
+<div class="table-div" style="overflow-x: scroll;">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1394,7 +1393,7 @@ scifi.head()
 
 The first 5 rows of your new `scifi` data frame will look like this:
 
-<div class="table-div">
+<div class="table-div" style="overflow-x: scroll;">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1497,7 +1496,7 @@ top_rate_by_decade
 
 The output of this operation will be your top-rated _Sci-Fi_ movies by decade:
 
-<div class="table-div">
+<div class="table-div" style="overflow-x: scroll;">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1687,7 +1686,7 @@ top_rate_by_decade.loc[1990:]
 
 Here are the results going back to 1990:
 
-<div class="table-div">
+<div class="table-div" style="overflow-x: scroll;">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
