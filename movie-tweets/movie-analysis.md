@@ -1,3 +1,16 @@
+<!-- necessary to render the tables nicely on the CN blog -->
+<style>
+  table, th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid gray;
+  }
+  th {
+    color: #545454;
+    background-color: #ededed;
+  }
+</style>
+
 # Movie Analysis
 
 In this article you will analyze a dataset of movie ratings. You will learn about:
