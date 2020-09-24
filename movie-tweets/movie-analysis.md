@@ -226,6 +226,7 @@ You will see a nicely formatted output that shows the first 5 rows of your `user
   </tbody>
 </table>
 </div>
+<br>
 
 You successfully read in the data from the external file and now have access to it as a `DataFrame()` object. Let's do the same with the other files as well.
 
@@ -303,6 +304,7 @@ You output should look similar to below:
   </tbody>
 </table>
 </div>
+<br>
 
 With the `ratings` data read in, there's only one more file left to go.
 
@@ -361,6 +363,7 @@ Checking the successful completion of this process with the familiar `movies.hea
   </tbody>
 </table>
 </div>
+<br>
 
 With this you're all set and the data has been read in to the notebook. What follows next, is **exploration**.
 
@@ -546,6 +549,7 @@ Inspecting the first two rows with the `.head(2)` method shows you this:
   </tbody>
 </table>
 </div>
+<br>
 
 Notice that you didn't use the `on` and `how` parameters when you joined the data, because you set the index of both data frames to `movie_id`. So, the `.join()` method knew on which variable to join and by default this creates an _inner_ join.
 
@@ -785,6 +789,7 @@ The data frame that gets produced by this command looks like below:
   </tbody>
 </table>
 </div>
+<br>
 
 You can concatenate these `dummies` to the original `movies_rating` data frame:
 
@@ -1044,6 +1049,7 @@ Your newly created data frame will look like this:
   </tbody>
 </table>
 </div>
+<br>
 
 This is almost as tidy as you want it, but it would be much more clean and useful if you could get those production years in a separate column. That would allow you to compare film productions over the years.
 
@@ -1186,6 +1192,7 @@ Now you can see that you produces a better-formatted version of the data frame:
   </tbody>
 </table>
 </div>
+<br>
 
 **Congratulations!** With this, you have completed the most difficult part: Getting and cleaning the data. Let's quickly recap what you did so far:
 
@@ -1252,6 +1259,7 @@ Similar to the `.head()` method you have encountered before, `.tail()` shows you
   </tbody>
 </table>
 </div>
+<br>
 
 Aside from 2021, which you filtered out, the other interesting year here is 2020. Although more than half of the year 2020 has passed at the time of writing this article, there are only `5712` rated films and movies for the year so far. Looks like 2020 is one of the most extraordinary years in history? Or maybe the movies are so new, that people didn't have the time to watch them yet. Or both!
 
@@ -1446,6 +1454,7 @@ The first 5 rows of your new `scifi` data frame will look like this:
   </tbody>
 </table>
 </div>
+<br>
 
 Next, you will filter for movies that have more than 10 ratings. But how can you find how many times a movie was rated? Here `.groupby()` comes to the rescue. After getting the counts, you will generate a new list called `movie_list` with the condition that a movie needs to have greater than 10 ratings. Below, the final operation will be only about getting the indices of the filtered `count_group`. You will achieve that by using `.index.values` method:
 
@@ -1673,6 +1682,7 @@ The output of this operation will be your top-rated _Sci-Fi_ movies by decade:
   </tbody>
 </table>
 </div>
+<br>
 
 If you want to see the values starting from 1990, you can do so by slicing the data frame:
 
@@ -1764,6 +1774,7 @@ Here are the results going back to 1990:
   </tbody>
 </table>
 </div>
+<br>
 
 **Congratulations** on completing your first _movie recommendation engine_! While some popular online streaming sites famously use _Machine Learning_ to recommend their viewers movies to watch, and that certainly has its use-case, as you can see it can be worth it to first establish some rule-of-thumb recommendations based on data and logic. That's what you now have in these tables you just generated.
 
