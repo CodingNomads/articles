@@ -1794,6 +1794,6 @@ I hope you enjoyed this article and continue having fun with analyzing your data
 
 ---
 
-> **About the Author:** **Cagdas Yetkin** is a Data Scientist at Nokia where he works on the next generation Supply Chain improvements for network devices and software. He develops soccer analytics and betting applicatons as a hobby, and enjoys traveling. Connect with him on <a href="https://www.linkedin.com/in/cagdasyetkin/" target="_blank">LinkedIn</a> and <a href="https://twitter.com/cagdasyetkin" target="_blank">Twitter</a>.
+> **About the Author:** **Cagdas Yetkin** is a Data Scientist at Nokia where he works on the next generation Supply Chain improvements for network devices and software. He develops soccer analytics and betting applications as a hobby, and enjoys traveling. Connect with him on <a href="https://www.linkedin.com/in/cagdasyetkin/" target="_blank">LinkedIn</a> and <a href="https://twitter.com/cagdasyetkin" target="_blank">Twitter</a>.
 
 Editor: Martin Breuss, <a href='https://twitter.com/martinbreuss' target='_blank'>@martinbreuss</a>, <a href='https://martinbreuss.com/' target='_blank'>martinbreuss.com</a>
