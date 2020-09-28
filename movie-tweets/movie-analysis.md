@@ -1,14 +1,14 @@
-# Movie Analysis
 
-In this article you will analyze a dataset of movie ratings. You will learn about:
 
-1. Getting and Cleaning the Data
-2. Getting the overall figures and basic statistics with their interpretation
-3. Joining datasets, aggregating and filtering your data by conditions
-4. Discovering hidden patterns and insights
-5. Creating summary tables
+Do you like movies? We do too! When working with our data science & analysis students, we like to use datasets that everyone can relate to - because it makes learning more fun! In this data analysis example, you will analyze a dataset of movie ratings to draw various conclusions. You will learn how to:
 
-You will achieve all of it by using Python and its popular <a href="https://pandas.pydata.org/docs/getting_started/index.html#getting-started" target="_blank"><code>pandas</code></a>  and <a href="https://matplotlib.org/3.2.2/contents.html" target="_blank"><code>matplotlib</code></a> libraries. You can download and run the Jupyter Notebook that this article is based on here <a href='https://github.com/CodingNomads/articles/blob/main/movie-tweets/movie-analysis.ipynb' target='_blank'><strong>here</strong></a>.
+1. Get and Clean the data
+2. Get the overall figures and basic statistics with their interpretation
+3. Join datasets, aggregate and filter your data by conditions
+4. Discover hidden patterns and insights
+5. Create summary tables
+
+This data analysis example teaches you to perform all of the above tasks using Python and its popular <a href="https://pandas.pydata.org/docs/getting_started/index.html#getting-started" target="_blank"><code>pandas</code></a>  and <a href="https://matplotlib.org/3.2.2/contents.html" target="_blank"><code>matplotlib</code></a> libraries. You can download and run the Jupyter Notebook that this tutorial is based on here <a href='https://github.com/CodingNomads/articles/blob/main/movie-tweets/movie-analysis.ipynb' target='_blank'><strong>here</strong></a>.
 
 ## Introduction
 
