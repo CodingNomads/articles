@@ -14,17 +14,16 @@
   }
 </style>
 
-# Movie Analysis
 
-In this article you will analyze a dataset of movie ratings. You will learn about:
+Do you like movies? We sure do! When working with our data science & machine learning students, we like to use datasets that everyone can relate to - because it makes learning more fun! In this data analysis example, you will analyze a dataset of movie ratings to draw various conclusions. You will learn how to:
 
-1. Getting and Cleaning the Data
-2. Getting the overall figures and basic statistics with their interpretation
-3. Joining datasets, aggregating and filtering your data by conditions
-4. Discovering hidden patterns and insights
-5. Creating summary tables
+1. Get and Clean Data
+2. Understand and interpret the overall figures and basic statistics
+3. Join datasets, and aggregate and filter your data by conditions
+4. Discover hidden patterns and insights
+5. Create summary tables
 
-You will achieve all of it by using Python and its popular <a href="https://pandas.pydata.org/docs/getting_started/index.html#getting-started" target="_blank"><code>pandas</code></a> and <a href="https://matplotlib.org/3.2.2/contents.html" target="_blank"><code>matplotlib</code></a> libraries. You can download and run the Jupyter Notebook that this article is based on here <a href='https://github.com/CodingNomads/articles/blob/main/movie-tweets/movie-analysis.ipynb' target='_blank'><strong>here</strong></a>.
+This data analysis example teaches you to perform all of the above tasks using Python and its popular <a href="https://pandas.pydata.org/docs/getting_started/index.html#getting-started" target="_blank"><code>pandas</code></a> and <a href="https://matplotlib.org/3.2.2/contents.html" target="_blank"><code>matplotlib</code></a> libraries. You can download and run the Jupyter Notebook that this tutorial is based on here <a href='https://github.com/CodingNomads/articles/blob/main/movie-tweets/movie-analysis.ipynb' target='_blank'><strong>here</strong></a>.
 
 - [Introduction](#introduction)
 - [Inspect the Data](#inspect-the-data)
@@ -40,23 +39,23 @@ You will achieve all of it by using Python and its popular <a href="https://pand
   - [Top Rated Sci-Fi Movies by Decades](#top-rated-sci-fi-movies-by-decades)
 - [What Next?](#what-next)
 
-<h2 id="introduction">Introduction</h2>
+<h2 id="introduction">Data Analysis Example Introduction</h2>
 
 You can access the code of the <a href="https://github.com/sidooms/MovieTweetings" target="_blank">Movie Tweetings Project</a> that you will be working with on GitHub. Here is what the project is about in a nutshell:
 
-It consists of ratings of movies that were contained in well-structured tweets on Twitter and it has been updated every day since 2013. OK, but how is this data created?
+The data consists of movie ratings from well-structured tweets on Twitter, and  has been updated every day since 2013. 
 
-It comes from people who connected their <a href='https://www.imdb.com/' target='_blank'>IMDB</a> profile with their <a href='https://twitter.com/' target='_blank'>Twitter</a> accounts. Whenever they rate a movie on the IMDB website an automated process will shoot a tweet.
+It was created from people who connected their <a href='https://www.imdb.com/' target='_blank'>IMDB</a> profile with their <a href='https://twitter.com/' target='_blank'>Twitter</a> accounts. Whenever they rate a movie on the IMDB website, an automated process generated a standard, well-structured tweet.
 
-And these _well-structured_ tweets look like this:
+These _well-structured_ tweets look like this:
 
 > "I rated The Matrix 9/10 http://www.imdb.com/title/tt0133093/ #IMDb"
 
-Nice, but can you use this data to learn and practice some data analysis using Python? The answer is yes!
+Because of this nice structure, we can use this data to learn and practice data analysis using Python!
 
-You are highly encouraged to write the code for this project yourself. You may discover some additional interesting revelations in the data, and doing the work yourself is what will give you the practice you need to improve your skills.
+You are highly encouraged to write the code for this data analysis example yourself. You may discover some additional interesting revelations in the data, and doing the work yourself is what will give you the practice you need to improve your skills.
 
-You can either download the data from the original repo or from <a href="https://drive.google.com/drive/folders/1nSV5S8jCh7LbrTdIgOSyxq6DqN-G3bah?usp=sharing" target="_blank">here</a>. Note that you will have the most up to date data if you use the original repo.
+You can either download the data from the original repo, or from <a href="https://drive.google.com/drive/folders/1nSV5S8jCh7LbrTdIgOSyxq6DqN-G3bah?usp=sharing" target="_blank">here</a>. Note that you will have the most up-to-date data if you use the original repo.
 
 <h2 id="inspect-the-data">Inspect the Data</h2>
 
@@ -92,7 +91,7 @@ With a basic idea of what you can expect to see in `users.dat`, let's next take 
 head -n3 data/movies.dat
 ```
 
-The output of this file will look like below:
+The output of this file will look like this:
 
 ```text
 0000008::Edison Kinetoscopic Record of a Sneeze (1894)::Documentary|Short
@@ -135,7 +134,7 @@ And again it comes with an interesting feature: The timestamps are in <a href="h
 
 <h2 id="set-up-your-notebook">Set Up Your Notebook</h2>
 
-Now you have an overall understanding of how the raw datasets look like. Next, you will import the libraries you will need for the rest of this analysis:
+Now you have an overall understanding of how the raw datasets look. Next, you will import the libraries you will need for the rest of this analysis:
 
 ```python
 import warnings
@@ -156,9 +155,9 @@ warnings.filterwarnings('ignore')
 
 Let's look a bit closer at the options you set up in the code snippet above. You:
 
-- Give the `filter-out-warnings` command to have a cleaner notebook without warning messages
-- Set the max rows and max columns to some big numbers, in this case `50`. This option just makes all the columns and rows in a DataFrame more readable or visible
-- Use `fivethirtyeight` style to have plots like the ones on <a href="https://www.fivethirtyeight.com" target="_blank">fivethirtyeight.com</a>: A website founded by <a href="https://en.wikipedia.org/wiki/Nate_Silver" target="_blank">Nate Silver</a>. If you want to explore `fivethirtyeight` further, I highly recommend the book: <a href="https://www.amazon.com/Signal-Noise-Many-Predictions-Fail-but/dp/0143125087" target="_blank">The Signal and the Noise</a>
+- Give the `filter-out-warnings` command to have a cleaner notebook without warning messages.
+- Set the max rows and max columns to some big numbers, in this case `50`. This option just makes all the columns and rows in a DataFrame more readable or visible.
+- Use `fivethirtyeight` style to have plots like the ones on <a href="https://www.fivethirtyeight.com" target="_blank">fivethirtyeight.com</a>: a website founded by <a href="https://en.wikipedia.org/wiki/Nate_Silver" target="_blank">Nate Silver</a>. If you want to explore `fivethirtyeight` further, I highly recommend the book: <a href="https://www.amazon.com/Signal-Noise-Many-Predictions-Fail-but/dp/0143125087" target="_blank">The Signal and the Noise</a>.
 
 These imports and adjustments create a good base setup for you to get started with your analysis. Keep in mind that while the `import`s are necessary, the adjustments are just to make your analysis easier and better-looking.
 
@@ -169,7 +168,7 @@ After importing the necessary libraries, you are now ready to read the files int
 There are a couple of adjustments you should make while reading in the data, to make sure it will be in good shape to work with:
 
 - Define that the separators are double colons `::`
-- Give the column names when so they will become the headers
+- Give the column names, so they will become the headers
 - Convert the UNIX time to a datetime format
 
 With this in mind, let's read in `users.dat`, `ratings.dat` and `movies.dat` one by one:
@@ -365,7 +364,7 @@ Checking the successful completion of this process with the familiar `movies.hea
 </table>
 </div>
 
-With this you're all set and the data has been read in to the notebook. What follows next, is **exploration**.
+With this, the data has been read in to the notebook. What follows next, is **exploration**.
 
 <h2 id="explore-your-data">Explore Your Data</h2>
 
@@ -422,11 +421,11 @@ Next, let's look at a visual representation of the data by creating a histogram:
 ratings['rating'].hist(bins=10)
 ```
 
-The data with the above settings will produce a histogram that looks like below:
+The data with the above settings will produce a histogram that looks like this:
 
 ![Rating Histogram with Bin of 10](https://github.com/CodingNomads/articles/blob/main/movie-tweets/imgs/output_30_0.png?raw=true)
 
-It is skewed to the left! That means that the distribution doesn't have a symmetrical shape around the mean and this specific off-balanced distribution has a long tail on the left hand side.
+You'll noticed that it is skewed to the left! That means that the distribution doesn't have a symmetrical shape around the mean, and this specific off-balanced distribution has a long tail on the left hand side.
 
 The `hist()` and `describe()` methods are in fact quite similar: One gives text output and the other gives its visual representation.
 
@@ -437,7 +436,7 @@ Given that both functions return the same output, you may also be able to conclu
 
 This is a bit confusing. You have seen first that the highest frequency was `8`. And then, after generating the histogram, it looked like the ratings were highest around `9`-`10`.
 
-This difference can arise because of <a href="https://statistics.laerd.com/statistical-guides/understanding-histograms.php" target="_blank">binning</a>! Different amounts of bins will lead to different results. Most of the time, the person conducting the analysis decides the right number of bins after a few trials. Generally, you will have a better idea about what is the right bin size for your data set after some research and digging into it.
+This difference can arise because of <a href="https://statistics.laerd.com/statistical-guides/understanding-histograms.php" target="_blank">binning</a>. Different amounts of bins will lead to different results. Most of the time, the person conducting the analysis decides the right number of bins after a few trials. Generally, you will have a better idea about what is the right bin size for your data set after some research and digging into it.
 
 Playing with the bins of a histogram can have an impact on the story you are telling. The same histogram would look like this if you increase the number of bins from `10` to `30`:
 
@@ -481,13 +480,13 @@ max       2875.000000
 Name: user_id, dtype: float64
 ```
 
-Notice that this time above you accessed the column using **dot notation**, which in this case does the same as accessing it through the square-bracket notation you used before, but is a little bit more convenient. Check out <a href='https://stackoverflow.com/a/55057329' target='_blank'>this StackOverflow post</a> if you want to learn more about the limitations and differences between the two notations.
+Notice that this time you accessed the column using **dot notation**. In this case it does the same as accessing it through the square-bracket notation you used before, but is a little bit more convenient. Check out <a href='https://stackoverflow.com/a/55057329' target='_blank'>this StackOverflow post</a> if you want to learn more about the limitations and differences between the two notations.
 
 See in the above output how the `mean` is much greater than the `median` (12.83 vs 2). It means that the data is skewed to the right.
 
-This skewness is at the extreme: Look how the `max` value is far far away! Could there be someone posting more than 2000 times? Not likely.
+This skewness is at the extreme: Look how the `max` value is far, far away! Could there be someone posting more than 2000 times? Not likely.
 
-The output also tells us that _50%_ of the people used it only _twice_ but the `mean` is almost `13`. This is because of those users with extremely high usage numbers. Could it be possible that they are not human beings but bots instead? That could be a great investigation topic, if you want to dive deeper. However, in this article you will leave this aside for now and continue by joining the datasets you have.
+The output also tells us that _50%_ of the people used it only _twice_ but the `mean` is almost `13`. This is because of those users with extremely high usage numbers. Could it be possible that they are not human beings but bots instead? That could be a great investigation topic, if you want to dive deeper. However, in this data analysis example you will leave this aside for now and continue by joining the datasets you have.
 
 <h2 id="join-the-datasets">Join the Datasets</h2>
 
@@ -561,7 +560,7 @@ dummies = movies_rating['genres'].str.get_dummies()
 dummies.head()
 ```
 
-The data frame that gets produced by this command looks like below:
+The data frame that gets produced by this command looks like this:
 
 <div class="table-div" style="overflow-x: scroll;">
 <table border="1" class="dataframe">
@@ -1050,7 +1049,7 @@ Your newly created data frame will look like this:
 
 This is almost as tidy as you want it, but it would be much more clean and useful if you could get those production years in a separate column. That would allow you to compare film productions over the years.
 
-To accomplish this, you will practice working with the `.str` attribute, which is quite popular and a lifesaver in many cases. You will:
+To accomplish this, you will practice working with the `.str` attribute, which is quite popular - and a lifesaver in many cases! You will:
 
 - Make a new column by getting the 4 digits representing the year
 - Remove the last 7 characters from the movie names
@@ -1071,7 +1070,7 @@ tidy_movie_ratings.reset_index(inplace=True)
 tidy_movie_ratings.head(2)
 ```
 
-Now you can see that you produces a better-formatted version of the data frame:
+Now you can see that you produce a better-formatted version of the data frame:
 
 <div class="table-div" style="overflow-x: scroll;">
 <table border="1" class="dataframe">
@@ -1190,21 +1189,21 @@ Now you can see that you produces a better-formatted version of the data frame:
 </table>
 </div>
 
-**Congratulations!** With this, you have completed the most difficult part: Getting and cleaning the data. Let's quickly recap what you did so far:
+**Congratulations!** With this, you have completed the most difficult part of this data analysis example: Getting and cleaning the data. Let's quickly recap what you did so far:
 
 - You read the raw data into data frames
-- You learnt and reported basic statistics
+- You learned and reported basic statistics
 - You joined data frames and created new fields
 
-This was not easy. You did some great work if you followed all the way until here. You can now: <a href="https://www.youtube.com/watch?v=2wnOpDWSbyw" target="_blank">watch the first movie in your records from 1894</a> as a reward :)
+This was not easy. You did some great work if you followed all the way until here! You can now: <a href="https://www.youtube.com/watch?v=2wnOpDWSbyw" target="_blank">watch the first movie in your records from 1894</a> as a reward :)
 
 Next, you are going to visualize your data and discover some patterns. Generally this part is more interesting for most people when you deliver your report.
 
 <h2 id="visualize-patterns">Visualize Patterns</h2>
 
-You will start with visualizing the total volume of films created over the years.
+First, you will start with visualizing the total volume of films created over the years.
 
-You will count the total number of productions for each year and plot it. The record you see for the year of 2021 should be filtered out before proceeding:
+Next, you will count the total number of productions for each year and plot it. The record you see for the year of 2021 should be filtered out before proceeding:
 
 ```python
 condition = tidy_movie_ratings["production_year"].astype(int) < 2021
@@ -1276,11 +1275,11 @@ You can see that the 5-year moving average is in a shocking decline! What is hap
 
 - This was an _inner_ join. So these are the _rated_ movies. Perhaps site and app usage went down.
 - The filming industry is in a serious crisis! They are not producing films because of COVID-19.
-- The people didn't have the time to watch the most recent movies. If they didn't watch them, they don't rate them, and you can see a decline in ratings. For example, I didn't watch the _Avengers_ series before doing this analysis. On the other hand, the movie _Braveheart_ (1995) most probably had enough time to get high numbers.
+- People didn't have time to watch the most recent movies. If they didn't watch them, they don't rate them, and you can see a decline in ratings. For example, I didn't watch the _Avengers_ series before doing this analysis. On the other hand, the movie _Braveheart_ (1995) most probably had enough time to get high numbers.
 
-Each of these hypotheses could warrant an investigation, and there might be other ideas that you can come up with yourself. Feel free to explore any of these hypotheses further on your own and remember that practicing your skills by following your interest is one of the best ways to learn new skills and keep them sharp.
+Each of these hypotheses could warrant an investigation, and there might be other ideas that you can come up with yourself. Feel free to explore any of these hypotheses further on your own. Remember that practicing your skills by following your interests is one of the best ways to learn new skills and keep them sharp.
 
-For this article, let's continue by investigating a slightly different question:
+For this data analysis example, let's continue by investigating a slightly different question:
 
 > What have people watched (or rated) most since 2000?
 
@@ -1307,7 +1306,7 @@ array(['Drama', 'Thriller', 'Action', 'Comedy', 'Adventure', 'Sci-Fi'],
       dtype=object)
 ```
 
-Now, you want to get the ratings for these genres from your `tidy_movie_ratings` data frame, but restrict the ratings to only the ones made between 2000 and 2019:
+Now, you want to get the ratings for these genres from your `tidy_movie_ratings` data frame, but restrict the ratings to only the movies made between 2000 and 2019:
 
 ```python
 genre_groups = (tidy_movie_ratings.iloc[:, 4:]
@@ -1327,12 +1326,12 @@ And here is your graph output for this data:
 
 ![2-year moving average plot for total rated films](https://github.com/CodingNomads/articles/blob/main/movie-tweets/imgs/output_69_0.png?raw=true)
 
-This gives a nice visual representation and helps you to interpret the data to answer the question you posed further up. Here are the take-aways that I took from it:
+This gives a nice visual representation and helps you to interpret the data to answer the question you posed before. Here are the take-aways that I took from it:
 
 - _Drama_ and _Thriller_ are the winner genres
-- Seems that _Sci-Fi_ & _Adventure_ are not as important genres
+- Seems that _Sci-Fi_ & _Adventure_ are not as popular
 
-On the other hand, some patterns can be misleading since we are only looking at the absolute numbers. Therefore, another way to analyze this phenomenon would be to look at the _percentage changes_. This could help your decision-taking if you are, let's say, in the business of online movie streaming.
+On the other hand, some patterns can be misleading since we are only looking at the absolute numbers. Therefore, another way to analyze this phenomenon would be to look at the _percentage changes_. This could help your decision making if you are, let's say, in the business of online movie streaming.
 
 So let's give that a try and plot the percentage changes:
 
@@ -1356,7 +1355,7 @@ And the output is shown below:
 
 ![5-year moving average plot for percentage changes](https://github.com/CodingNomads/articles/blob/main/movie-tweets/imgs/output_72_0.png?raw=true)
 
-You notice the decline you already spotted earlier one more time. However, it's interesting to see the _Sci-Fi_ & _Adventure_ genres moving to the top.
+You notice the decline you already spotted earlier. However, it's interesting to see the _Sci-Fi_ & _Adventure_ genres moving to the top.
 
 Indeed, _Sci-Fi_ & _Adventure_ movies were a real _hype_, and you might want to play your cards into them, especially if your business is somewhat related to global film industry trends. These two genres has the sharpest slope for the increase in receiving ratings. This _may_ signal that there is an increasing demand and could be a valuable insight for your business.
 
@@ -1366,7 +1365,7 @@ Let's stay with one of these hyped genres for a bit longer and explore yet anoth
 
 Let's say you're still building out your imaginary streaming service, you understood that the interest in Sci-Fi movies is rising sharply, and you want to make it easy for your users to find the best Sci-Fi movies of all times. What are the movies _from each decade_ which you could suggest to your users by default?
 
-To answer this question, let's start out by writing out the necessary steps first:
+To answer this question, let's start by writing the necessary steps:
 
 - Build a `scifi` base table containing only the columns you need
 - Filter for the records before 2020
@@ -1474,7 +1473,7 @@ columns = ["movie_title", "decade", "rating"]
 scifi_filtered = scifi[condition][columns]
 ```
 
-After having created the `filtered_scifi` table, you can focus on building up your metrics in order to select the best liked movies of each decade. You will look at the average rating, and you will need to `.groupby()` decade and `movie_title`.
+After you created the `filtered_scifi` table, you can focus on building up your metrics in order to select the best liked movies of each decade. You will look at the average rating, and you will need to `.groupby()` decade and `movie_title`.
 
 It is important to sort the aggregated value in a _descending_ order to get the results you are expecting. You want each group to have a maximum of 5 films, so a _lambda expression_ can help you to loop through the decade groups and show only the top 5. Otherwise, if there are less than 5 films in a decade, you want to show only the top movie, meaning only 1 record. Finally you will `round` the ratings to two decimal points.
 
