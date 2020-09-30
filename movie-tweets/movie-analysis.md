@@ -45,21 +45,17 @@ This tutorial teaches you to perform all of the above tasks using Python and its
 
 <h2 id="introduction">Introduction: Movie Ratings Data Analysis Example</h2>
 
-You can access the code of the <a href="https://github.com/sidooms/MovieTweetings" target="_blank">Movie Tweetings Project</a> that you will be working with on GitHub. Here is what the project is about in a nutshell:
-
-The data consists of movie ratings from well-structured tweets on Twitter, and  has been updated every day since 2013. 
-
-It was created from people who connected their <a href='https://www.imdb.com/' target='_blank'>IMDB</a> profile with their <a href='https://twitter.com/' target='_blank'>Twitter</a> accounts. Whenever they rated a movie on the IMDB website, an automated process generated a standard, well-structured tweet.
+The data in this example consists of  movie ratings from Twitter since 2013, updated daily. The data was created from people who connected their <a href='https://www.imdb.com/' target='_blank'>IMDB</a> profile with their <a href='https://twitter.com/' target='_blank'>Twitter</a> accounts. Whenever they rated a movie on the IMDB website, an automated process generated a standard, well-structured tweet.
 
 These _well-structured_ tweets look like this:
 
 > "I rated The Matrix 9/10 http://www.imdb.com/title/tt0133093/ #IMDb"
 
-Because of this nice structure, we can use this data to learn and practice data analysis using Python!
+Because of this nice structure, we can use this data to learn and practice data analysis using Python.
 
 You are highly encouraged to write the code for this data analysis example yourself. You may discover some additional interesting revelations in the data, and doing the work yourself will give you the practice you need to improve your skills.
 
-You can either download the data from the original repo, or from <a href="https://drive.google.com/drive/folders/1nSV5S8jCh7LbrTdIgOSyxq6DqN-G3bah?usp=sharing" target="_blank">here</a>. Note that you will have the most up-to-date data if you use the original repo.
+You can either download the data from the original GitHub repo - <a href="https://github.com/sidooms/MovieTweetings" target="_blank">Movie Tweetings Project</a> - or from <a href="https://drive.google.com/drive/folders/1nSV5S8jCh7LbrTdIgOSyxq6DqN-G3bah?usp=sharing" target="_blank">here</a>. Note that you will have the most up-to-date data if you use the original repo.
 
 <h2 id="inspect-the-data">Inspect the Data</h2>
 
@@ -97,6 +93,7 @@ With a basic idea of what you can expect to see in `users.dat`, let's next take 
 head -n3 data/movies.dat
 ```
 &nbsp;
+
 The output of this file will look like this:
 
 ```text
@@ -105,6 +102,7 @@ The output of this file will look like this:
 0000012::The Arrival of a Train (1896)::Documentary|Short
 ```
 &nbsp;
+
 In this file, you have three fields:
 
 1. `movie_id`
@@ -118,6 +116,7 @@ After looking at `movies.dat`, there's only one file left to inspect. Let's peek
 ```bash
 head -n3 data/ratings.dat
 ```
+&nbsp;
 
 The output you will receive should look similar to the one below:
 
@@ -126,6 +125,7 @@ The output you will receive should look similar to the one below:
 2::0102926::9::1590148016
 2::0208092::5::1586466072
 ```
+&nbsp;
 
 In this third dataset, your variables are:
 
@@ -369,6 +369,7 @@ Checking the successful completion of this process with the familiar `movies.hea
   </tbody>
 </table>
 </div>
+&nbsp;
 
 With this, the data has been read in to the notebook. What follows next, is **exploration**.
 
@@ -518,6 +519,7 @@ movies_rating = (ratings
 
 movies_rating.head(2)
 ```
+&nbsp;
 
 Inspecting the first two rows with the `.head(2)` method shows you this:
 
@@ -561,6 +563,7 @@ Inspecting the first two rows with the `.head(2)` method shows you this:
   </tbody>
 </table>
 </div>
+&nbsp;
 
 Notice that you didn't use the `on` and `how` parameters when you joined the data, because you set the index of both data frames to `movie_id`. So, the `.join()` method knew on which variable to join and by default this creates an _inner_ join.
 
@@ -572,6 +575,7 @@ One way of doing that could be creating dummies for each possible `genre`, such 
 dummies = movies_rating['genres'].str.get_dummies()
 dummies.head()
 ```
+&nbsp;
 
 The data frame that gets produced by this command looks like this:
 
@@ -800,6 +804,7 @@ The data frame that gets produced by this command looks like this:
   </tbody>
 </table>
 </div>
+&nbsp;
 
 You can concatenate these `dummies` to the original `movies_rating` data frame:
 
@@ -810,6 +815,7 @@ tidy_movie_ratings = (pd.concat([movies_rating, dummies], axis=1)
 
 tidy_movie_ratings.head()
 ```
+&nbsp;
 
 Your newly created data frame will look like this:
 
@@ -1059,6 +1065,7 @@ Your newly created data frame will look like this:
   </tbody>
 </table>
 </div>
+&nbsp;
 
 This is almost as tidy as you want it, but it would be much more clean and useful if you could get those production years in a separate column. That would allow you to compare film productions over the years.
 
@@ -1074,6 +1081,7 @@ Let's write the code for achieving these tasks:
 tidy_movie_ratings["production_year"] = tidy_movie_ratings["movie_title"].str[-5:-1]
 tidy_movie_ratings["movie_title"] = tidy_movie_ratings["movie_title"].str[:-7]
 ```
+&nbsp;
 
 Before checking out the results, let's go ahead and reset the index on this data frame first:
 
@@ -1082,6 +1090,7 @@ tidy_movie_ratings.reset_index(inplace=True)
 
 tidy_movie_ratings.head(2)
 ```
+&nbsp;
 
 Now you can see that you produce a better-formatted version of the data frame:
 
@@ -1201,6 +1210,7 @@ Now you can see that you produce a better-formatted version of the data frame:
   </tbody>
 </table>
 </div>
+&nbsp;
 
 **Congratulations!** With this, you have completed the most difficult part of this data analysis example: Getting and cleaning the data. Let's quickly recap what you did so far:
 
@@ -1402,6 +1412,7 @@ scifi["decade"] = scifi['production_year'].astype(int)//10*10
 
 scifi.head()
 ```
+&nbsp;
 
 The first 5 rows of your new `scifi` data frame will look like this:
 
@@ -1461,6 +1472,7 @@ The first 5 rows of your new `scifi` data frame will look like this:
   </tbody>
 </table>
 </div>
+&nbsp;
 
 Next, you will filter for movies that have more than 10 ratings. But how can you find how many times a movie was rated? Here `.groupby()` comes to the rescue. After getting the counts, you will generate a new list called `movie_list` with the condition that a movie needs to have greater than 10 ratings. Below, the final operation will be only about getting the indices of the filtered `count_group`. You will achieve that by using `.index.values` method:
 
@@ -1485,6 +1497,7 @@ columns = ["movie_title", "decade", "rating"]
 
 scifi_filtered = scifi[condition][columns]
 ```
+&nbsp;
 
 After you created the `filtered_scifi` table, you can focus on building up your metrics in order to select the best liked movies of each decade. You will look at the average rating, and you will need to `.groupby()` decade and `movie_title`.
 
@@ -1505,6 +1518,7 @@ top_rate_by_decade = (scifi_filtered
 
 top_rate_by_decade
 ```
+&nbsp;
 
 The output of this operation will be your top-rated _Sci-Fi_ movies by decade:
 
@@ -1688,6 +1702,7 @@ The output of this operation will be your top-rated _Sci-Fi_ movies by decade:
   </tbody>
 </table>
 </div>
+&nbsp;
 
 If you want to see the values starting from 1990, you can do so by slicing the data frame:
 
@@ -1695,6 +1710,7 @@ If you want to see the values starting from 1990, you can do so by slicing the d
 # loc method for filtering with the index
 top_rate_by_decade.loc[1990:]
 ```
+&nbsp;
 
 Here are the results going back to 1990:
 
@@ -1779,15 +1795,16 @@ Here are the results going back to 1990:
   </tbody>
 </table>
 </div>
+&nbsp;
 
-**Congratulations** on completing your first _movie recommendation engine_! While some popular online streaming sites famously use _Machine Learning_ to recommend their viewers movies to watch, and that certainly has its use-case, as you can see it can be worth it to first establish some rule-of-thumb recommendations based on data and logic. That's what you now have in these tables you just generated.
+**Congratulations** on completing your first movie recommendation engine! I know it's not quite yet Netflix - which uses machine learning to recommend what _you_ should watch. However in the tables you just generated, you've established some rule-of-thumb recommendations based on data and logic - a solid and fun first step!
 
-What is more, you completed a full data-analysis project:
+What is more, you completed a full data analysis example project:
 
 - You read your data as pandas data frames
 - You created basic statistics and interpreted the results
 - You joined data frames, applied conditions to filter them, and aggregated them
-- You have found patterns by using visualization and developed some hypotheses
+- You used data visualization to find patterns and develop hypotheses
 - And you didn't jump into conclusions and root causes. You kept your reasoning simple and skeptic
 - You created summary tables
 
@@ -1795,10 +1812,11 @@ All of the above are important and common aspects of working with data.
 
 <h2 id="what-next">What Next?</h2>
 
-If you enjoyed this project and you want to learn more and practice your data analysis skills further:
+If you enjoyed this data analysis example and you want to learn more and practice your skills further:
 
 - **Add More Data**: You can search for some additional IMDB data freely available on the internet. Chances are they contain information about _directors_ of the movies. You could join this data with your `tidy_movie_ratings` dataset and see which directors are getting top ratings for which movies over the years, and by decades. This way, you can practice everything you have learned here over again
 - **Build Your Service**: You can write a function which takes the `top_rate_by_decade` data frame as input and returns a random movie from the list, further simulating a movie recommendation system
+- **Your Idea Here**: There are limitless possibilities to practice and play with this data. Share your explorations with us if you do!
 - **Your Idea Here**: There are limitless possibilities to practice and play with this data. Share your explorations with us if you do!
 
 I hope you enjoyed this article and continue having fun with analyzing your datasets.
