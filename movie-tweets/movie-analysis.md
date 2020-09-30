@@ -464,7 +464,9 @@ f"You have {len(users.user_id.unique())} unique user ids in the data"
 
 You have seen earlier that both `value_counts()` and `describe()` are quite handy. So why not combine them to learn a little more?
 
-For instance, how many rating tweets are posted by a user on average? What is the minimum, maximum and median number of tweets posted by the users? The answer to these questions will enable you understand how active the users are: Are they frequent users or are they disappearing after shooting one single tweet? Let's try it out:
+For instance, how many rating tweets are posted by a user on average? What is the minimum, maximum and median number of tweets posted by the users? The answer to these questions will enable you understand how active the users are: Are they frequent users or are they disappearing after shooting one single tweet? 
+
+Let's try it out:
 
 ```python
 ratings.user_id.value_counts().describe()
@@ -483,7 +485,8 @@ min          1.000000
 max       2875.000000
 Name: user_id, dtype: float64
 ```
-<br></br>
+&nbsp;
+
 Notice that this time you accessed the column using **dot notation**. In this case it does the same as accessing it through the square-bracket notation you used before, but is a little bit more convenient. Check out <a href='https://stackoverflow.com/a/55057329' target='_blank'>this StackOverflow post</a> if you want to learn more about the limitations and differences between the two notations.
 
 See in the above output how the `mean` is much greater than the `median` (12.83 vs 2). It means that the data is skewed to the right.
