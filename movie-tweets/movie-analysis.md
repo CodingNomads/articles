@@ -13,7 +13,7 @@
     background-color: #ededed;
   }
 </style>
-<h6>By Cagdas Yetkin, Data Scientist at Nokia</h6>
+<strong>By Cagdas Yetkin, Data Scientist at Nokia</strong>
 
 One of my favorite things about working with data is exploring datasets that everyone can relate to. Although many might strongly disagree on which genre is the best, I bet most of us can agree that we enjoy watching a great movie!
 
@@ -25,7 +25,7 @@ In this data analysis example, you will analyze a dataset of movie ratings to dr
 4. Discover hidden patterns and insights
 5. Create summary tables
 
-This tutorial teaches you to perform all of the above tasks using Python and its popular <a href="https://pandas.pydata.org/docs/getting_started/index.html#getting-started" target="_blank"><code>pandas</code></a> and <a href="https://matplotlib.org/3.2.2/contents.html" target="_blank"><code>matplotlib</code></a> libraries. You can download and run the Jupyter Notebook used in this data analysis example here <a href='https://github.com/CodingNomads/articles/blob/main/movie-tweets/movie-analysis.ipynb' target='_blank'><strong>here</strong></a>.
+This tutorial teaches you to perform all of the above tasks using Python and its popular <a href="https://pandas.pydata.org/docs/getting_started/index.html#getting-started" target="_blank"><code>pandas</code></a> and <a href="https://matplotlib.org/3.2.2/contents.html" target="_blank"><code>matplotlib</code></a> libraries. You can download and run the Jupyter Notebook used in this data analysis example <a href='https://github.com/CodingNomads/articles/blob/main/movie-tweets/movie-analysis.ipynb' target='_blank'><strong>here</strong></a>.
 
 <strong>Table of Contents</strong>
 
