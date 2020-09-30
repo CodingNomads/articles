@@ -53,7 +53,7 @@ These _well-structured_ tweets look like this:
 
 Because of this nice structure, we can use this data to learn and practice data analysis using Python.
 
-You are highly encouraged to write the code for this data analysis example yourself. You may discover some additional interesting revelations in the data, and doing the work yourself will give you the practice you need to improve your skills.
+<strong>Tip:</strong>You are highly encouraged to write the code for this data analysis example yourself! This will help you truly understand the contents of this tutorial, give you the practice you need to improve your data analysis "muscle memory" skills, and you may discover some additional interesting revelations for yourself!
 
 You can either download the data from the original GitHub repo - <a href="https://github.com/sidooms/MovieTweetings" target="_blank">Movie Tweetings Project</a> - or from <a href="https://drive.google.com/drive/folders/1nSV5S8jCh7LbrTdIgOSyxq6DqN-G3bah?usp=sharing" target="_blank">here</a>. Note that you will have the most up-to-date data if you use the original repo.
 
@@ -136,7 +136,9 @@ In this third dataset, your variables are:
 
 And again it comes with an interesting feature: The timestamps are in <a href="https://www.unixtimestamp.com/" target="_blank">unixtime</a> format!
 
-**UNIX time** is a time format often used in computer time that shows the seconds passed since January 1st, 1970. You can use online converters to translate it to a format that is easier to read for humans. If you're interested, read more about <a href='https://en.wikipedia.org/wiki/Unix_time' target='_blank'>Unix time on Wikipedia</a>.
+**UNIX time** is a time format often used in computer time that shows the seconds passed since January 1st, 1970. You can use online converters to translate it to a format that is easier to read for humans. If you're interested, read more about <a href='https://en.wikipedia.org/wiki/Unix_time' target='_blank'>Unix time on Wikipedia</a>. 
+
+<div style="width:100%;height:0;padding-bottom:50%;position:relative;"><iframe src="https://giphy.com/embed/9u514UZd57mRhnBCEk" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/reaction-9u514UZd57mRhnBCEk">via GIPHY</a></p>
 
 <h2 id="set-up-your-notebook">Set Up Your Notebook</h2>
 
@@ -373,6 +375,8 @@ Checking the successful completion of this process with the familiar `movies.hea
 
 With this, the data has been read in to the notebook. What follows next, is **exploration**.
 
+<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/l49K0XNJvLtx9lPry" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/l49K0XNJvLtx9lPry">via GIPHY</a></p>
+
 <h2 id="explore-your-data">Explore Your Data</h2>
 
 To get a feeling for the data you are working with, it always helps to play around a little and create some quick stats and graphs for different aspects of it. This will help you have a better overview of what the data is about.
@@ -500,7 +504,7 @@ The output also tells us that _50%_ of the people used it only _twice_ but the `
 
 Could it be possible that they are not human beings but bots instead? That could be a great investigation topic, if you want to dive deeper. 
 
-But for this data analysis example, let's leave this aside for now and continue by joining the datasets we have.
+But for this data analysis example, let's leave this aside for now and continue by <strong>joining the datasets</strong> we have.
 
 <h2 id="join-the-datasets">Join the Datasets</h2>
 
@@ -1218,9 +1222,11 @@ Now you can see that you produce a better-formatted version of the data frame:
 - You learned and reported basic statistics
 - You joined data frames and created new fields
 
-This was not easy. You did some great work if you followed all the way until here! You can now: <a href="https://www.youtube.com/watch?v=2wnOpDWSbyw" target="_blank">watch the first movie in your records from 1894</a> as a reward :)
+You did some great work if you followed all the way until here! You can now: <a href="https://www.youtube.com/watch?v=2wnOpDWSbyw" target="_blank">watch the first movie in your records from 1894</a> as a reward :)
 
-Next, you are going to visualize your data and discover some patterns. Generally this part is more interesting for most people when you deliver your report.
+Next, you are going to visualize your data and discover some patterns. When delivering a report in a professional or academic setting, this is where things start to get very interesting!
+
+<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/RrVzUOXldFe8M" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/excited-yes-nicolas-cage-RrVzUOXldFe8M">via GIPHY</a></p>
 
 <h2 id="visualize-patterns">Visualize Patterns</h2>
 
