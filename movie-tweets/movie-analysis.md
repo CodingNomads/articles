@@ -1816,7 +1816,7 @@ Here are the results going back to 1990:
 <div style="width:100%;height:0;padding-bottom:55%;position:relative;"><iframe src="https://giphy.com/embed/ckeHl52mNtoq87veET" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/yes-avengers-infinity-war-ckeHl52mNtoq87veET">via GIPHY</a></p></div>
 &nbsp;
 
-<h2>Success! Your very own data analysis example</h2>
+<h2>Success! Your very own data analysis example project</h2>
 
 **Congratulations!** You have officially completed your first movie recommendation engine! Ok, I know it's not quite Netflix - which uses machine learning to recommend what _you_ should watch. However in the tables you just generated, you've established some rule-of-thumb recommendations based on data and logic - a solid and fun first step!
 
