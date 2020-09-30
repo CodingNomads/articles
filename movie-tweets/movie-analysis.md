@@ -74,6 +74,7 @@ If all these files are accessible to you, you can start off your investigation b
 ```bash
 head -n3 data/users.dat
 ```
+&nbsp;
 
 Your output will look similar to this:
 
@@ -82,6 +83,7 @@ Your output will look similar to this:
 2::522540374
 3::475571186
 ```
+&nbsp;
 
 At first it may be confusing that you can't see any field names but these are documented in the <a href="https://github.com/sidooms/MovieTweetings" target="_blank">README</a> file as follows:
 
@@ -94,7 +96,7 @@ With a basic idea of what you can expect to see in `users.dat`, let's next take 
 ```bash
 head -n3 data/movies.dat
 ```
-
+&nbsp;
 The output of this file will look like this:
 
 ```text
@@ -102,7 +104,7 @@ The output of this file will look like this:
 0000010::La sortie des usines Lumière (1895)::Documentary|Short
 0000012::The Arrival of a Train (1896)::Documentary|Short
 ```
-
+&nbsp;
 In this file, you have three fields:
 
 1. `movie_id`
