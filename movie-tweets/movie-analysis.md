@@ -139,6 +139,7 @@ And again it comes with an interesting feature: The timestamps are in <a href="h
 **UNIX time** is a time format often used in computer time that shows the seconds passed since January 1st, 1970. You can use online converters to translate it to a format that is easier to read for humans. If you're interested, read more about <a href='https://en.wikipedia.org/wiki/Unix_time' target='_blank'>Unix time on Wikipedia</a>. 
 
 <div style="width:100%;height:0;padding-bottom:50%;position:relative;"><iframe src="https://giphy.com/embed/9u514UZd57mRhnBCEk" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/reaction-9u514UZd57mRhnBCEk">via GIPHY</a></p></div>
+&nbsp;
 
 <h2 id="set-up-your-notebook">Set Up Your Notebook</h2>
 
@@ -376,6 +377,7 @@ Checking the successful completion of this process with the familiar `movies.hea
 With this, the data has been read in to the notebook. What follows next, is **exploration**.
 
 <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/l49K0XNJvLtx9lPry" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/l49K0XNJvLtx9lPry">via GIPHY</a></p></div>
+&nbsp;
 
 <h2 id="explore-your-data">Explore Your Data</h2>
 
@@ -1226,7 +1228,8 @@ You did some great work if you followed all the way until here! You can now: <a 
 
 Next, you are going to visualize your data and discover some patterns. When delivering a report in a professional or academic setting, this is where things start to get very interesting!
 
-<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/RrVzUOXldFe8M" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/excited-yes-nicolas-cage-RrVzUOXldFe8M">via GIPHY</a></p></div>
+<div style="width:100%;height:0;padding-bottom:40%;position:relative;"><iframe src="https://giphy.com/embed/VeNDat4n4Kre76oS1g" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/UpSteamMobileCarWash-data-eesti-upsteamers-VeNDat4n4Kre76oS1g">via GIPHY</a></p></div>
+&nbsp;
 
 <h2 id="visualize-patterns">Visualize Patterns</h2>
 
@@ -1283,6 +1286,7 @@ Similar to the `.head()` method you have encountered before, `.tail()` shows you
   </tbody>
 </table>
 </div>
+&nbsp;
 
 Aside from 2021, which you filtered out, the other interesting year here is 2020. Although more than half of the year 2020 has passed at the time of writing this article, there are only `5712` rated films and movies for the year so far. Looks like 2020 is one of the most extraordinary years in history? Or maybe the movies are so new, that people didn't have the time to watch them yet. Or both!
 
@@ -1295,6 +1299,7 @@ You can chart a 5 year moving average of the total productions:
        title="Count of Rated Movies - by production year")
 )
 ```
+&nbsp;
 
 This will produce a graphic similar to the one below:
 
@@ -1350,6 +1355,7 @@ Finally, you can create a graph showing a 2-year moving average of the total vol
 genre_groups.rolling(2).mean().plot(figsize=(15,5),
                                     title="Total Rated Films")
 ```
+&nbsp;
 
 And here is your graph output for this data:
 
@@ -1379,6 +1385,7 @@ From this filtered data, let's produce a 5-years moving average graph:
  .plot(figsize=(15,5),
        title="Percentage Change in Rated Films"))
 ```
+&nbsp;
 
 And the output is shown below:
 
@@ -1389,6 +1396,9 @@ You notice the decline you already spotted earlier. However, it's interesting to
 Indeed, _Sci-Fi_ & _Adventure_ movies were a real _hype_, and you might want to play your cards into them, especially if your business is somewhat related to global film industry trends. These two genres has the sharpest slope for the increase in receiving ratings. This _may_ signal that there is an increasing demand and could be a valuable insight for your business.
 
 Let's stay with one of these hyped genres for a bit longer and explore yet another question you can answer through this data set.
+
+<div style="width:100%;height:0;padding-bottom:41%;position:relative;"><iframe src="https://giphy.com/embed/26BRzQS5HXcEWM7du" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/martial-arts-come-here-morpheus-26BRzQS5HXcEWM7du">via GIPHY</a></p></div>
+&nbsp;
 
 <h3 id="top-rated-sci-fi-movies-by-decades">Top Rated Sci-Fi Movies by Decades</h3>
 
@@ -1803,9 +1813,14 @@ Here are the results going back to 1990:
 </div>
 &nbsp;
 
-**Congratulations** on completing your first movie recommendation engine! I know it's not quite yet Netflix - which uses machine learning to recommend what _you_ should watch. However in the tables you just generated, you've established some rule-of-thumb recommendations based on data and logic - a solid and fun first step!
+<div style="width:100%;height:0;padding-bottom:55%;position:relative;"><iframe src="https://giphy.com/embed/ckeHl52mNtoq87veET" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/yes-avengers-infinity-war-ckeHl52mNtoq87veET">via GIPHY</a></p></div>
+&nbsp;
 
-What is more, you completed a full data analysis example project:
+<h2>Success! Your very own data analysis example</h2>
+
+**Congratulations!** You have officially completed your first movie recommendation engine! Ok, I know it's not quite Netflix - which uses machine learning to recommend what _you_ should watch. However in the tables you just generated, you've established some rule-of-thumb recommendations based on data and logic - a solid and fun first step!
+
+What's more, you've completed your own full data analysis example project:
 
 - You read your data as pandas data frames
 - You created basic statistics and interpreted the results
@@ -1823,7 +1838,7 @@ If you enjoyed this data analysis example and you want to learn more and practic
 - **Add More Data**: You can search for some additional IMDB data freely available on the internet. Chances are they contain information about _directors_ of the movies. You could join this data with your `tidy_movie_ratings` dataset and see which directors are getting top ratings for which movies over the years, and by decades. This way, you can practice everything you have learned here over again
 - **Build Your Service**: You can write a function which takes the `top_rate_by_decade` data frame as input and returns a random movie from the list, further simulating a movie recommendation system
 - **Your Idea Here**: There are limitless possibilities to practice and play with this data. Share your explorations with us if you do!
-- **Your Idea Here**: There are limitless possibilities to practice and play with this data. Share your explorations with us if you do!
+- **If you want to learn more**: Check out CodingNomads' <a target="_blank_ href="https://codingnomads.co/courses/data-science-machine-learning-course">Data Science & Machine Learning Course</a> to dive even deeper into data analysis and run full end-to-end machine learning projects on your own!
 
 I hope you enjoyed this article and continue having fun with analyzing your datasets.
 
