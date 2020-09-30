@@ -13,9 +13,11 @@
     background-color: #ededed;
   }
 </style>
+<h6>By Cagdas Yetkin, Data Scientist at Nokia</h6>
 
+One of my favorite things about working with data is exploring datasets that everyone can relate to. Although many might strongly disagree on which genre is the best, I bet most of us can agree that we enjoy watching a great movie!
 
-Do you like movies? We sure do! When working with our data science & machine learning students, we like to use datasets that everyone can relate to - because it makes learning more fun! In this data analysis example, you will analyze a dataset of movie ratings to draw various conclusions. You will learn how to:
+In this data analysis example, you will analyze a dataset of movie ratings to draw various conclusions. You will learn how to:
 
 1. Get and Clean Data
 2. Understand and interpret the overall figures and basic statistics
@@ -23,7 +25,9 @@ Do you like movies? We sure do! When working with our data science & machine lea
 4. Discover hidden patterns and insights
 5. Create summary tables
 
-This data analysis example teaches you to perform all of the above tasks using Python and its popular <a href="https://pandas.pydata.org/docs/getting_started/index.html#getting-started" target="_blank"><code>pandas</code></a> and <a href="https://matplotlib.org/3.2.2/contents.html" target="_blank"><code>matplotlib</code></a> libraries. You can download and run the Jupyter Notebook that this tutorial is based on here <a href='https://github.com/CodingNomads/articles/blob/main/movie-tweets/movie-analysis.ipynb' target='_blank'><strong>here</strong></a>.
+This tutorial teaches you to perform all of the above tasks using Python and its popular <a href="https://pandas.pydata.org/docs/getting_started/index.html#getting-started" target="_blank"><code>pandas</code></a> and <a href="https://matplotlib.org/3.2.2/contents.html" target="_blank"><code>matplotlib</code></a> libraries. You can download and run the Jupyter Notebook used in this data analysis example here <a href='https://github.com/CodingNomads/articles/blob/main/movie-tweets/movie-analysis.ipynb' target='_blank'><strong>here</strong></a>.
+
+<strong>Table of Contents</strong>
 
 - [Introduction](#introduction)
 - [Inspect the Data](#inspect-the-data)
@@ -39,13 +43,13 @@ This data analysis example teaches you to perform all of the above tasks using P
   - [Top Rated Sci-Fi Movies by Decades](#top-rated-sci-fi-movies-by-decades)
 - [What Next?](#what-next)
 
-<h2 id="introduction">Data Analysis Example Introduction</h2>
+<h2 id="introduction">Introduction: Movie Ratings Data Analysis Example</h2>
 
 You can access the code of the <a href="https://github.com/sidooms/MovieTweetings" target="_blank">Movie Tweetings Project</a> that you will be working with on GitHub. Here is what the project is about in a nutshell:
 
 The data consists of movie ratings from well-structured tweets on Twitter, and  has been updated every day since 2013. 
 
-It was created from people who connected their <a href='https://www.imdb.com/' target='_blank'>IMDB</a> profile with their <a href='https://twitter.com/' target='_blank'>Twitter</a> accounts. Whenever they rate a movie on the IMDB website, an automated process generated a standard, well-structured tweet.
+It was created from people who connected their <a href='https://www.imdb.com/' target='_blank'>IMDB</a> profile with their <a href='https://twitter.com/' target='_blank'>Twitter</a> accounts. Whenever they rated a movie on the IMDB website, an automated process generated a standard, well-structured tweet.
 
 These _well-structured_ tweets look like this:
 
@@ -53,7 +57,7 @@ These _well-structured_ tweets look like this:
 
 Because of this nice structure, we can use this data to learn and practice data analysis using Python!
 
-You are highly encouraged to write the code for this data analysis example yourself. You may discover some additional interesting revelations in the data, and doing the work yourself is what will give you the practice you need to improve your skills.
+You are highly encouraged to write the code for this data analysis example yourself. You may discover some additional interesting revelations in the data, and doing the work yourself will give you the practice you need to improve your skills.
 
 You can either download the data from the original repo, or from <a href="https://drive.google.com/drive/folders/1nSV5S8jCh7LbrTdIgOSyxq6DqN-G3bah?usp=sharing" target="_blank">here</a>. Note that you will have the most up-to-date data if you use the original repo.
 
@@ -479,14 +483,18 @@ min          1.000000
 max       2875.000000
 Name: user_id, dtype: float64
 ```
-
+<br></br>
 Notice that this time you accessed the column using **dot notation**. In this case it does the same as accessing it through the square-bracket notation you used before, but is a little bit more convenient. Check out <a href='https://stackoverflow.com/a/55057329' target='_blank'>this StackOverflow post</a> if you want to learn more about the limitations and differences between the two notations.
 
 See in the above output how the `mean` is much greater than the `median` (12.83 vs 2). It means that the data is skewed to the right.
 
 This skewness is at the extreme: Look how the `max` value is far, far away! Could there be someone posting more than 2000 times? Not likely.
 
-The output also tells us that _50%_ of the people used it only _twice_ but the `mean` is almost `13`. This is because of those users with extremely high usage numbers. Could it be possible that they are not human beings but bots instead? That could be a great investigation topic, if you want to dive deeper. However, in this data analysis example you will leave this aside for now and continue by joining the datasets you have.
+The output also tells us that _50%_ of the people used it only _twice_ but the `mean` is almost `13`. This is because of those users with extremely high usage numbers. 
+
+Could it be possible that they are not human beings but bots instead? That could be a great investigation topic, if you want to dive deeper. 
+
+But for this data analysis example, let's leave this aside for now and continue by joining the datasets we have.
 
 <h2 id="join-the-datasets">Join the Datasets</h2>
 
