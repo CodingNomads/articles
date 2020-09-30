@@ -45,6 +45,8 @@ This tutorial teaches you to perform all of the above tasks using Python and its
 
 <h2 id="introduction">Introduction: Movie Ratings Data Analysis Example</h2>
 
+You can download the data from the original GitHub repo - <a href="https://github.com/sidooms/MovieTweetings" target="_blank">Movie Tweetings Project</a>.
+
 The data in this example consists of  movie ratings from Twitter since 2013, updated daily. The data was created from people who connected their <a href='https://www.imdb.com/' target='_blank'>IMDB</a> profile with their <a href='https://twitter.com/' target='_blank'>Twitter</a> accounts. Whenever they rated a movie on the IMDB website, an automated process generated a standard, well-structured tweet.
 
 These _well-structured_ tweets look like this:
@@ -54,8 +56,6 @@ These _well-structured_ tweets look like this:
 Because of this nice structure, we can use this data to learn and practice data analysis using Python.
 
 <strong>Tip:</strong> You are highly encouraged to write the code for this data analysis example yourself! This will help you truly understand the contents of this tutorial, give you the practice you need to improve your data analysis "muscle memory" skills, and you may discover some additional interesting revelations for yourself!
-
-You can either download the data from the original GitHub repo - <a href="https://github.com/sidooms/MovieTweetings" target="_blank">Movie Tweetings Project</a> - or from <a href="https://drive.google.com/drive/folders/1nSV5S8jCh7LbrTdIgOSyxq6DqN-G3bah?usp=sharing" target="_blank">here</a>. Note that you will have the most up-to-date data if you use the original repo.
 
 <h2 id="inspect-the-data">Inspect the Data</h2>
 
