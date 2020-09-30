@@ -1838,7 +1838,7 @@ If you enjoyed this data analysis example and you want to learn more and practic
 - **Add More Data**: You can search for some additional IMDB data freely available on the internet. Chances are they contain information about _directors_ of the movies. You could join this data with your `tidy_movie_ratings` dataset and see which directors are getting top ratings for which movies over the years, and by decades. This way, you can practice everything you have learned here over again
 - **Build Your Service**: You can write a function which takes the `top_rate_by_decade` data frame as input and returns a random movie from the list, further simulating a movie recommendation system
 - **Your Idea Here**: There are limitless possibilities to practice and play with this data. Share your explorations with us if you do!
-- **If you want to learn more**: Check out CodingNomads' <a href="https://codingnomads.co/courses/data-science-machine-learning-course" target="_blank>Data Science & Machine Learning Course</a> to dive even deeper into data analysis and run full end-to-end machine learning projects on your own!
+- **If you want to learn more**: Check out CodingNomads' <a href="https://codingnomads.co/courses/data-science-machine-learning-course" target="_blank">Data Science & Machine Learning Course</a> to dive even deeper into data analysis and run full end-to-end machine learning projects on your own!
 
 I hope you enjoyed this article and continue having fun with analyzing your datasets.
 
