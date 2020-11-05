@@ -1,10 +1,12 @@
 # Python Project for Beginners
 
-In this article and video, you will learn how to write a simple **Guess-the-number game** in Python using a normal text editor. This tutorial is meant to be a fun and easy Python project for beginners, so don't worry if you don't yet understand everything that's going on at first. The main point is that you get to see how **code is just text**. Now let's go build and run your first interactive Python project!
+In this article and video, you will learn how to write a simple **Guess-the-number game** in Python using a normal text editor. 
+
+This tutorial is meant to be a fun and easy Python project for beginners, so don't worry if you don't yet understand everything that's going on at first. The main point is that you get to see how **code is just text**. Now let's go build and run your first interactive Python project!
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CAOOILNwI5M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-**Note**: If you don't already have Python installed on your computer, visit <a target="_blank" href="https://www.python.org/downloads/">Python.org</a> to download it. This tutorial is taught for UNIX-based systems (Mac & Linux). If you are on Windows and you don't have Python pre-installed, you can also build the game in an online coding interface, such as [repl.it](https://repl.it/).
+**Note**: If you don't already have Python installed on your computer, visit <a target="_blank" href="https://www.python.org/downloads/">Python.org</a> to download it. This tutorial is taught for UNIX-based systems (Mac & Linux). If you are on Windows and you don't have Python pre-installed, you can also build the game in an online coding interface, such as [repl.it](https://repl.it/){:target="_blank"}.
 
 ## Build the Game
 
