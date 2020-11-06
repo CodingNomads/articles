@@ -1,4 +1,15 @@
-## Introduction
+- [Introduction](#introduction)
+- [Video Tutorial: Python project for beginners](#video-tutorial-python-project-for-beginners)
+- [Install Python on your computer](#install-python-on-your-computer)
+- [Build the Game ](#build-the-game-)
+  - [Coding in your text editor](#coding-in-your-text-editor)
+  - [Save your code!](#save-your-code)
+- [Play the Game](#play-the-game)
+  - [Run your Python project file](#run-your-python-project-file)
+- [Parts of a Python project](#parts-of-a-python-project)
+- [Tutorial take-aways](#tutorial-take-aways)
+
+<h2 id="introduction">Introduction</h2>
 
 In this article and video, you will learn how to write a simple **Guess-the-number game** in Python using a normal text editor. 
 
@@ -6,19 +17,19 @@ This tutorial is meant to be an easy Python project for beginners, so don't worr
 
 You can watch the video tutorial below, and/or continue reading this blog for the written tutorial. Now let's go build and run your first interactive Python project!
 
-## Video Tutorial: Python project for beginners
+<h2 id="video-tutorial-python-project-for-beginners">Video Tutorial: Python project for beginners</h2>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CAOOILNwI5M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Install Python on your computer
+<h2 id="install-python-on-your-computer">Install Python on your computer</h2>
 
-If you don't already have Python installed on your computer, visit <a target="_blank" href="https://www.python.org/downloads/">Python.org</a> to download it. This tutorial is taught for UNIX-based systems (Mac & Linux). If you are on Windows and you don't have Python pre-installed, you can also build the game in an online coding interface, such as [repl.it](https://repl.it/).
+If you don't already have Python installed on your computer, visit <a target="_blank" href="https://www.python.org/downloads/">Python.org</a> to download it. This tutorial is taught for UNIX-based systems (Mac & Linux). If you are on Windows and you don't have Python pre-installed, you can also build the game in an online coding interface, such as <a href="repl.it" target="_blank">[repl.it](https://repl.it/)</a>.
 
-## Build the Game 
+<h2 id="build-the-game">Build the Game</h2> 
 
 The first step in building your Python project for beginners game is to write your code in a text editor.
 
-### Coding in your text editor
+<h3 id="coding-in-your-text-editor">Coding in your text editor</h3>
 
 Open up any Text Editor - this can be as simple as the built-in TextEdit program on MacOS:
 
@@ -53,7 +64,7 @@ Make sure you type the code exactly as you see it above, including the 4 spaces 
 
 ![Code In TextEdit Window](https://github.com/CodingNomads/articles/blob/main/code-is-text/imgs/guess_code.png?raw=true)
 
-### Save your code!
+<h3 id="save-your-code">Save your code!</h3>
 
 Finally, let's save your text file using the python file extension `.py`. 
 
@@ -63,11 +74,11 @@ Press <kbd>Cmd</kbd>+<kbd>s</kbd> or go to _File/Save_ and save it on your Deskt
 
 And that's it for writing the code. Next step is to run the code and play your game.
 
-## Play the Game
+<h2 id="play-the-game">Play the Game</h2>
 
 Well done so far! :) To play your game on your computer you need to run the Python file you just created. 
 
-### Run your Python project file
+<h3 id="run-your-python-project-file">Run your Python project file</h3>
 To run your Python project on MacOS, open up your **Terminal**. Press <kbd>Cmd</kbd>+<kbd>Space</kbd> to open up Spotlight, and type _Terminal_, then press <kbd>Enter</kbd>:
 
 ![How to get to the Terminal](https://github.com/CodingNomads/articles/blob/main/code-is-text/imgs/get_to_terminal.png?raw=true)
@@ -109,7 +120,7 @@ Pressing <kbd>Enter</kbd> will start the program again from the beginning.
 
 Have fun guessing the number! :D
 
-## Parts of a Python project
+<h2 id="parts-of-a-python-project">Parts of a Python project</h2>
 
 There are a lot of different concepts that went into creating even this simple Python project for beginners. Let's take a look what they are:
 
@@ -125,7 +136,7 @@ Keep in mind that, like a paragraph of English, if you understand these parts, t
 
 We know that is a lot of parts with a lot of colors! If you're intrigued to learn more about writing your own Python projects, check out <a target="_blank" href="https://codingnomads.co/courses/python-bootcamp-online/">CodingNomads Python Programming course</a>. With some time and effort, you will soon be able to grasp these concepts and start speaking the coding language too!
 
-## Tutorial take-aways
+<h2 id="tutorial-take-aways">Tutorial take-aways</h2>
 
 - **Code is just Text**: Programming is just writing text, and all you need is a simple text editor to get started!
 - **Run using Python**: After writing your code text, you run Python programs with `python`
