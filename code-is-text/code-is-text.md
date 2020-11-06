@@ -133,4 +133,4 @@ We know that is a lot of parts with a lot of colors! If you're intrigued to lear
 
 Congratulations again on building your first Python project for beginners!
 
-Get started working with one of the most popular programming languages in our [Python Online Course](https://codingnomads.co/courses/python-bootcamp-online/).
+Get started working with one of the most popular programming languages in CodingNomads' [Python Online Course](https://codingnomads.co/courses/python-bootcamp-online/).
