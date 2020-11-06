@@ -123,7 +123,7 @@ Keep in mind that, like a paragraph of English, if you understand these parts, t
 
 ![Highlighted Programming Concepts with Labels](https://github.com/CodingNomads/articles/blob/main/code-is-text/imgs//programming_concepts.png?raw=True)
 
-We know that is a lot of parts with a lot of colors! If you're intrigued to learn more about writing your own Python projects, check out <a target="_blank" href="https://codingnomads.co/courses/python-bootcamp-online/">CodingNomads comprehensive Python Programming course</a>. With some time and effort, you will soon be able to grasp these concepts and start speaking the coding language too!
+We know that is a lot of parts with a lot of colors! If you're intrigued to learn more about writing your own Python projects, check out <a target="_blank" href="https://codingnomads.co/courses/python-bootcamp-online/">CodingNomads Python Programming course</a>. With some time and effort, you will soon be able to grasp these concepts and start speaking the coding language too!
 
 ## Tutorial take-aways
 
@@ -132,5 +132,3 @@ We know that is a lot of parts with a lot of colors! If you're intrigued to lear
 - **Python project components**: Yes, code is just text... but is it also code :) There are many parts of a Python project, but once you get a grasp you open the door to creating any Python project of your own.
 
 Congratulations again on building your first Python project for beginners!
-
-Get started working with one of the most popular programming languages in CodingNomads' [Python Online Course](https://codingnomads.co/courses/python-bootcamp-online/).
