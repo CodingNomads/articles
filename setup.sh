@@ -2,9 +2,9 @@ mkdir -p ~/Documents/codingnomads/article-dev
 cd ~/Documents/codingnomads/article-dev
 git clone https://github.com/CodingNomads/article-drafts.git
 cd article-drafts
-git remote add production https://github.com/CodingNomads/articles.git
+git remote add publish https://github.com/CodingNomads/articles.git
 git pull origin main
-git pull production main
+git pull publish main
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
