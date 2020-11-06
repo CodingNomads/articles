@@ -123,7 +123,7 @@ Keep in mind that, like a paragraph of English, if you understand these parts, t
 
 ![Highlighted Programming Concepts with Labels](https://github.com/CodingNomads/articles/blob/main/code-is-text/imgs//programming_concepts.png?raw=True)
 
-We know that is a lot of parts with a lot of colors! If you're intrigued to learn more about writing your own Python projects, check out <a href="https://codingnomads.co/courses/python-bootcamp-online/" target=_"blank">CodingNomads comprehensive Python Programming course</a>. With some time and effort, you will soon be able to grasp these concepts and start speaking the coding language too!
+We know that is a lot of parts with a lot of colors! If you're intrigued to learn more about writing your own Python projects, check out <a target="_blank" href="https://codingnomads.co/courses/python-bootcamp-online/">CodingNomads comprehensive Python Programming course</a>. With some time and effort, you will soon be able to grasp these concepts and start speaking the coding language too!
 
 ## Tutorial take-aways
 
