@@ -1,4 +1,4 @@
-# Python Project for Beginners
+## Introduction
 
 In this article and video, you will learn how to write a simple **Guess-the-number game** in Python using a normal text editor. 
 
@@ -6,9 +6,13 @@ This tutorial is meant to be a fun and easy Python project for beginners, so don
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CAOOILNwI5M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-**Note**: If you don't already have Python installed on your computer, visit <a target="_blank" href="https://www.python.org/downloads/">Python.org</a> to download it. This tutorial is taught for UNIX-based systems (Mac & Linux). If you are on Windows and you don't have Python pre-installed, you can also build the game in an online coding interface, such as [repl.it](https://repl.it/){:target="_blank"}.
+**Note**: If you don't already have Python installed on your computer, visit <a target="_blank" href="https://www.python.org/downloads/">Python.org</a> to download it. This tutorial is taught for UNIX-based systems (Mac & Linux). If you are on Windows and you don't have Python pre-installed, you can also build the game in an online coding interface, such as [repl.it](https://repl.it/).
 
-## Build the Game
+## Build the Game 
+
+The first step in building your Python project for beginners game is to write your code in a text editor.
+
+### Coding in your text editor
 
 Open up any Text Editor - this can be as simple as the built-in TextEdit program on MacOS:
 
@@ -37,22 +41,33 @@ while guess != num:
     else:
         print("nope, sorry. try again!")
 ```
-
-Make sure you type it out as-is, including the 4 spaces for **indentation**. You can also copy-paste the code from [this online resource](https://gist.github.com/martin-martin/d2f0bf7a6187a4e05d847b06e2bcee1d). Your text window should look like this, which is already the full code for your beginner python project:
+&nbsp;
+Make sure you type the code exactly as you see it above, including the 4 spaces for **indentation**. You can also copy-paste the code from [this online resource](https://gist.github.com/martin-martin/d2f0bf7a6187a4e05d847b06e2bcee1d). Your text window should look like this, which is already the full code for this Python project for beginners:
 
 ![Code In TextEdit Window](https://github.com/CodingNomads/articles/blob/main/code-is-text/imgs/guess_code.png?raw=true)
 
-Finally, let's save it and give it a name, then top it off with the python file extension `.py`. Press <kbd>Cmd</kbd>+<kbd>s</kbd> or go to _File/Save_ and save it on your Desktop with the name `guess.py`:
+### Save your code!
+
+Finally, let's save your text file using the python file extension `.py`. 
+
+Press <kbd>Cmd</kbd>+<kbd>s</kbd> or go to _File/Save_ and save it on your Desktop with the name `guess.py`:
 
 ![Finised Code in TextEdit Window](https://github.com/CodingNomads/articles/blob/main/code-is-text/imgs/finished_code.png?raw=true)
 
-And that's it for writing the code. You're done with building your first Python project. Next step is for your to run the code to play your game.
+And that's it for writing the code. You're done with building this simple Python project for beginners. 
 
-### Play the Game
+Next step is to run the code and play your game.
 
-Well done so far! :) To play your game on your computer you need to run the Python file you just created. To do this on MacOS, open up your **Terminal**. Press <kbd>Cmd</kbd>+<kbd>Space</kbd> to open up Spotlight, and type _Terminal_, then press <kbd>Enter</kbd>:
+## Play the Game
+
+Well done so far! :) To play your game on your computer you need to run the Python file you just created. 
+
+### Run your Python project file
+To run your Python project on MacOS, open up your **Terminal**. Press <kbd>Cmd</kbd>+<kbd>Space</kbd> to open up Spotlight, and type _Terminal_, then press <kbd>Enter</kbd>:
 
 ![How to get to the Terminal](https://github.com/CodingNomads/articles/blob/main/code-is-text/imgs/get_to_terminal.png?raw=true)
+
+&nbsp;
 
 This will open up your Terminal, a tool that programmers use on a daily basis. If you join one of our courses, you will get to know your Terminal in much more detail, but for this beginner project you don't need to worry about it too much. Just type the following in there:
 
@@ -71,6 +86,7 @@ Now you finally get to play your guess-the-number game. Since you wrote it in Py
 ```bash
 python guess.py
 ```
+&nbsp;
 
 And lo and behold! Here you are! Ready to play your game:
 
