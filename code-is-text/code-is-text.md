@@ -1,12 +1,18 @@
-## Introduction - Python project for beginners
+## Introduction
 
 In this article and video, you will learn how to write a simple **Guess-the-number game** in Python using a normal text editor. 
 
-This tutorial is meant to be an easy Python project for beginners, so don't worry if you don't understand everything at first. The main point is to see how **code is just text**. Now let's go build and run your first interactive Python project!
+This tutorial is meant to be an easy Python project for beginners, so don't worry if you don't understand everything at first. The main point is to see that **code is just text**. 
+
+You can watch the video tutorial below, and/or continue reading this blog for the written tutorial. Now let's go build and run your first interactive Python project!
+
+## Video Tutorial: Python project for beginners
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CAOOILNwI5M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-**Note**: If you don't already have Python installed on your computer, visit <a target="_blank" href="https://www.python.org/downloads/">Python.org</a> to download it. This tutorial is taught for UNIX-based systems (Mac & Linux). If you are on Windows and you don't have Python pre-installed, you can also build the game in an online coding interface, such as [repl.it](https://repl.it/).
+## Install Python on your computer
+
+If you don't already have Python installed on your computer, visit <a target="_blank" href="https://www.python.org/downloads/">Python.org</a> to download it. This tutorial is taught for UNIX-based systems (Mac & Linux). If you are on Windows and you don't have Python pre-installed, you can also build the game in an online coding interface, such as [repl.it](https://repl.it/).
 
 ## Build the Game 
 
@@ -103,9 +109,9 @@ Pressing <kbd>Enter</kbd> will start the program again from the beginning.
 
 Have fun guessing the number! :D
 
-## Parts of this Python project for beginners
+## Parts of a Python project
 
-There are a lot of different concepts that went into creating even this very simple Python project for beginners. Let's take a look what they are:
+There are a lot of different concepts that went into creating even this simple Python project for beginners. Let's take a look what they are:
 
 ![Base Parts of your Program](https://github.com/CodingNomads/articles/blob/main/code-is-text/imgs/base_parts.png?raw=true)
 
@@ -117,7 +123,7 @@ Keep in mind that, like a paragraph of English, if you understand these parts, t
 
 ![Highlighted Programming Concepts with Labels](https://github.com/CodingNomads/articles/blob/main/code-is-text/imgs//programming_concepts.png?raw=True)
 
-We know that is a lot of parts with a lot of colors! If you're intrigued to learn more about writing your own Python projects, check out <a target=_"blank" href="https://codingnomads.co/courses/python-bootcamp-online/">CodingNomads' comprehensive and intutitive Python Programming course</a>. With some time and effort, you will soon be able to grasp these concepts and start speaking the coding language too!
+We know that is a lot of parts with a lot of colors! If you're intrigued to learn more about writing your own Python projects, check out <a href="https://codingnomads.co/courses/python-bootcamp-online/" target=_"blank">CodingNomads comprehensive Python Programming course</a>. With some time and effort, you will soon be able to grasp these concepts and start speaking the coding language too!
 
 ## Tutorial take-aways
 
@@ -127,6 +133,4 @@ We know that is a lot of parts with a lot of colors! If you're intrigued to lear
 
 Congratulations again on building your first Python project for beginners!
 
----
-
-Get started working with one of the most popular programming languages in our [Python Online Bootcamp](https://codingnomads.co/courses/python-bootcamp-online/).
+Get started working with one of the most popular programming languages in our [Python Online Course](https://codingnomads.co/courses/python-bootcamp-online/).
