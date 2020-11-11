@@ -1,4 +1,11 @@
-- [Introduction](#introduction)
+<h2 id="introduction">Introduction</h2>
+
+In this article and video, you will learn how to write a simple **Guess-the-number game** in Python using a normal text editor. 
+
+This tutorial is meant to be an easy Python project for beginners, so don't worry if you don't understand everything at first. The main point is to see that **code is just text**. 
+
+You can watch the video tutorial below, and/or continue reading this blog for the written tutorial. Now let's go build and run your first interactive Python project!
+
 - [Video Tutorial: Python project for beginners](#video-tutorial-python-project-for-beginners)
 - [Install Python on your computer](#install-python-on-your-computer)
 - [Build the Game ](#build-the-game-)
@@ -8,14 +15,6 @@
   - [Run your Python project file](#run-your-python-project-file)
 - [Parts of a Python project](#parts-of-a-python-project)
 - [Tutorial take-aways](#tutorial-take-aways)
-
-<h2 id="introduction">Introduction</h2>
-
-In this article and video, you will learn how to write a simple **Guess-the-number game** in Python using a normal text editor. 
-
-This tutorial is meant to be an easy Python project for beginners, so don't worry if you don't understand everything at first. The main point is to see that **code is just text**. 
-
-You can watch the video tutorial below, and/or continue reading this blog for the written tutorial. Now let's go build and run your first interactive Python project!
 
 <h2 id="video-tutorial-python-project-for-beginners">Video Tutorial: Python project for beginners</h2>
 
