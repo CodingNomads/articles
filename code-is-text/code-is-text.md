@@ -6,6 +6,8 @@ This tutorial is meant to be an easy Python project for beginners, so don't worr
 
 You can watch the video tutorial below, and/or continue reading this blog for the written tutorial. Now let's go build and run your first interactive Python project!
 
+<h3 id="toc">Table of Contents</h3>
+
 - [Video Tutorial: Python project for beginners](#video-tutorial-python-project-for-beginners)
 - [Install Python on your computer](#install-python-on-your-computer)
 - [Build the Game ](#build-the-game-)
