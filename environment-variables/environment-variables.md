@@ -30,7 +30,7 @@ There are a few ways to keep your sensitive information safe. In this article, y
 
 [Environment variables](https://en.wikipedia.org/wiki/Environment_variable) are variables that you can access from anywhere in your local system. They are usually shared across many applications.
 
-In UNIX systems, the most famous one of them is [$PATH](<https://en.wikipedia.org/wiki/PATH_(variable)>) which specifies file paths where your system looks for executable files.
+In UNIX systems, the most famous one of them is [$PATH](https://en.wikipedia.org/wiki/PATH_(variable)) which specifies file paths where your system looks for executable files.
 
 You can access the value of your environment variables anywhere in your project without ever spelling out the actual value of that variable. Instead, you can refer to it through the environment variable.
 
