@@ -16,7 +16,7 @@ Knowing how to work with environment variables is a crucial skill when building 
 
 The web is full of horror stories of accidentally posted API key secrets that ended up costing the owner a ton of money. If you need to stay up late tonight, or need some extra convincing, check out the following posts:
 
-- [https://mikegerwitz.com/2012/05/a-git-horror-story-repository-integrity-with-signed-commits]A Git Horror Story: Repository Integrity With Signed Commits)
+- [https://mikegerwitz.com/2012/05/a-git-horror-story-repository-integrity-with-signed-commits](A Git Horror Story: Repository Integrity With Signed Commits)
 - [https://securosis.com/blog/my-500-cloud-security-screwup](My $500 Cloud Security Screwup)
 - [https://www.theregister.co.uk/2015/01/06/dev_blunder_shows_github_crawling_with_keyslurping_bots/](Dev put AWS keys on Github. Then BAD THINGS happened)
 
