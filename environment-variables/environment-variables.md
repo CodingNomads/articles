@@ -1,5 +1,16 @@
 # Using Environment Variables In Bash And Python
 
+- [Avoiding Horror Scenarios](#avoiding-horror-scenarios)
+- [Using Environment Variables](#using-environment-variables)
+  - [Inspecting Environment Variables](#inspecting-environment-variables)
+  - [Adding And Removing Environment Variables](#adding-and-removing-environment-variables)
+- [Using Environment Variables In Python Virtual Environments](#using-environment-variables-in-python-virtual-environments)
+  - [Editing Your Activation Script](#editing-your-activation-script)
+  - [Unsetting Virtual Environment Variables](#unsetting-virtual-environment-variables)
+  - [Setting Virtual Environment Variables](#setting-virtual-environment-variables)
+  - [Accessing Virtual Environment Variables](#accessing-virtual-environment-variables)
+- [Conclusion](#conclusion)
+
 Every other program you build will include some secret information that you don't want to share with the world. API keys for your web service calls, database login credentials, or the ingredients to your secret sauce in your recipe generator.
 
 While Git and GitHub is great, those personal secrets should _never_ make their way to the open source community.
@@ -12,13 +23,13 @@ In this blog post you will learn how to keep your secrets save using **environme
 
 Knowing how to work with environment variables is a crucial skill when building for the web, and can be helpful in many other situations that require some level of secrecy.
 
-## Avoiding Horror Scenarios
+<h2 id="avoiding-horror-scenarios">Avoiding Horror Scenarios</h2>
 
 The web is full of horror stories of accidentally posted API key secrets that ended up costing the owner a ton of money. If you need to stay up late tonight, or need some extra convincing, check out the following posts:
 
-- [A Git Horror Story: Repository Integrity With Signed Commits](https://mikegerwitz.com/2012/05/a-git-horror-story-repository-integrity-with-signed-commits)
-- [My $500 Cloud Security Screwup](https://securosis.com/blog/my-500-cloud-security-screwup)
-- [Dev put AWS keys on Github. Then BAD THINGS happened](https://www.theregister.co.uk/2015/01/06/dev_blunder_shows_github_crawling_with_keyslurping_bots/)
+- <a href='https://mikegerwitz.com/2012/05/a-git-horror-story-repository-integrity-with-signed-commits' target='_blank'>A Git Horror Story: Repository Integrity With Signed Commits</a>
+- <a href='https://securosis.com/blog/my-500-cloud-security-screwup' target='_blank'>My $500 Cloud Security Screwup</a>
+- <a href='https://www.theregister.co.uk/2015/01/06/dev_blunder_shows_github_crawling_with_keyslurping_bots/' target='_blank'>Dev put AWS keys on Github. Then BAD THINGS happened</a>
 
 The quick take-away is that you should never post your secrets to GitHub.
 
@@ -26,17 +37,17 @@ The quick take-away is that you should never post your secrets to GitHub.
 
 There are a few ways to keep your sensitive information safe. In this article, you'll learn how to do it using environment variables in UNIX systems.
 
-## Using Environment Variables
+<h2 id="using-environment-variables">Using Environment Variables</h2>
 
 [Environment variables](https://en.wikipedia.org/wiki/Environment_variable) are variables that you can access from anywhere in your local system. They are usually shared across many applications.
 
-In UNIX systems, the most famous one of them is [$PATH](https://en.wikipedia.org/wiki/PATH_(variable)) which specifies file paths where your system looks for executable files.
+In UNIX systems, the most famous one of them is <a href="https://en.wikipedia.org/wiki/PATH_(variable)" target="_blank">$PATH</a> which specifies file paths where your system looks for executable files.
 
 You can access the value of your environment variables anywhere in your project without ever spelling out the actual value of that variable. Instead, you can refer to it through the environment variable.
 
 Because of that you can work with API secrets and passwords throughout your project, and commit all project-relevant code to GitHub, while keeping all these secrets safe to yourself.
 
-### Inspecting Environment Variables
+<h3 id="inspecting-environment-variables">Inspecting Environment Variables</h3>
 
 Open up your CLI and type `printenv`. This will give you a list of all the current environment variables present on your system:
 
@@ -59,7 +70,7 @@ The output you receive when running the same command will be whatever you have d
 
 With these two commands you can inspect all the environment variables that are currently defined in your system, as well as their values. But what if you want to change, add, or remove one?
 
-### Adding And Removing Environment Variables
+<h3 id="adding-and-removing-environment-variables">Adding And Removing Environment Variables</h3>
 
 You can add a new environment variable with the following command:
 
@@ -95,7 +106,7 @@ Try adding and removing some environment variables using these commands. Remembe
 
 However, when you are working on a Python web development project, you don't want to set your environment variables across your whole system. As soon as you're working on more than one Django project, the `SECRET_KEY` variables you need for each project will clash with each other. That's why you should compartmentalize your environment variables.
 
-## Using Environment Variables In Python Virtual Environments
+<h2 id="using-environment-variables">Using Environment Variables</h2> In Python Virtual Environments
 
 When doing any project-specific development, you always want to avoid setting anything for your whole system. The same counts for secrets, which are usually project-specific.
 
@@ -103,7 +114,7 @@ It's a much better idea to set such environment variables inside of **virtual en
 
 Using environment variables inside of a Python virtual environment is easier than having to first `export` and then `unset` each variable every time you want to work on a project.
 
-### Editing Your Activation Script
+<h3 id="editing-your-activation-script">Editing Your Activation Script</h3>
 
 If you haven't yet created a virtual environment for your project, go ahead and make one:
 
@@ -111,7 +122,7 @@ If you haven't yet created a virtual environment for your project, go ahead and 
 python3 -m venv venv
 ```
 
-This command creates a virtual environment in your current project folder. Learn more about working with virtual environments and Python in the [Python Engineering](https://codingnomads.co/courses/python-bootcamp-online/) course.
+This command creates a virtual environment in your current project folder. Learn more about working with virtual environments and Python in the <a href='https://codingnomads.co/courses/python-bootcamp-online/' target='_blank'>Python Engineering</a> course.
 
 After you successfully created a virtual environment, open the `activate` script in your favorite text editor. You can find this file inside of the `venv` folder that got created by running the command shown above, specifically in `venv/bin/activate`.
 
@@ -119,7 +130,7 @@ This script runs every time your `venv` gets activated, which makes it a good pl
 
 You will edit this script and hard-code the values in there. First, you need to make sure that your virtual environment variables won’t stick around once you deactivated it, so you start by _unsetting_ the environment variable that you haven't even created yet.
 
-### Unsetting Virtual Environment Variables
+<h3 id="unsetting-virtual-environment-variables">Unsetting Virtual Environment Variables</h3>
 
 To unset a virtual environment variable, you add an `unset` command to the `deactivate` command section in your `activate` script. The code in this part of the script runs every time you `deactivate` your virtual environment.
 
@@ -136,7 +147,7 @@ Adding this line in the `deactivate` section makes sure that your virtual enviro
 
 Once you wrote the code to unset your variable, it's time to make sure you also _set_ it, so it will exist in the first place.
 
-### Setting Virtual Environment Variables
+<h3 id="setting-virtual-environment-variables">Setting Virtual Environment Variables</h3>
 
 You can set a virtual environment variable in the same way you learned about int he first section of this blog post. However, instead of typing the `export` command directly in your terminal, you'll add it as a new line of code at the end of the `activate` script:
 
@@ -159,7 +170,7 @@ After you confirmed that activating your virtual environment brings your virtual
 
 As you can see, this setup can keep your project-specific secrets safe within their own comfy virtual environments.
 
-### Accessing Virtual Environment Variables
+<h3 id="accessing-virtual-environment-variables">Accessing Virtual Environment Variables</h3>
 
 To use one of your virtual environment variables inside of your Python project, you need to access it with Python's `os` module from the standard library:
 
@@ -172,7 +183,7 @@ print(secret)
 
 You'll be able to run this code from any file in your project, as long as your virtual environment is activated.
 
-## Conclusion
+<h2 id="conclusion">Conclusion</h2>
 
 Some secrets are meant to stay secret. Setting environment variables inside of your Python virtual environments allows you to easily access project-specific secrets without running into the danger of accidentally committing them to public version control.
 
@@ -184,4 +195,4 @@ In this blog post you learned how to:
 - Set up **project-specific environment variables** inside of your Python **virtual environments**
 - **Access** environment variables with Python
 
-If you’re interested in learning about Python web development from the ground up and drilling best practices right from the start check out the courses on [Python Engineering](https://codingnomads.co/courses/python-bootcamp-online/) and [Django Web Development](https://codingnomads.co/courses/django-course-learn-django-online). No snake-oil. Just coding.
+If you’re interested in learning about Python web development from the ground up and drilling best practices right from the start check out the courses on <a href='https://codingnomads.co/courses/python-bootcamp-online/' target='_blank'>Python Engineering</a> and <a href='https://codingnomads.co/courses/django-course-learn-django-online' target='_blank'>Django Web Development</a>. No snake-oil. Just coding.
