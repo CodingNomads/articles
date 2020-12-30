@@ -13,13 +13,13 @@
 
 Every other program you build will include some secret information that you don't want to share with the world. API keys for your web service calls, database login credentials, or the ingredients to your secret sauce in your recipe generator.
 
-While Git and GitHub is great, those personal secrets should _never_ make their way to the open source community.
+While Git and GitHub are great, those personal secrets should _never_ make their way to the open source community.
 
-In this blog post you will learn how to keep your secrets save using **environment variables**. By the end you will know how to:
+In this blog, post you will learn how to keep your secrets safe using **environment variables**. By the end you will know how to:
 
-- **Adding and removing** environment variables from your Bash command line
-- Creating **virtual environment variables** in your Python virtual environment
-- **Automatically setting and unsetting** these virtual environment variables when you activate or deactivate your virtual environment
+- **Add and remove** environment variables from your Bash command line
+- Create **virtual environment variables** in your Python virtual environment
+- **Automatically set and unset** these virtual environment variables when you activate or deactivate your virtual environment
 
 Knowing how to work with environment variables is a crucial skill when building for the web, and can be helpful in many other situations that require some level of secrecy.
 
