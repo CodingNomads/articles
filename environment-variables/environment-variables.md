@@ -13,7 +13,7 @@
 
 Every other program you build will include some secret information that you don't want to share with the world. API keys for your web service calls, database login credentials, or the ingredients to your secret sauce in your recipe generator.
 
-While Git and GitHub are great, those personal secrets should _never_ make their way to the open source community.
+While Git and GitHub are great, those personal secrets should _never_ make their way to the open-source community.
 
 In this blog, post you will learn how to keep your secrets safe using **environment variables**. By the end you will know how to:
 
@@ -25,7 +25,7 @@ Knowing how to work with environment variables is a crucial skill when building 
 
 <h2 id="avoiding-horror-scenarios">Avoiding Horror Scenarios</h2>
 
-The web is full of horror stories of accidentally posted API key secrets that ended up costing the owner a ton of money. If you need to stay up late tonight, or need some extra convincing, check out the following posts:
+The web is full of horror stories of accidentally posted API key secrets that ended up costing the owner a ton of money. If you need to stay up late tonight or need some extra convincing, check out the following posts:
 
 - <a href='https://mikegerwitz.com/2012/05/a-git-horror-story-repository-integrity-with-signed-commits' target='_blank'>A Git Horror Story: Repository Integrity With Signed Commits</a>
 - <a href='https://securosis.com/blog/my-500-cloud-security-screwup' target='_blank'>My $500 Cloud Security Screwup</a>
@@ -68,7 +68,7 @@ echo $LOGNAME
 
 The output you receive when running the same command will be whatever you have defined next to the `LOGNAME` variable that you can inspect by running `printenv`.
 
-With these two commands you can inspect all the environment variables that are currently defined in your system, as well as their values. But what if you want to change, add, or remove one?
+With these two commands, you can inspect all the environment variables that are currently defined in your system, as well as their values. But what if you want to change, add, or remove one?
 
 <h3 id="adding-and-removing-environment-variables">Adding And Removing Environment Variables</h3>
 
@@ -106,7 +106,7 @@ Try adding and removing some environment variables using these commands. Remembe
 
 However, when you are working on a Python web development project, you don't want to set your environment variables across your whole system. As soon as you're working on more than one Django project, the `SECRET_KEY` variables you need for each project will clash with each other. That's why you should compartmentalize your environment variables.
 
-<h2 id="using-environment-variables">Using Environment Variables</h2> In Python Virtual Environments
+<h2 id="using-environment-variables-in-python-virtual-environments">Using Environment Variables In Python Virtual Environments</h2>
 
 When doing any project-specific development, you always want to avoid setting anything for your whole system. The same counts for secrets, which are usually project-specific.
 
