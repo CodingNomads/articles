@@ -106,7 +106,7 @@ Try adding and removing some environment variables using these commands. Remembe
 
 However, when you are working on a Python web development project, you don't want to set your environment variables across your whole system. As soon as you're working on more than one Django project, the `SECRET_KEY` variables you need for each project will clash with each other. That's why you should compartmentalize your environment variables.
 
-<h2 id="using-environment-variables">Using Environment Variables</h2> In Python Virtual Environments
+<h2 id="using-environment-variables-in-python-virtual-environments">Using Environment Variables In Python Virtual Environments</h2>
 
 When doing any project-specific development, you always want to avoid setting anything for your whole system. The same counts for secrets, which are usually project-specific.
 
