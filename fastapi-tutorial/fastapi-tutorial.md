@@ -10,7 +10,7 @@ In this article you are going to write a demonstration API using FastAPI. Since 
 
 What else do you need right?
 
-## Taking Off
+## Setting up the Project
 
 To get started you will go through the usual Python project song and dance. Create a new folder for your project, and then create a new virtual environment inside it:
 
@@ -26,7 +26,7 @@ Now you can install FastAPI and uvicorn, an ASGI server:
 
 And now you should be ready to write some code.
 
-## Just a Quick Hello
+## Starting with "Hello World"
 
 Before you delve into coffee shops and libraries, you should have the traditional "Hello World" app up in running in FastAPI. This will allow you to prove that your initial setup is working properly.
 
@@ -81,7 +81,7 @@ Here you can see the endpoint that was just defined, and even execute it straigh
 
 Since you are creating an API only with no frontend user interface, you'll be using this interactive documentation as the main method of interacting with the API.
 
-## Bring the Caffeine
+## Defining Models and Business Logic
 
 Now that you've seen the basics, let's get started working out the business logic. The first thing you are going to do is create a Pydantic model to represent a `Place`. You'll also define a route to create a new Place. Add the following code so that your `main.py` looks like this:
 
@@ -123,7 +123,7 @@ Try it out in the interactive API docs. Select the `/places/` route, and click t
 
 The example is neat, but you should probably actually save the data to a database so that it can be queried later.
 
-## All Your Base are a Database
+## Adding a Database
 
 Setting up a database is going to require a little more configuration and the installation of some more software. First install [SqlAlchemy](https://www.sqlalchemy.org) a "Python Toolkit and Object Relational Mapper.":
 
@@ -330,6 +330,8 @@ async def root():
 Here you have an endpoint per database action. They are simple wrappers around the database functions that you defined above. In a real app, these views might be more complicated and contain extra logic.
 
 Open up the [auto generated docs](http://127.0.0.1:8000/docs) in your browser, you should see these news endpoints listed. You can also interact with them. Try creating a few places using the "Post /places/" endpoint. Once that is done, use the "Get /places/" endpoint to retrieve them.
+
+## Conclusion
 
 Congrats! You now have a fully functional API that serves a database of remote working locations.
 
