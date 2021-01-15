@@ -4,7 +4,7 @@ One of the many great reasons to use Python for development is the vast amount o
 
 Recently the Python ecosystem has been seeing some exciting new players on the field powered by new features available only in Python 3+ such as [coroutines](https://docs.python.org/3/library/asyncio-task.html) and [optional typing](https://docs.python.org/3/library/typing.html). This new era of libraries and frameworks promise both greater speed and ease of development to bring Python on par with newer languages like Go and Rust, while keeping the core experience that has made Python so popular.
 
-[FastAPI](https://fastapi.tiangolo.com) is one of these new frameworks for developing web APIs. It leverages many existing projects built around modern python to provide something akin to Django or Flask, but much faster (it claims to be the fastest python web framework available, equal with frameworks written in Go and NodeJS). It also provides an excellent developer experience with editor autocomplete support, automatic API documentation and other modern tooling.
+[FastAPI](https://fastapi.tiangolo.com) is one of these new frameworks for developing web APIs. It leverages many existing projects built around modern Python to provide something akin to Django or Flask, but much faster. In fact, the author claims FastAPI is the fastest Python web framework available, equal with frameworks written in Go and NodeJS. It also provides an excellent developer experience with editor autocomplete support, automatic API documentation and other modern tooling.
 
 In this article you are going to write a demonstration API using FastAPI. Since you are a coding nomad, this API is going to allow users to submit remote working locations and document them based on availability of wifi, coffee and food.
 
@@ -202,7 +202,7 @@ Base.metadata.create_all(bind=engine)
 This is the object that will be used to actually fetch and insert rows into the database.
 
 > Aside:
-> Acute readers might notice that this model looks a lot like the Pydantic `Place` model you already defined earlier on. Aren't you repeating yourself? And indeed, there are many frameworks that avoid this dual definition. However, over the years backend engineers collectively learned that very rarely does the data stored in a database exactly match the desired representation presented to the user. Take a `User` object for example. You could define this model once, and use it to generate JSON to send to your endpoints for a user to consume. But it probably contains a hashed password, admin flags, and other sensitive information you don't want to be exposed, or aren't provided when the object is created. So somewhere (usually in a serializer) you would still have to create some exceptions to the one-to-one mapping. This is so common that it makes more sense to decouple the database representation completely from the "schema" representation, even if it means repeating yourself sometimes!
+> Acute readers might notice that this model looks a lot like the Pydantic `Place` model you already defined earlier on. Aren't you repeating yourself? And indeed, there are many frameworks that avoid this dual definition. However, over the years backend engineers collectively learned that very rarely does the data stored in a database exactly match the desired representation presented to the user. Take a `User` object for example. You could define this model once, and use it to generate JSON to send to your endpoints for a user to consume. But it probably contains a hashed password, admin flags, and other sensitive information you don't want to be exposed, or aren't provided when the object is created. So somewhere, such as a serializer, you would still have to create some exceptions to the one-to-one mapping. This is so common that it makes more sense to decouple the database representation completely from the "schema" representation, even if it means repeating yourself sometimes!
 
 
 Next you should define some methods to insert and fetch places from the database.
@@ -333,6 +333,6 @@ Open up the [auto generated docs](http://127.0.0.1:8000/docs) in your browser, y
 
 Congrats! You now have a fully functional API that serves a database of remote working locations.
 
-To learn more, including how to deploy your application so that other's can use it, check out the excellent [FastAPI Docs](https://fastapi.tiangolo.com)
+To learn more, including how to deploy your application so that others can use it, check out the excellent [FastAPI Docs](https://fastapi.tiangolo.com)
 
 Happy Travels!
