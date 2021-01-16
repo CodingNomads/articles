@@ -1,6 +1,6 @@
 # Gotta go Fast: Writing an API with Python and FastAPI
 
-One of the many great reasons to use Python for development is the vast amount of mature and stable libraries to choose from. When it comes to web development, [Django](https://www.djangoproject.org) and [Flask](https://flask.pocoo.org) offer a great development experience and troves of documentation that has been written over the years.
+One of the many great reasons to use Python for development is the vast amount of mature and stable libraries to choose from. When it comes to web development, [Django](https://codingnomads.co/courses/django-course-learn-django-online) and [Flask](https://flask.pocoo.org) offer a great development experience and troves of documentation that has been written over the years.
 
 Recently the Python ecosystem has been seeing some exciting new development powered by new features available only in Python 3+ such as [coroutines](https://docs.python.org/3/library/asyncio-task.html) and [optional typing](https://docs.python.org/3/library/typing.html). This new era of libraries and frameworks promise both greater speed and ease of development to bring Python on par with newer languages like Go and Rust, while keeping the core experience that has made Python so popular.
 
@@ -95,7 +95,11 @@ Since you are creating an API only with no frontend user interface, you'll be us
 
 ## Defining Models and Business Logic
 
-Now it's time to take your application beyond the basics and start writing code specific to your goal. The first thing you are going to do is create a Pydantic model to represent a `Place`. You'll also define a route to create a new Place. 
+Now it's time to take your application beyond the basics and start writing code specific to your goal. 
+
+The first thing you are going to do is create a [Pydantic](https://pydantic-docs.helpmanual.io) model to represent a `Place`. Pydantic is a data validation library that uses some neat tricks from the Python3 type system. FastAPI relies heavily on it to both validate incoming data and serialize outgoing data.
+
+You'll also define a route to create a new `Place`. For now all it will do is return the submitted `Place` back to you.
 
 Add the following code so that your `main.py` looks like this:
 ```python
@@ -132,9 +136,13 @@ Don't worry about the `orm_mode` bit yet, that's for use later when you hook up 
 
 The `create_place` method simply takes a Place as a parameter, and returns it. Soon, you'll actually save it to a database so it persists.
 
-Try it out in the interactive API docs. Select the `/places/` route, and click the "try it out" button. Fill in some values for the example place (or just use the defaults) and press execute. You should see the API response below, mirroring the values you put in! Notice FastAPI also gives you a cURL command string, so you can even try it from your terminal if you'd like.
+Try it out in the interactive API docs. Select the `/places/` route, and click the *try it out* button. Fill in some values for the example place (or just use the defaults) and press execute. You should be able to watch as your browser executes the request and displays the response:
 
-The code you have so far demonstrates how to send and receive data from the FastAPI application. The code is still simple but there is a lot going on including validation and serialization - much of which FastAPI gives us for "free". You should start to see what makes FastAPI fast (as in fast to develop).
+![Place Created](placecreated.png)
+
+Notice FastAPI also gives you a cURL command string for your request, so you can copy and paste it into your terminal or use it in scripts!
+
+What you have so far demonstrates how to send and receive data from the FastAPI application. The code is still simple but there is a lot going on including validation and serialization - much of which FastAPI gives us for "free". You should start to see what makes FastAPI fast (as in fast to develop).
 
 ## Adding a Database
 
@@ -144,7 +152,7 @@ Setting up a database is going to require a little more configuration and the in
 
     pip install sqlalchmemy
 
-__As of this writing, sqlalchemy 1.4 is still in beta, but it's what you'll be using since it mirrors 2.0's API and will eventually replace anything < 1.4. If you're reading this fresh off the press, make sure you use the --pre flag: `pip install sqlalchemy --pre`__
+> **Note**: As of this writing, sqlalchemy 1.4 is still in beta, but it's what you'll be using since it mirrors 2.0's API and will eventually replace anything < 1.4. If you're reading this fresh off the press, make sure you use the --pre flag: `pip install sqlalchemy --pre`
 
 For this demonstration you'll be using sqlite3 for your database since it requires no special setup or servers to run. Edit `main.py` so that it looks like this:
 
@@ -223,8 +231,7 @@ Base.metadata.create_all(bind=engine)
 
 You just defined the object that will be used to actually fetch and insert rows into the database.
 
-> Aside:
-> Acute readers might notice that this model looks a lot like the Pydantic `Place` model you already defined earlier on. Aren't you repeating yourself? And indeed, there are many frameworks that avoid this dual definition. However, over the years backend engineers collectively learned that very rarely does the data stored in a database exactly match the desired representation presented to the user. Take a `User` object for example. You could define this model once, and use it to generate JSON to send to your endpoints for a user to consume. But it probably contains a hashed password, admin flags, and other sensitive information you don't want to be exposed, or aren't provided when the object is created. So somewhere, such as a serializer, you would still have to create some exceptions to the one-to-one mapping. This is so common that it makes more sense to decouple the database representation completely from the "schema" representation, even if it means repeating yourself sometimes!
+> **Note**: Acute readers might notice that this model looks a lot like the Pydantic `Place` model you already defined earlier on. Aren't you repeating yourself? And indeed, there are many frameworks that avoid this dual definition. However, over the years backend engineers collectively learned that very rarely does the data stored in a database exactly match the desired representation presented to the user. Take a `User` object for example. You could define this model once, and use it to generate JSON to send to your endpoints for a user to consume. But it probably contains a hashed password, admin flags, and other sensitive information you don't want to be exposed, or aren't provided when the object is created. So somewhere, such as a serializer, you would still have to create some exceptions to the one-to-one mapping. This is so common that it makes more sense to decouple the database representation completely from the "schema" representation, even if it means repeating yourself sometimes!
 
 
 Next you should define some methods to insert and fetch places from the database.
@@ -274,6 +281,9 @@ def get_place_view(place_id: int, db: Session = Depends(get_db)):
     return get_place(db, place_id)
 ```
 
+Note that both the `create_places_view` and `get_places_view` methods are called from the same endpoint: `/places/`. In this case, the [HTTP method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) determines which function is called. HTTP methods are like verbs: they convey the intent of the client. When a `GET` request is sent `get_places_view` is called because we want to **get** the resource. Conversely when a `POST` request is sent `create_places_view` is called because we want to **post** (like posting a letter in the mail) the resource . It is important to use the correct HTTP methods for your actions.
+
+
 All together, your `main.py` file should look like this:
 
 ```python
@@ -286,13 +296,12 @@ from sqlalchemy import Boolean, Column, Float, String, Integer
 
 app = FastAPI()
 
-#SqlAlchemy Setup
+# SqlAlchemy Setup
 SQLALCHEMY_DATABASE_URL = 'sqlite+pysqlite:///./db.sqlite3:'
 engine = create_engine(SQLALCHEMY_DATABASE_URL, echo=True, future=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
-# Dependency
 def get_db():
     db = SessionLocal()
     try:
@@ -300,6 +309,7 @@ def get_db():
     finally:
         db.close()
 
+# A SQLAlchemny ORM Place
 class DBPlace(Base):
     __tablename__ = 'places'
 
@@ -314,6 +324,7 @@ class DBPlace(Base):
 
 Base.metadata.create_all(bind=engine)
 
+# A Pydantic Place
 class Place(BaseModel):
     name: str
     description: Optional[str] = None
@@ -326,6 +337,7 @@ class Place(BaseModel):
     class Config:
         orm_mode = True
 
+# Methods for interacting with the database
 def get_place(db: Session, place_id: int):
     return db.query(DBPlace).where(DBPlace.id == place_id).first()
 
@@ -340,6 +352,7 @@ def create_place(db: Session, place: Place):
 
     return db_place
 
+# Routes for interacting with the API
 @app.post('/places/', response_model=Place)
 def create_places_view(place: Place, db: Session = Depends(get_db)):
     db_place = create_place(db, place)
@@ -358,7 +371,13 @@ async def root():
     return {'message': 'Hello World!'}
 ```
 
-Here you have an endpoint per database action. They are simple wrappers around the database functions that you defined above. In a real app, these routes might be more complicated and contain extra logic.
+This code can be broken down into five distinct sections (after imports):
+
+1. Setup code for SQLAlchemy for the database connection and initialization.
+2. A SQLAlchemy ORM `Place` definition, used when fetching and inserting records into the database.
+3. A Pydantic `Place` definition, used with receiving data from the user as well as sending data to the user.
+4. Methods specific to interacting with the database.
+5. Routes for interacting with the API corresponding with actions to perform on a `Place`.
 
 Open up the [auto generated docs](http://127.0.0.1:8000/docs) in your browser, you should see these news endpoints listed. You can also interact with them. Try creating a few places using the "Post /places/" endpoint. Once that is done, use the "Get /places/" endpoint to retrieve them.
 
@@ -370,8 +389,8 @@ In this article you:
 * Created a CRUD app for remote working locations.
 * Integrated a database with your application.
 
-Congrats! You now have a fully functional API that serves a database of remote working locations.
+Congrats! You now have a fully functional API that serves a database of remote working locations. If you wanted to create something actual coding nomads could use, you'd probably want to create a client for your API: a website, a phone app, or even another API! Check out some of CodingNomad's other tutorials for information on these topics.
 
-To learn more, including how to deploy your application so that others can use it, check out the excellent [FastAPI Docs](https://fastapi.tiangolo.com)
+To go more in depth with FastAPI, including how to deploy your application so that others can use it, check out the excellent [FastAPI Docs](https://fastapi.tiangolo.com)
 
 Happy Travels!
