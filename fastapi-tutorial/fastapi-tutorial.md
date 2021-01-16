@@ -2,13 +2,15 @@
 
 One of the many great reasons to use Python for development is the vast amount of mature and stable libraries to choose from. When it comes to web development, [Django](https://www.djangoproject.org) and [Flask](https://flask.pocoo.org) offer a great development experience and troves of documentation that has been written over the years.
 
-Recently the Python ecosystem has been seeing some exciting new players on the field powered by new features available only in Python 3+ such as [coroutines](https://docs.python.org/3/library/asyncio-task.html) and [optional typing](https://docs.python.org/3/library/typing.html). This new era of libraries and frameworks promise both greater speed and ease of development to bring Python on par with newer languages like Go and Rust, while keeping the core experience that has made Python so popular.
+Recently the Python ecosystem has been seeing some exciting new development powered by new features available only in Python 3+ such as [coroutines](https://docs.python.org/3/library/asyncio-task.html) and [optional typing](https://docs.python.org/3/library/typing.html). This new era of libraries and frameworks promise both greater speed and ease of development to bring Python on par with newer languages like Go and Rust, while keeping the core experience that has made Python so popular.
 
-[FastAPI](https://fastapi.tiangolo.com) is one of these new frameworks for developing web APIs. It leverages many existing projects built around modern Python to provide something akin to Django or Flask, but much faster. In fact, the author claims FastAPI is the fastest Python web framework available, equal with frameworks written in Go and NodeJS. It also provides an excellent developer experience with editor autocomplete support, automatic API documentation and other modern tooling.
+[FastAPI](https://fastapi.tiangolo.com) is one of these new frameworks for developing web APIs that has been gaining popularity over the last few years.
 
-In this article you are going to write a demonstration API using FastAPI. Since you are a coding nomad, this API is going to allow users to submit remote working locations and document them based on availability of wifi, coffee and food.
+In this article you will:
 
-What else do you need right?
+ * Create a new FastAPI project from scratch.
+ * Create an API for fellow coding nomads to submit remote working locations.
+ * Save the app's data to a real database using an ORM.
 
 ## Setting up the Project
 
