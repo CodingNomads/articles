@@ -335,6 +335,12 @@ Open up the [auto generated docs](http://127.0.0.1:8000/docs) in your browser, y
 
 ## Conclusion
 
+In this article you:
+
+* Learned the basics of working with FastPI projects.
+* Created a CRUD app for remote working locations.
+* Integrated a database with your application.
+
 Congrats! You now have a fully functional API that serves a database of remote working locations.
 
 To learn more, including how to deploy your application so that others can use it, check out the excellent [FastAPI Docs](https://fastapi.tiangolo.com)
