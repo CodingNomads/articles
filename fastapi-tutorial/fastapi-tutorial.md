@@ -4,7 +4,7 @@ One of the many great reasons to use Python for development is the vast amount o
 
 Recently the Python ecosystem has been seeing some exciting new development powered by new features available only in Python 3+ such as [coroutines](https://docs.python.org/3/library/asyncio-task.html) and [optional typing](https://docs.python.org/3/library/typing.html). This new era of libraries and frameworks promise both greater speed and ease of development to bring Python on par with newer languages like Go and Rust, while keeping the core experience that has made Python so popular.
 
-[FastAPI](https://fastapi.tiangolo.com) is one of these new frameworks for developing web APIs that has been gaining popularity over the last few years.
+[FastAPI](https://fastapi.tiangolo.com) is one of these new frameworks for developing web APIs that has been gaining popularity over the last few years. If you are planning on doing web development with Python now or in the future, it would be a good idea to be familiar with it.
 
 In this article you will:
 
