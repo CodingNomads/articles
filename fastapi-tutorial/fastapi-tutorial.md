@@ -151,6 +151,8 @@ Sending and receiving data to our application is great, and for some application
 Setting up a database is going to require a little more configuration and the installation of some more software. First install [SqlAlchemy](https://www.sqlalchemy.org) a "Python Toolkit and Object Relational Mapper.":
 
     pip install sqlalchmemy
+    
+SqlAlchemy is a common library for Python that makes working with databases easier and removes most of the need to write SQL by hand. If you'd like to learn more about SqlAlchemy, CodingNomads offers a [free course](https://platform.codingnomads.co/learn/course/view.php?id=20#section-2) that goes into more detail than this tutorial.
 
 > **Note**: As of this writing, sqlalchemy 1.4 is still in beta, but it's what you'll be using since it mirrors 2.0's API and will eventually replace anything < 1.4. If you're reading this fresh off the press, make sure you use the --pre flag: `pip install sqlalchemy --pre`
 
