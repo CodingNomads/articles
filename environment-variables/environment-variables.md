@@ -1,10 +1,10 @@
 ##Keep your Secrets Safe with Python Environment Variables
 
-Most programs that you build will include some secret information that you don't want to share with the world. Think: API keys for your web service calls, database login credentials, or the ingredients to your secret sauce in your recipe generator.
+Most programs that you build will include some secret information that you don't want to share with the world. Think: API keys for your web service calls, database login credentials, or the ingredients to your secret sauce in your recipe generator!
 
 > While Git and GitHub are great, those personal secrets should _never_ make their way to the open-source community.
 
-That's where Python Environment Variables come in handy! Knowing how to work with environment variables is a crucial skill when building for the web, and can be helpful in many other situations that require some level of secrecy. 
+That's where Python Environment Variables come in handy.  Knowing how to work with environment variables is a crucial skill when building for the web, and can be helpful in many other situations that require some level of secrecy. 
 
 In this blog you will learn how to keep your secrets safe using **environment variables**. By the end you will know how to:
 
@@ -41,7 +41,7 @@ There are a few ways to keep your sensitive information safe. In this article, y
 
 <h2 id="using-environment-variables">Using Python Environment Variables</h2>
 
-[Environment variables](https://en.wikipedia.org/wiki/Environment_variable) are variables that you can access from anywhere in your local system. They are usually shared across many applications.
+[Environment variables](https://en.wikipedia.org/wiki/Environment_variable) are dynamic-named values that exist outside of your code, which you can access from anywhere in your local system. Environment variables can help you streamline the process of running your scripts and applications, and make these processes more secure. They are usually shared across many applications.
 
 In UNIX systems, the most famous one of them is <a href="https://en.wikipedia.org/wiki/PATH_(variable)" target="_blank">$PATH</a> which specifies file paths where your system looks for executable files.
 
