@@ -1,5 +1,16 @@
-# Using Environment Variables In Bash And Python
+##Keep your Secrets Safe with Python Environment Variables
 
+Most programs that you build will include some secret information that you don't want to share with the world. Think: API keys for your web service calls, database login credentials, or the ingredients to your secret sauce in your recipe generator.
+
+> While Git and GitHub are great, those personal secrets should _never_ make their way to the open-source community.
+
+Knowing how to work with environment variables is a crucial skill when building for the web, and can be helpful in many other situations that require some level of secrecy. In this blog you will learn how to keep your secrets safe using **environment variables**. By the end you will know how to:
+
+- **Add and remove** environment variables from your Bash command line
+- Create **virtual environment variables** in your Python virtual environment
+- **Automatically set and unset** these virtual environment variables when you activate or deactivate your virtual environment
+
+##Table of Contents
 - [Avoiding Horror Scenarios](#avoiding-horror-scenarios)
 - [Using Environment Variables](#using-environment-variables)
   - [Inspecting Environment Variables](#inspecting-environment-variables)
@@ -10,18 +21,6 @@
   - [Setting Virtual Environment Variables](#setting-virtual-environment-variables)
   - [Accessing Virtual Environment Variables](#accessing-virtual-environment-variables)
 - [Conclusion](#conclusion)
-
-Every other program you build will include some secret information that you don't want to share with the world. API keys for your web service calls, database login credentials, or the ingredients to your secret sauce in your recipe generator.
-
-> While Git and GitHub are great, those personal secrets should _never_ make their way to the open-source community.
-
-In this blog, post you will learn how to keep your secrets safe using **environment variables**. By the end you will know how to:
-
-- **Add and remove** environment variables from your Bash command line
-- Create **virtual environment variables** in your Python virtual environment
-- **Automatically set and unset** these virtual environment variables when you activate or deactivate your virtual environment
-
-Knowing how to work with environment variables is a crucial skill when building for the web, and can be helpful in many other situations that require some level of secrecy.
 
 <h2 id="avoiding-horror-scenarios">Avoiding Horror Scenarios</h2>
 
