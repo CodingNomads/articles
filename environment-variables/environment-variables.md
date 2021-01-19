@@ -4,8 +4,11 @@ Most programs that you build will include some secret information that you don't
 
 > While Git and GitHub are great, those personal secrets should _never_ make their way to the open-source community.
 
-Knowing how to work with environment variables is a crucial skill when building for the web, and can be helpful in many other situations that require some level of secrecy. In this blog you will learn how to keep your secrets safe using **environment variables**. By the end you will know how to:
+That's where Python Environment Variables come in handy! Knowing how to work with environment variables is a crucial skill when building for the web, and can be helpful in many other situations that require some level of secrecy. 
 
+In this blog you will learn how to keep your secrets safe using **environment variables**. By the end you will know how to:
+
+- **Set a variable** in Bash
 - **Add and remove** environment variables from your Bash command line
 - Create **virtual environment variables** in your Python virtual environment
 - **Automatically set and unset** these virtual environment variables when you activate or deactivate your virtual environment
@@ -36,7 +39,7 @@ The quick take-away is that you should never post your secrets to GitHub.
 
 There are a few ways to keep your sensitive information safe. In this article, you'll learn how to do it using environment variables in UNIX systems.
 
-<h2 id="using-environment-variables">Using Environment Variables</h2>
+<h2 id="using-environment-variables">Using Python Environment Variables</h2>
 
 [Environment variables](https://en.wikipedia.org/wiki/Environment_variable) are variables that you can access from anywhere in your local system. They are usually shared across many applications.
 
@@ -44,9 +47,9 @@ In UNIX systems, the most famous one of them is <a href="https://en.wikipedia.or
 
 You can access the value of your environment variables anywhere in your project without ever spelling out the actual value of that variable. Instead, you can refer to it through the environment variable.
 
-Because of that you can work with API secrets and passwords throughout your project, and commit all project-relevant code to GitHub while keeping all these secrets safe to yourself.
+That way you can work with API secrets and passwords throughout your project, and commit all project-relevant code to GitHub while keeping all these secrets safe to yourself.
 
-<h3 id="inspecting-environment-variables">Inspecting Environment Variables</h3>
+<h3 id="inspecting-environment-variables">Inspecting Python Environment Variables</h3>
 
 Open up your CLI and type `printenv`. This will give you a list of all the current environment variables present on your system:
 
@@ -101,15 +104,15 @@ unset DAY
 
 This command removes the `DAY` variable you set before.
 
-> Try adding and removing some environment variables using these commands. Remember you can check up on what’s happening using `printenv` or `echo <NAME>`.
+> Try adding and removing some environment variables using these commands. Remember you can check on what’s happening using `printenv` or `echo <NAME>`.
 
-However, when you are working on a Python web development project, you don't want to set your environment variables across your whole system. As soon as you're working on more than one Django project, the `SECRET_KEY` variables you need for each project will clash with each other. That's why you should compartmentalize your environment variables.
+However, when you are working on a Python web development project, you don't want to set your environment variables across your whole system. As soon as you're working on more than one Django project, the `SECRET_KEY` variables you need for each project will clash with each other. That's why you should compartmentalize your environment variables using virtual environments.
 
 <h2 id="using-environment-variables-in-python-virtual-environments">Using Environment Variables In Python Virtual Environments</h2>
 
 When doing any project-specific development, you always want to avoid setting anything for your whole system. The same counts for secrets, which are usually project-specific.
 
-It's a much better idea to set such environment variables inside of **virtual environments**, which makes them turn into **virtual environment variables**.
+It's a much better idea to set these types of Python environment variables inside of **virtual environments**, which makes them turn into **virtual environment variables**.
 
 Using environment variables inside of a Python virtual environment is easier than having to first `export` and then `unset` each variable every time you want to work on a project.
 
@@ -121,7 +124,7 @@ If you haven't yet created a virtual environment for your project, go ahead and 
 python3 -m venv venv
 ```
 
-This command creates a virtual environment in your current project folder. Learn more about working with virtual environments and Python in the <a href='https://codingnomads.co/courses/python-bootcamp-online/' target='_blank'>Python Engineering</a> course.
+This command creates a virtual environment in your current project folder. You can learn more about working with virtual environments and Python in our <a href='https://codingnomads.co/courses/python-bootcamp-online/' target='_blank'>Python Engineering</a> course.
 
 After you successfully created a virtual environment, open the `activate` script in your favorite text editor. You can find this file inside of the `venv` folder that got created by running the command shown above, specifically in `venv/bin/activate`.
 
@@ -161,7 +164,7 @@ Save the script and close it. Now you can activate your virtual environment:
 source venv/bin/activate
 ```
 
-Once the virtual environment has been successfully activated, you can now run the `printenv` command to inspect the state of your environment variables.
+Once the virtual environment has been successfully activated, you can now run the `printenv` command to inspect the state of your Python environment variables.
 
 `MY_SUPER_SECRET_SECRET` should show up, as should the value you assigned to it.
 
@@ -190,8 +193,8 @@ Some secrets are meant to stay secret. Setting environment variables inside of y
 
 In this blog post you learned how to:
 
-- **Add and remove** environment variables in Bash
+- **Add and remove** Python environment variables in Bash
 - Set up **project-specific environment variables** inside of your Python **virtual environments**
 - **Access** environment variables with Python
 
-If you’re interested in learning about Python web development from the ground up and drilling best practices right from the start check out the courses on <a href='https://codingnomads.co/courses/python-bootcamp-online/' target='_blank'>Python Engineering</a> and <a href='https://codingnomads.co/courses/django-course-learn-django-online' target='_blank'>Django Web Development</a>.
+If you’re interested in learning about Python web development from the ground up and drilling best practices right from the start, check out CodingNomads' courses on <a href='https://codingnomads.co/courses/python-bootcamp-online/' target='_blank'>Python Engineering</a> and <a href='https://codingnomads.co/courses/django-course-learn-django-online' target='_blank'>Django Web Development</a>.
