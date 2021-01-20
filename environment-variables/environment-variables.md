@@ -1,23 +1,24 @@
-##Keep your Secrets Safe with Python Environment Variables
+## Keep Your Secrets Safe With Environment Variables
 
-Most programs that you build will include some secret information that you don't want to share with the world. Think: API keys for your web service calls, database login credentials, or the ingredients to your secret sauce in your recipe generator!
+Most programs that you build will include some secret information that you don't want to share with the world. Think about API keys for your web service calls, database login credentials, or the ingredients to your secret sauce in your recipe generator!
 
 > While Git and GitHub are great, those personal secrets should _never_ make their way to the open-source community.
 
-That's where Python Environment Variables come in handy.  Knowing how to work with environment variables is a crucial skill when building for the web, and can be helpful in many other situations that require some level of secrecy. 
-
-In this blog you will learn how to keep your secrets safe using **environment variables**. By the end you will know how to:
+That's where Python Environment Variables come in handy. In this blog you will learn how to keep your secrets safe using **environment variables**. By the end you will know how to:
 
 - **Set a variable** in Bash
 - **Add and remove** environment variables from your Bash command line
 - Create **virtual environment variables** in your Python virtual environment
 - **Automatically set and unset** these virtual environment variables when you activate or deactivate your virtual environment
 
-##Table of Contents
+Knowing how to work with environment variables is a crucial skill when building for the web, and can be helpful in many other situations that require some level of secrecy.
+
+## Table of Contents
+
 - [Avoiding Horror Scenarios](#avoiding-horror-scenarios)
 - [Using Environment Variables](#using-environment-variables)
   - [Inspecting Environment Variables](#inspecting-environment-variables)
-  - [Adding And Removing Environment Variables](#adding-and-removing-environment-variables)
+  - [Adding And Removing Environment Variables](#adding-and-removing-environment-variables-in-bash)
 - [Using Environment Variables In Python Virtual Environments](#using-environment-variables-in-python-virtual-environments)
   - [Editing Your Activation Script](#editing-your-activation-script)
   - [Unsetting Virtual Environment Variables](#unsetting-virtual-environment-variables)
@@ -41,17 +42,17 @@ There are a few ways to keep your sensitive information safe. In this article, y
 
 <h2 id="using-environment-variables">Using Python Environment Variables</h2>
 
-[Environment variables](https://en.wikipedia.org/wiki/Environment_variable) are dynamic-named values that exist outside of your code, which you can access from anywhere in your local system. Environment variables can help you streamline the process of running your scripts and applications, and make these processes more secure. They are usually shared across many applications.
+[Environment variables](https://en.wikipedia.org/wiki/Environment_variable) are dynamic-named values, which you can access from anywhere in your current environment. They can help you make running your scripts more user-friendly and secure, and are shared across all applications in your current environment.
 
 In UNIX systems, the most famous one of them is <a href="https://en.wikipedia.org/wiki/PATH_(variable)" target="_blank">$PATH</a> which specifies file paths where your system looks for executable files.
 
-You can access the value of your environment variables anywhere in your project without ever spelling out the actual value of that variable. Instead, you can refer to it through the environment variable.
+You can access the value of your environment variables anywhere in your project without ever spelling out the actual value of that variable. Instead, you can refer to it through the environment variable defined in Bash.
 
 That way you can work with API secrets and passwords throughout your project, and commit all project-relevant code to GitHub while keeping all these secrets safe to yourself.
 
 <h3 id="inspecting-environment-variables">Inspecting Python Environment Variables</h3>
 
-Open up your CLI and type `printenv`. This will give you a list of all the current environment variables present on your system:
+Open up your CLI and type the Bash command `printenv`. This will give you a list of all the current environment variables present on your system:
 
 ```bash
 HOME=/Users/Martin
@@ -70,11 +71,11 @@ echo $LOGNAME
 
 The output you receive when running the same command will be whatever you have defined next to the `LOGNAME` variable that you can inspect by running `printenv`.
 
-With these two commands, you can inspect all the environment variables that are currently defined in your system, as well as their values. But what if you want to change, add, or remove one?
+With these two commands, you can inspect all the environment variables that are currently defined in your system. But what if you want to change, add, or remove one using Bash?
 
-<h3 id="adding-and-removing-environment-variables">Adding And Removing Environment Variables</h3>
+<h3 id="adding-and-removing-environment-variables-in-bash">Adding And Removing Environment Variables In Bash</h3>
 
-You can add a new environment variable with the following command:
+Using Bash in your CLI, you can add a new environment variable with the following command:
 
 ```bash
 export <NAME>=<VALUE>
@@ -90,7 +91,7 @@ export DAY=Sunday
 
 After executing this command, you can see that there was a new variable added to your environment. Take a look at it using `printenv` and `echo` as described above.
 
-In order to remove an environment variable, you'll have to call the following command:
+In order to remove an environment variable in Bash, you'll have to call the following command:
 
 ```bash
 unset <NAME>
@@ -102,11 +103,11 @@ Again, you'll have to add the actual name of the variable you want to remove ins
 unset DAY
 ```
 
-This command removes the `DAY` variable you set before.
+This Bash command removes the `DAY` variable you set before.
 
-> Try adding and removing some environment variables using these commands. Remember you can check on what’s happening using `printenv` or `echo <NAME>`.
+> Try adding and removing some environment variables using these Bash commands. Remember you can check on what’s happening using `printenv` or `echo <NAME>`.
 
-However, when you are working on a Python web development project, you don't want to set your environment variables across your whole system. As soon as you're working on more than one Django project, the `SECRET_KEY` variables you need for each project will clash with each other. That's why you should compartmentalize your environment variables using virtual environments.
+However, when you are working on a Python web development project, you don't want to set your environment variables across your whole system environment. As soon as you're working on more than one Django project, for example, the `SECRET_KEY` variables you need for each project will clash with each other. That's why you should compartmentalize your environment variables using **virtual environments**.
 
 <h2 id="using-environment-variables-in-python-virtual-environments">Using Environment Variables In Python Virtual Environments</h2>
 
@@ -124,19 +125,19 @@ If you haven't yet created a virtual environment for your project, go ahead and 
 python3 -m venv venv
 ```
 
-This command creates a virtual environment in your current project folder. You can learn more about working with virtual environments and Python in our <a href='https://codingnomads.co/courses/python-bootcamp-online/' target='_blank'>Python Engineering</a> course.
+This command creates a virtual environment in your current project folder. You can learn more about working with virtual environments and Python in the <a href='https://codingnomads.co/courses/python-bootcamp-online/' target='_blank'>Python Engineering</a> course.
 
 After you successfully created a virtual environment, open the `activate` script in your favorite text editor. You can find this file inside of the `venv` folder that got created by running the command shown above, specifically in `venv/bin/activate`.
 
-This script runs every time your `venv` gets activated, which makes it a good place to let your computer know which environment variables you would like to have, and which ones to get rid of once you exit the virtual environment.
+This Bash script runs every time your `venv` gets activated, which makes it a good place to let your computer know which environment variables you would like to have, and which ones to get rid of once you exit the virtual environment.
 
-You will edit this script and hard-code the values in there. First, you need to make sure that your virtual environment variables won’t stick around once you deactivated them, so you start by _unsetting_ the environment variable that you haven't even created yet.
+You will edit this Bash script and hard-code the values in there. First, you need to make sure that your virtual environment variables won’t stick around once you deactivated them, so you start by _unsetting_ the environment variable that you haven't even created yet.
 
 <h3 id="unsetting-virtual-environment-variables">Unsetting Virtual Environment Variables</h3>
 
-To unset a virtual environment variable, you add an `unset` command to the `deactivate` command section in your `activate` script. The code in this part of the script runs every time you `deactivate` your virtual environment.
+To unset a virtual environment variable, you add an `unset` command to the `deactivate` command section in your Bash `activate` script. The code in this part of the script runs every time you `deactivate` your virtual environment.
 
-For example, to unset the variable `MY_SUPER_SECRET_SECRET`, you need to add the following line of code:
+For example, to unset the variable `MY_SUPER_SECRET_SECRET`, you need to add the following line of Bash code:
 
 ```bash
 deactivate () {
@@ -158,7 +159,7 @@ You can set a virtual environment variable in the same way you learned about in 
 export MY_SUPER_SECRET_SECRET="OMG this is so secret I can't even say!"
 ```
 
-Save the script and close it. Now you can activate your virtual environment:
+Save the Bash script and close it. Now you can activate your virtual environment:
 
 ```bash
 source venv/bin/activate
