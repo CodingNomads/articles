@@ -16,9 +16,9 @@ Knowing how to work with environment variables is a crucial skill when building 
 ## Table of Contents
 
 - [Avoiding Horror Scenarios](#avoiding-horror-scenarios)
-- [Using Environment Variables](#using-environment-variables)
+- [Using Environment Variables In Bash](#using-environment-variables-in-bash)
   - [Inspecting Environment Variables](#inspecting-environment-variables)
-  - [Adding And Removing Environment Variables](#adding-and-removing-environment-variables-in-bash)
+  - [Adding And Removing Environment Variables](#adding-and-removing-environment-variables)
 - [Using Environment Variables In Python Virtual Environments](#using-environment-variables-in-python-virtual-environments)
   - [Editing Your Activation Script](#editing-your-activation-script)
   - [Unsetting Virtual Environment Variables](#unsetting-virtual-environment-variables)
@@ -40,7 +40,7 @@ The quick take-away is that you should never post your secrets to GitHub.
 
 There are a few ways to keep your sensitive information safe. In this article, you'll learn how to do it using environment variables in UNIX systems.
 
-<h2 id="using-environment-variables">Using Python Environment Variables</h2>
+<h2 id="using-environment-variables-in-bash">Using Environment Variables In Bash</h2>
 
 [Environment variables](https://en.wikipedia.org/wiki/Environment_variable) are dynamic-named values, which you can access from anywhere in your current environment. They can help you make running your scripts more user-friendly and secure, and are shared across all applications in your current environment.
 
@@ -50,7 +50,7 @@ You can access the value of your environment variables anywhere in your project 
 
 That way you can work with API secrets and passwords throughout your project, and commit all project-relevant code to GitHub while keeping all these secrets safe to yourself.
 
-<h3 id="inspecting-environment-variables">Inspecting Python Environment Variables</h3>
+<h3 id="inspecting-environment-variables">Inspecting Environment Variables</h3>
 
 Open up your CLI and type the Bash command `printenv`. This will give you a list of all the current environment variables present on your system:
 
@@ -73,7 +73,7 @@ The output you receive when running the same command will be whatever you have d
 
 With these two commands, you can inspect all the environment variables that are currently defined in your system. But what if you want to change, add, or remove one using Bash?
 
-<h3 id="adding-and-removing-environment-variables-in-bash">Adding And Removing Environment Variables In Bash</h3>
+<h3 id="adding-and-removing-environment-variables">Adding And Removing Environment Variables</h3>
 
 Using Bash in your CLI, you can add a new environment variable with the following command:
 
