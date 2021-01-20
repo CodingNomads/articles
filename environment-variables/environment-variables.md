@@ -42,7 +42,7 @@ There are multiple ways to keep your sensitive information safe. In this article
 
 <h2 id="using-environment-variables-in-bash">Using Environment Variables In Bash</h2>
 
-[Environment variables](https://en.wikipedia.org/wiki/Environment_variable) are dynamic-named values, which you can access from anywhere in your current environment. They can help you make running your scripts more user-friendly and secure, and are shared across all applications in your current environment.
+<a href='https://en.wikipedia.org/wiki/Environment_variable' target='_blank'>Environment variables</a> are dynamic-named values, which you can access from anywhere in your current environment. They can help you make running your scripts more user-friendly and secure, and are shared across all applications in your current environment.
 
 In UNIX systems, the most famous one of them is <a href="https://en.wikipedia.org/wiki/PATH_(variable)" target="_blank">$PATH</a>, which specifies file paths where your system looks for executable files.
 
