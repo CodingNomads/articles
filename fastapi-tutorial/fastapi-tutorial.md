@@ -6,11 +6,20 @@ Recently the Python ecosystem has been seeing some exciting new development powe
 
 [FastAPI](https://fastapi.tiangolo.com) is one of these new frameworks for developing web APIs that has been gaining popularity over the last few years. If you are planning on doing web development with Python now or in the future, it would be a good idea to be familiar with it.
 
+In this tutorial, you'll build an API for a database of remote working locations
+using FastAPI. Coding Nomads are always in need of good coffee and wifi while on
+the road. With this API, you can ask your friends from all over the world to
+submit their favorite places so that you'll always know the best place to go no
+matter where you are.
+
 In this article you will:
 
  * Create a new FastAPI project from scratch.
  * Create an API for fellow coding nomads to submit remote working locations.
  * Save the app's data to a real database using an ORM.
+
+Get ready to build your tool to locate the best remote working locations for your fellow
+travelers, and learn to use the modern Python FastAPI library on the way.
 
 ## Setting up the Project
 
@@ -95,7 +104,7 @@ Since you are creating an API only with no frontend user interface, you'll be us
 
 ## Defining Models and Business Logic
 
-Now it's time to take your application beyond the basics and start writing code specific to your goal. 
+Now it's time to take your application beyond the basics and start writing code specific to your goal.
 
 The first thing you are going to do is create a [Pydantic](https://pydantic-docs.helpmanual.io) model to represent a `Place`. Pydantic is a data validation library that uses some neat tricks from the Python3 type system. FastAPI relies heavily on it to both validate incoming data and serialize outgoing data.
 
@@ -254,12 +263,12 @@ def create_place(db: Session, place: Place):
     return db_place
 ```
 
-These three methods are responsible for getting a single `Place`, getting all the `Place`s, and creating a new `Place`. 
+These three methods are responsible for getting a single `Place`, getting all the `Place`s, and creating a new `Place`.
 
 The first parameter is always `db`: it's type is a SqlAlchemy session. The rest of the parameters depend on what you're going to do:
 
-1. For retrieving a single place, you just need the `place_id`. 
-2. For creating a place, you want the entire Pydantic `Place` model so you can create a record from it. 
+1. For retrieving a single place, you just need the `place_id`.
+2. For creating a place, you want the entire Pydantic `Place` model so you can create a record from it.
 3. For retrieving all places you don't need any more information, you just return all the `Place`s in the database.
 
 Finally you should define some routes to perform the actions we need.
