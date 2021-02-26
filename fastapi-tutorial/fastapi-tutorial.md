@@ -112,7 +112,7 @@ Now try visiting <a href="http://127.0.0.1:8000" target="_blank">http://127.0.0.
 
 Perfect. But that's not it, FastAPI has also automatically generated fully interactive API documentation that you can use to interact with your new API. Visit <a href="http://127.0.0.1:8000/docs" target="_blank">http://127.0.0.1:8000/docs</a> in your browser. You should see something like this:
 
-<img alt="alt" class="img-responsive cn_image" src="https://github.com/CodingNomads/articles/blob/main/fastapi-tutorial/apidocs.png?raw=true">
+![Landing page of the auto-generated API docs](https://github.com/CodingNomads/articles/blob/main/fastapi-tutorial/apidocs.png?raw=true)
 
 In this image you can see the endpoint that was just defined, and even execute it straight from your browser!
 
@@ -164,7 +164,7 @@ The `create_place` method simply takes a Place as a parameter, and returns it. S
 
 Try it out in the interactive API docs. Select the `/places/` route, and click the _try it out_ button. Fill in some values for the example place (or just use the defaults) and press execute. You should be able to watch as your browser executes the request and displays the response:
 
-<img alt="alt" class="img-responsive cn_image" src="https://github.com/CodingNomads/static/blob/main/articles/fastapi-tutorial/placecreated.png?raw=true">
+![Response after a place has been created](https://github.com/CodingNomads/articles/blob/main/fastapi-tutorial/placecreated.png?raw=true)
 
 Notice FastAPI also gives you a cURL command string for your request, so you can copy and paste it into your terminal or use it in scripts!
 
