@@ -44,7 +44,7 @@ Below, each datatype has a brief explanation as to what it is, followed by examp
 
 ### 2. Float
 
-- ```float: Decimal numbers ```
+- ```float```: Decimal numbers
 - ```pi = 3.1415```
 - **IMMUTABLE DATATYPE**
 
