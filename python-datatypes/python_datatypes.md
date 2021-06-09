@@ -1,5 +1,7 @@
 ## A Quick and Simple Guide to Python Data Types
 
+This blog introduces the most common Python data types, as well as tips for staying sane while learning concepts like these as a beginner.
+
 Let’s say you’re just starting out on your programming journey into Python, and you feel like you’re making some progress. You’ve watched some online tutorials, put together a few simple programs, and you're hungry for more. 
 
 You open up Google in your browser and you type ‘python data types’ into the search bar. You’re intent on mastering the basics, and you’re trying to get a better understanding of what types are built into Python. 
