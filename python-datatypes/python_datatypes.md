@@ -56,7 +56,7 @@ Below, each Python data type has a brief explanation as to what it is, followed 
 
 ### 2. Float
 
-- ```float: Decimal numbers ```
+- ```float```: Decimal numbers
 - ```pi = 3.1415```
 - **IMMUTABLE DATA TYPE**
 
