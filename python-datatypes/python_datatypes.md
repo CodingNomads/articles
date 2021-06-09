@@ -52,13 +52,13 @@ Below, each Python data type has a brief explanation as to what it is, followed 
 
 - ```int```: Positive and/or Negative whole numbers
 - ```some_int = 252```
-- **IMMUTABLE DATATYPE**
+- **IMMUTABLE DATA TYPE**
 
 ### 2. Float
 
 - ```float: Decimal numbers ```
 - ```pi = 3.1415```
-- **IMMUTABLE DATATYPE**
+- **IMMUTABLE DATA TYPE**
 
 ### 3. String
 
@@ -69,14 +69,14 @@ Below, each Python data type has a brief explanation as to what it is, followed 
 - **Special Note**: 
     - You cannot mix quote types.
     - They must start and end with the same type
-- **IMMUTABLE DATATYPE**
+- **IMMUTABLE DATA TYPE**
 
 
 ### 4. List
 
 - ```list```: elements separated by comas, encased by square brackets
 - ```some_list = ['banana', 'apple', 'mango']```
-- **Mutable Datatype**
+- **Mutable Data type**
 
 ### 5. Tuple
 
@@ -85,7 +85,7 @@ Below, each Python data type has a brief explanation as to what it is, followed 
 - ```another_tup = (1, 2, 'Hi!')```
 - ```wrap_tup = tuple(1, 2, 'Konnichiwa!')```
 - ```singleton_tup = (, )```
-- **IMMUTABLE DATATYPE**
+- **IMMUTABLE DATA TYPE**
 
 ### 6. Set
 
@@ -96,7 +96,7 @@ Below, each Python data type has a brief explanation as to what it is, followed 
     - ```url_list = ['http://www.example.com', 'http://www.setsareuseful.com', 'http://www.example.com']```
     - ```unique_urls = set(url_list)```
     - ```print(unique_urls)  # OUTPUT: {'http://www.example.com', 'http://www.setsareuseful.com'}```
-- **Mutable Datatype**
+- **Mutable Data type**
 
 ### 7. Dictionary
 
@@ -105,7 +105,7 @@ Below, each Python data type has a brief explanation as to what it is, followed 
     - ```key = 'Scott'```
     - ```value = 'scott@email.com'```
     - ```print(some_dict['Scott']) #OUTPUT scott@email.com```
-- **KEYS = NEED TO BE IMMUTABLE DATATYPE**
+- **KEYS = NEED TO BE IMMUTABLE DATA TYPE**
 
 ### 8. Boolean
 
