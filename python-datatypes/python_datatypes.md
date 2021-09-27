@@ -58,6 +58,80 @@ In this cheatsheet you'll see that each Python data type has a brief explanation
 | Set        | Unordered collection with no duplicate elements                              | Mutable          |  ```url_list = ['http://www.example.com', 'http://www.setsareuseful.com', 'http://www.example.com']```<br>```unique_urls = set(url_list)```<br>```print(unique_urls)  # OUTPUT: {'http://www.example.com', 'http://www.setsareuseful.com'}```                        |
 | Dictionary | Curly braces that encase key and value pairs, which are separated by a colon | Immutable = Keys | ```some_dict = {'Scott': 'scott@email.com'}```<br>```Key = 'Scott'```<br>```Value = 'scott@email.com'```                                                                                                                                                                  |
 | Boolean    | Code logic that evaluates to TRUE or FALSE                                   | Depends          | ```if 1 < 2: # This is True, so indented code will get executed```<br>```if 1 > 2: # This is False, so indented code wont get executed```                                                                                                                              |
+=======
+## Python Data Types Overview/Cheatsheet:
+
+Below, each Python data type has a brief explanation as to what it is, followed by examples showing what they look like, and whether they're Mutable or Immutable (changeable or not-changeable).
+
+### 1. Integer
+
+- ```int```: Positive and/or Negative whole numbers
+- ```some_int = 252```
+- **IMMUTABLE DATA TYPE**
+
+### 2. Float
+
+- ```float```: Decimal numbers
+- ```pi = 3.1415```
+- **IMMUTABLE DATA TYPE**
+
+### 3. String
+
+- ```str```: text wrapped in quotes
+- ```single_quote_string = 'I am a string in single quotes'```
+- ```double_quote_string = "This is a string in double quotes"```
+- ```multi_line_string = '''Triple quotes... For when you have lots of text. It's easier to read this way'''```
+- **Special Note**: 
+    - You cannot mix quote types.
+    - They must start and end with the same type
+- **IMMUTABLE DATA TYPE**
+
+
+### 4. List
+
+- ```list```: elements separated by comas, encased by square brackets
+- ```some_list = ['banana', 'apple', 'mango']```
+- **Mutable Data type**
+
+### 5. Tuple
+
+- ```tuple```: values that are separated by commas, wrapped in parentheses
+- ```some_tup = 1, 2, 'Hello'```
+- ```another_tup = (1, 2, 'Hi!')```
+- ```wrap_tup = tuple(1, 2, 'Konnichiwa!')```
+- ```singleton_tup = (, )```
+- **IMMUTABLE DATA TYPE**
+
+### 6. Set
+
+- ```set```: an unordered collection with no duplicate elements
+- ```some_set = {1, 2, 3}```
+- ```another_set = set([1, 2, 3])```
+    - *Practical Example*:
+    - ```url_list = ['http://www.example.com', 'http://www.setsareuseful.com', 'http://www.example.com']```
+    - ```unique_urls = set(url_list)```
+    - ```print(unique_urls)  # OUTPUT: {'http://www.example.com', 'http://www.setsareuseful.com'}```
+- **Mutable Data type**
+
+### 7. Dictionary
+
+- ```dict```: key and value pairs separated by a colon, which are encased in curly braces
+- ```some_dict = {'Scott': 'scott@email.com'}```
+    - ```key = 'Scott'```
+    - ```value = 'scott@email.com'```
+    - ```print(some_dict['Scott']) #OUTPUT scott@email.com```
+- **KEYS = NEED TO BE IMMUTABLE DATA TYPE**
+
+### 8. Boolean
+
+- ```bool```: 
+    - fundamental building block of computers; representation of binary
+    - useful when testing for 'truthness' with comparison operators
+    - `True` / `ON` / `1`
+    - `False` / `OFF` / `0`
+    - *Practical Example*
+        - ```if 1 < 2:  #THIS IS TRUE, SO INDENTED CODE BELOW WILL GET EXECUTED```
+        - ```if 1 > 2:  #THIS IS FALSE, SO INDENTED CODE BELOW WILL NOT GET EXECUTED```
 
 ## Takeaway
 During your day-to-day work with Python, these are the meat and potatoes of the data types that you'll be working with. But another important takeaway is that when going over documentation, you're not expected to know every little detail. 
