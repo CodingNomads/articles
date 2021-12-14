@@ -21,7 +21,7 @@ In this tutorial you will:
 
 Hold on tight, you're about to speed up your Flask API endpoints using Python's `asyncio`!
 
-## One app, two endpoints.
+## One app, two endpoints
 
 To begin this feat of strength, you will write a simple Flask app with two endpoints. One will be asynchronous and the other will not.
 
@@ -105,7 +105,7 @@ The difference between 7 miliseconds and 21 miliseconds is not noticeable to the
 Still, this is a good demonstration that there can be overhead to using `asyncio`,
 so it is not faster in *all* situations.
 
-## Two endpoints, one fast, one slow.
+## Two endpoints, one fast, one slow
 
 In order to see the `async_get_data` endpoint become faster than it's sync counterpart, you'll have to make the endpoints actually do some work. One common case for APIs is that they need to make calls to other APIs, for example, to fetch the weather for a specific location from a third party service.
 
@@ -151,9 +151,9 @@ async def async_get_data():
         }
 ```
 
-Both endpoints now make two GET requests to https://flash.siwalik.in/delay/1000/, which returns a simple response after one second. The first method `get_data` should look familiar to anyone who has used the Python `requests` library. `response_1` contains the result of the first API call, and `response_2` contains the result of the second API call. The method then returns the status code of each response.
+Both endpoints now make two GET requests to https://flash.siwalik.in/delay/1000/, which returns a simple response after one second. The first function `get_data()` should look familiar to anyone who has used the Python `requests` library. `response_1` contains the result of the first API call, and `response_2` contains the result of the second API call. The method then returns the status code of each response.
 
-The second method, `async_get_data`, looks a bit different, although the end result is the same. Going step by step, this is what is happening:
+The second function, `async_get_data()`, looks a bit different, although the end result is the same. Going step by step, this is what is happening:
 
 ```python
 async with httpx.AsyncClient() as client:
@@ -168,13 +168,13 @@ coroutine_1 = client.get('https://flash.siwalik.in/delay/1000/')
 coroutine_2 = client.get('https://flash.siwalik.in/delay/1000/')
 ```
 
-At first you might assume that the results of the API calls will be stored in these variables but actually `coroutine_1` and `coroutine_2` are `co-routines`, not HTTP responses.
+At first you might assume that the results of the API calls will be stored in these variables but actually `coroutine_1` and `coroutine_2` are co-routines, not HTTP responses.
 
 ```python
 results = await asyncio.gather(coroutine_1, coroutine_2)
 ```
 
-Now the magic of async happens. Here the return value of `asyncio.gather()` is assigned to the `result` variable, and it is awaited. When you see the `await` keyword, it means that the code will block execution there until the call to a co-routine is complete. The `gather` method itself is a co-routine, and will execute a sequence of other co-routines (like `[coroutine_1, coroutine_2]`) *concurrently*, and then return a list of results.
+Now the magic of async happens. Here the return value of `asyncio.gather()` is assigned to the `result` variable, and it is awaited. When you see the `await` keyword, it means that the code will block execution there until the call to a co-routine is complete. The `.gather()` method itself is a co-routine, and will execute a sequence of other co-routines (like `[coroutine_1, coroutine_2]`) *concurrently*, and then return a list of results.
 
 Finally, the method returns the status code for each HTTP response by accessing it within the array of results.
 
@@ -185,9 +185,9 @@ return {
 }
 ```
 
-Calling `get_data` and `async_get_data` should result in the exact same result, but `async_get_data` will complete much faster. How much faster do you think it will finish?
+Calling `get_data()` and `async_get_data()` should result in the exact same result, but `async_get_data()` will complete much faster. How much faster do you think it will finish?
 
-## Timing the Results.
+## Timing the Results
 
 Now that you have an API with two endpoints that do the same thing, except one is asynchronous and one is not, you should return to using cURL to time them.
 
@@ -250,6 +250,6 @@ which would bump your total time back to a synchronous execution time.
 
 ## Conclusion.
 
-In this article you learned how Python's `asyncio` can speed up your application considerably in situations where your code is waiting on multiple instances of Input/Output. You also learned how `asyncio` can be used effectively and easily with the Flask web framework and the `HTTPX` library.
+In this article you learned how Python's `asyncio` can speed up your application considerably in situations where your code is waiting on multiple instances of Input/Output. You also learned how `asyncio` can be used effectively and easily with the Flask web framework and the HTTPX library.
 
-`Asyncio` won't always make your API faster, but in certain situations it can make a huge difference like demonstrated in this tutorial. Keep what you learned here in mind when writing your code in the future and you might gain some easy performance wins!
+`asyncio` won't always make your API faster, but in certain situations it can make a huge difference like demonstrated in this tutorial. Keep what you learned here in mind when writing your code in the future and you might gain some easy performance wins!
