@@ -233,20 +233,19 @@ HTTP calls aren't the only place where asyncio can make a difference. In fact, y
 
 Many APIs are backed by databases and getting the results of a SQL query from a database server is often bound by I/O. You could replace one of the calls to the Flash API in our app with a call to a database instead. Imagine this DB call takes 500 milliseconds to return.
 
-The first endpoint, `get_data`, would take roughly 1.5 seconds to return the result:
+The **synchronous endpoint**, `get_data`, takes roughly **1.5 seconds** to return the result:
 
  - 1 second for the HTTP call
  - 0.5 seconds for the database call
 
- The second endpoint, `async_get_data`, would take roughly 1 second to return the result:
+ The **asynchronous endpoint**, `async_get_data`, takes roughly **1 second** to return the result:
 
 - 1 second for the HTTP call
 - 0.5 seconds for the database call
 
-However, both execute *concurrently*.
-This means it only takes as long as the slowest operation to return the result.
+Even though the individual calls take the same amount of time, they both execute *concurrently*.
+This means the total time is only as long as it takes the slowest operation to return the result.
 You just saved 0.5 seconds by using `asyncio`!
-
 
 Keep in mind that if you need the results of one async call for the next async call, this won't be much help.
 In that case you can only start running the second call when the first one is complete,
