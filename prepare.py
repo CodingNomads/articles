@@ -1,4 +1,5 @@
 """Prepares a simple Markdown doc for publishing on the CN Blog site."""
+import sys
 import argparse
 from pathlib import Path
 import re
@@ -33,7 +34,7 @@ if not input_path.is_file():
     sys.exit()
 
 
-new_tab_link_pattern = re.compile(r'(?<!!)(\[([^\s\]]*)\]\(([^\s\)]*)\))')
+new_tab_link_pattern = re.compile(r'(?<!!)\[([\w\s]+)\]\((https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b[-a-zA-Z0-9()@:%_\+.~#?&\/\/=]*)\)')
 """
 the regex matches all Markdown links of the form following form:
     [Example](http://www.example.com)
