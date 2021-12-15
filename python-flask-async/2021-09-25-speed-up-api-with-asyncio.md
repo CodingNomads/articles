@@ -15,15 +15,13 @@ draft: true
 
 As a developer, you want the APIs you write to be as fast as possible. So what if I told you that with one trick,
 you might be able to increase the speed of your API by 2x, 3x, or maybe even 4x? In this article you will
-learn how to utilize Python **asyncio**, the **httpx** library, and the **Flask** micro framework to optimize certain parts of your API.
+learn how to utilize Python **asyncio**, the **HTTPX** library, and the **Flask** micro framework to optimize certain parts of your API.
 
-<!--more-->
+**In this tutorial you will:**
 
-In this tutorial you will:
-
-1. Write a small HTTP API using everyone's favorite Python framework: <a href="Flask" target="_blank">[Flask](https://flask.palletsprojects.com/en/2.0.x/)</a>.
-2. Use <a href="httpx" target="_blank">[httpx](https://www.python-httpx.org/)</a>, an awesome modern Python HTTP client that supports async.
-3. Familiarize yourself with a small subset of Python's <a href="asyncio" target="_blank">[asyncio](https://docs.python.org/3/library/asyncio.html)</a> Library.
+1. Write a small HTTP API using everyone's favorite Python framework: <a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">Flask</a>.
+2. Use <a href="https://www.python-httpx.org/" target="_blank">HTTPX</a>, an awesome modern Python HTTP client that supports async.
+3. Familiarize yourself with a small subset of Python's <a href="https://docs.python.org/3/library/asyncio.html" target="_blank">asyncio</a> library.
 
 Hold on tight, you're about to speed up your Flask API endpoints using Python's `asyncio`!
 
@@ -64,8 +62,8 @@ async def async_get_data():
     return 'ok'
 ```
 
-You now have a fully working Flask API with two endpoints. If you are new to Flask and are curious what is going on here, check out the [Flask quickstart documentation](https://flask.palletsprojects.com/en/2.0.x/quickstart/)
-or dive deep into [web development with Flask](https://codingnomads.co/courses/flask-tutorial-python-flask-apps-online-course).
+You now have a fully working Flask API with two endpoints. If you are new to Flask and are curious what is going on here, check out the <a href="https://flask.palletsprojects.com/en/2.0.x/quickstart/" target="_blank">Flask quickstart documentation</a>
+or dive deep into <a href="https://codingnomads.co/courses/flask-tutorial-python-flask-apps-online-course" target="_blank">web development with Flask</a>.
 
 Notice that the second endpoint, `/async_get_data` uses the `async def` syntax for defining it's method. Still, this endpoint does exactly the same as the normal `/get_data` endpoint, except that you can run asynchronous code in it. As it is written now, however, it is not any faster. You can prove this by running our API and making a few calls with **cURL**.
 
@@ -115,7 +113,7 @@ so it is not faster in *all* situations.
 
 In order to see the `async_get_data` endpoint become faster than it's sync counterpart, you'll have to make the endpoints actually do some work. One common case for APIs is that they need to make calls to other APIs, for example, to fetch the weather for a specific location from a third party service.
 
-You can add HTTP requests to your API using a combination of `httpx` and <a href="Flash" target="_blank">[Flash](https://flash.siwalik.in/)</a>, a service that intentionally returns slow HTTP responses. Why slow? Because you want to be able to simulate large and or slow external APIs which will help exaggerate the effect of using `asyncio`.
+You can add HTTP requests to your API using a combination of `httpx` and <a href="https://flash.siwalik.in/" target="_blank">Flash</a>, a service that intentionally returns slow HTTP responses. Why slow? Because you want to be able to simulate large and or slow external APIs which will help exaggerate the effect of using `asyncio`.
 
 First, install the `httpx` library:
 
@@ -211,7 +209,7 @@ Executed in    3.56 secs      fish           external
    sys time    5.00 millis   48.00 micros    4.96 millis
 ```
 
-You can see that both responses return an [HTTP 200](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#2xx_success), and in total your endpoint took about 3.5 seconds to return. That makes sense: the external endpoints provided by Flash paused for one second each and the extra 1.5 seconds of other overhead can be accounted for in DNS lookups, TCP connections, slow Comcast internet, and other internet related spaghetti.
+You can see that both responses return an <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#2xx_success" target="_blank">HTTP 200</a>, and in total your endpoint took about 3.5 seconds to return. That makes sense: the external endpoints provided by Flash paused for one second each and the extra 1.5 seconds of other overhead can be accounted for in DNS lookups, TCP connections, slow Comcast internet, and other internet related spaghetti.
 
 Next, try timing the `async_get_data` endpoint:
 
@@ -223,7 +221,7 @@ ________________________________________________________
 Executed in    1.81 secs      fish           external
    usr time    6.21 millis  342.00 micros    5.87 millis
    sys time    0.06 millis   59.00 micros    0.00 millis
-````
+```
 
 If in the previous section you guessed that the async version would be about twice as fast, you are correct! Why? Because Flask ran the calls to the external API concurrently. That means that in this case, the entire act of retrieving the results from the Flash API was only as slow as the slowest call.
 
