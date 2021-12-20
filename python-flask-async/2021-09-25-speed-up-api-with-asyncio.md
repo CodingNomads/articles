@@ -7,12 +7,6 @@ categories:
 draft: true
 ---
 
-- [One App, Two Endpoints](#one-app-two-endpoints)
-- [Two Endpoints, One Fast, One Slow](#two-endpoints-one-fast-one-slow)
-- [Timing the Results](#timing-the-results)
-- [A Real World Use Case](#a-real-world-use-case)
-- [Conclusion](#conclusion)
-
 As a developer, you want the APIs you write to be as fast as possible. So what if I told you that with one trick,
 you might be able to increase the speed of your API by 2x, 3x, or maybe even 4x? In this article you will
 learn how to utilize Python **asyncio**, the **HTTPX** library, and the **Flask** micro framework to optimize certain parts of your API.
@@ -24,6 +18,13 @@ learn how to utilize Python **asyncio**, the **HTTPX** library, and the **Flask*
 3. Familiarize yourself with a small subset of Python's <a href="https://docs.python.org/3/library/asyncio.html" target="_blank">asyncio</a> library.
 
 Hold on tight, you're about to speed up your Flask API endpoints using Python's `asyncio`!
+
+**Table of Contents**
+- [One App, Two Endpoints](#one-app-two-endpoints)
+- [Two Endpoints, One Fast, One Slow](#two-endpoints-one-fast-one-slow)
+- [Timing the Results](#timing-the-results)
+- [A Real World Use Case](#a-real-world-use-case)
+- [Conclusion](#conclusion)
 
 <h2 id="one-app-two-endpoints">One App, Two Endpoints</h2>
 
