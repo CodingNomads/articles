@@ -14,7 +14,7 @@ learn how to utilize Python **asyncio**, the **HTTPX** library, and the **Flask*
 
 **In this tutorial you will:**
 
-1. Write a small HTTP API using everyone's favorite Python framework: <a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">Flask</a>.
+1. Write a small HTTP API using the popular Python framework: <a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">Flask</a>.
 2. Use <a href="https://www.python-httpx.org/" target="_blank">HTTPX</a>, an awesome modern Python HTTP client that supports async.
 3. Familiarize yourself with a small subset of the Python <a href="https://docs.python.org/3/library/asyncio.html" target="_blank">asyncio</a> library.
 
@@ -26,6 +26,7 @@ Hold on tight, because you're about to speed up your Flask API endpoints using P
 - [Timing the Results](#timing-the-results)
 - [A Real World Use Case for Python Asyncio](#a-real-world-use-case)
 - [Conclusion](#conclusion)
+- [Learn More](#learnmore)
 
 <h2 id="one-app-two-endpoints">One App, Two Endpoints</h2>
 
@@ -258,3 +259,8 @@ which would bump your total time back to a synchronous execution time.
 In this article you learned how Python `asyncio` can speed up your application considerably in situations where your code is waiting on multiple instances of Input/Output. You also learned how `asyncio` can be used effectively and easily with the Flask web framework and the HTTPX library.
 
 `asyncio` won't always make your API faster, but in certain situations it can make a huge difference like demonstrated in this tutorial. Keep what you learned here in mind when writing your code in the future and you might gain some easy performance wins!
+
+<h2 id="learnmore">Want to learn more?</h2>
+
+There are tons of cool things you can do with Python. CodingNomads teaches Python web dev starting from absolute scratch, through web frameworks like Flask and Django, and all the way to the level where you can do cool stuff like use Python `asyncio` :) Click below to learn more about our Python Web Development program.
+
