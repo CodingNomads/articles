@@ -6,6 +6,7 @@ categories:
     - python
 draft: true
 ---
+<h2>How to use Python Asyncio</h2>
 
 As a developer, you want the APIs you write to be as fast as possible. So what if I told you that with one trick,
 you might be able to increase the speed of your API by 2x, 3x, or maybe even 4x? In this article you will
@@ -15,15 +16,15 @@ learn how to utilize Python **asyncio**, the **HTTPX** library, and the **Flask*
 
 1. Write a small HTTP API using everyone's favorite Python framework: <a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">Flask</a>.
 2. Use <a href="https://www.python-httpx.org/" target="_blank">HTTPX</a>, an awesome modern Python HTTP client that supports async.
-3. Familiarize yourself with a small subset of Python's <a href="https://docs.python.org/3/library/asyncio.html" target="_blank">asyncio</a> library.
+3. Familiarize yourself with a small subset of the Python <a href="https://docs.python.org/3/library/asyncio.html" target="_blank">asyncio</a> library.
 
-Hold on tight, you're about to speed up your Flask API endpoints using Python's `asyncio`!
+Hold on tight, because you're about to speed up your Flask API endpoints using Python `asyncio`!
 
 **Table of Contents**
 - [One App, Two Endpoints](#one-app-two-endpoints)
 - [Two Endpoints, One Fast, One Slow](#two-endpoints-one-fast-one-slow)
 - [Timing the Results](#timing-the-results)
-- [A Real World Use Case](#a-real-world-use-case)
+- [A Real World Use Case for Python Asyncio](#a-real-world-use-case)
 - [Conclusion](#conclusion)
 
 <h2 id="one-app-two-endpoints">One App, Two Endpoints</h2>
@@ -107,7 +108,7 @@ Are you surprised to see that the asynchronous version was slower?
 
 The asynchronous request took about 3x longer than the synchronous request!
 The difference between 7 miliseconds and 21 miliseconds is not noticeable to the human eyes.
-Still, this is a good demonstration that there can be overhead to using `asyncio`,
+Still, this is a good demonstration that there can be overhead to using Python `asyncio`,
 so it is not faster in *all* situations.
 
 <h2 id="two-endpoints-one-fast-one-slow">Two Endpoints, One Fast, One Slow</h2>
@@ -228,9 +229,9 @@ If in the previous section you guessed that the async version would be about twi
 
 In fact, you can try adding a third call to each method. The first endpoint will take roughly 1.5 seconds longer, while the async version will still execute in roughly 1.8 seconds. You can keep adding HTTP calls to the async version and it should *continue* to return in roughly the same amount of time until you start hitting various hardware, network and operating system level constraints.
 
-<h2 id="a-real-world-use-case">A Real World Use Case</h2>
+<h2 id="a-real-world-use-case">A Real World Use Case for Python Asyncio</h2>
 
-HTTP calls aren't the only place where asyncio can make a difference. In fact, you can see other use cases right there in the name of the Python module: `asyncio` stands for Asynchronous Input/Output.
+HTTP calls aren't the only place where Python asyncio can make a difference. In fact, you can see other use cases right there in the name of the Python module: `asyncio` stands for Asynchronous Input/Output.
 
 Many APIs are backed by databases and getting the results of a SQL query from a database server is often bound by I/O. You could replace one of the calls to the Flash API in our app with a call to a database instead. Imagine this DB call takes 500 milliseconds to return.
 
@@ -254,6 +255,6 @@ which would bump your total time back to a synchronous execution time.
 
 <h2 id="conclusion">Conclusion</h2>
 
-In this article you learned how Python's `asyncio` can speed up your application considerably in situations where your code is waiting on multiple instances of Input/Output. You also learned how `asyncio` can be used effectively and easily with the Flask web framework and the HTTPX library.
+In this article you learned how Python `asyncio` can speed up your application considerably in situations where your code is waiting on multiple instances of Input/Output. You also learned how `asyncio` can be used effectively and easily with the Flask web framework and the HTTPX library.
 
 `asyncio` won't always make your API faster, but in certain situations it can make a huge difference like demonstrated in this tutorial. Keep what you learned here in mind when writing your code in the future and you might gain some easy performance wins!
